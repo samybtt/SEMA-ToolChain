@@ -30,6 +30,7 @@ try:
     from .explorer.ToolChainExplorerCDFS import ToolChainExplorerCDFS
     from .explorer.ToolChainExplorerBFS import ToolChainExplorerBFS
     from .explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
+    from .explorer.ToolChainExplorerStochS import StochasticSearch
     from .clogging.CustomFormatter import CustomFormatter
     from .clogging.LogBookFormatter import *
     from .helper.ArgumentParserSCDG import ArgumentParserSCDG
@@ -347,7 +348,9 @@ class ToolChainSCDG:
             self.call_sim.custom_hook_windows_symbols(proj)
 
         # Creation of simulation manager, primary interface in angr for performing execution
+        # simgr = proj.factory.simulation_manager(state, veritesting=True)
         simgr = proj.factory.simulation_manager(state)
+
 
         #####################################################
         ##########         Exploration           ############
@@ -443,6 +446,8 @@ class ToolChainSCDG:
             exploration_tech = ToolChainExplorerBFS(
                 simgr, 0, exp_dir, nameFileShort, self
             )
+        elif self.expl_method == "SS":
+            exploration_tech = StochasticSearch()
 
         simgr.use_technique(exploration_tech)
 

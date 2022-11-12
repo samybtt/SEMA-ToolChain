@@ -1,0 +1,31 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4199664.main
+example_samy1.exe"]
+	1 [label="4200357.GetSystemTimeAsFileTime
+576460752303357568"]
+	2 [label="4200368.GetCurrentProcessId
+"]
+	3 [label="4200376.GetCurrentThreadId
+"]
+	4 [label="4200384.GetTickCount
+"]
+	5 [label="4200398.QueryPerformanceCounter
+0"]
+	6 [label="4198766.__getmainargs
+4223016
+4223008
+4223000
+0
+4222980"]
+	7 [label="4199000.SetUnhandledExceptionFilter
+4203440"]
+	8 [label="4204635.strlen
+.pdata"]
+	9 [label="4204741.strncmp
+.text
+.pdata
+8"]
+	8 -> 9 [label="(1-->2)"]
+	5 -> 9 [label="(0-->0)"]
+}

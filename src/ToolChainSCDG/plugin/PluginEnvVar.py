@@ -1,5 +1,5 @@
 import angr
-
+import claripy
 
 class PluginEnvVar(angr.SimStatePlugin):
     def __init__(self):
@@ -29,3 +29,9 @@ class PluginEnvVar(angr.SimStatePlugin):
         p.stop_flag = self.stop_flag
         p.dict_calls = self.dict_calls.copy()
         return p
+    
+    def merge(self, others, merge_conditions, common_ancestor=None):
+        assert len(merge_conditions) == len(others) + 1
+        assert zip(merge_conditions, [self] + others)
+        
+        self.myvar = claripy.ite_cases(zip(merge_conditions[1:], [o.myvar for o in others]), self.myvar)

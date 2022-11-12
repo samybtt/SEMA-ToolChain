@@ -906,6 +906,8 @@ class CustomSimProcedure:
                     str_mem = state.mem[retval].string.concrete.decode("utf-8")
                 self.scdg[id][-1]["ret"] = str_mem
             except:
+                # import pdb;pdb.set_trace()
+                # self.scdg[id][-1]["ret"] = "ERROR_ligne903"
                 self.scdg[id][-1]["ret"] = retval
         elif (
             self.scdg[id][-1]["ret"] != "symbolic"
