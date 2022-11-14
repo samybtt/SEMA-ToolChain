@@ -30,7 +30,7 @@ try:
     from .explorer.ToolChainExplorerCDFS import ToolChainExplorerCDFS
     from .explorer.ToolChainExplorerBFS import ToolChainExplorerBFS
     from .explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
-    from .explorer.ToolChainExplorerStochS import StochasticSearch
+    from .explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
     from .clogging.CustomFormatter import CustomFormatter
     from .clogging.LogBookFormatter import *
     from .helper.ArgumentParserSCDG import ArgumentParserSCDG
@@ -42,6 +42,7 @@ except:
     from explorer.ToolChainExplorerCDFS import ToolChainExplorerCDFS
     from explorer.ToolChainExplorerBFS import ToolChainExplorerBFS
     from explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
+    from explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
     from clogging.CustomFormatter import CustomFormatter
     from clogging.LogBookFormatter import * # TODO
     from helper.ArgumentParserSCDG import ArgumentParserSCDG
@@ -431,14 +432,13 @@ class ToolChainSCDG:
 
         simgr.stashes["temp"]
 
-        exploration_tech = ToolChainExplorerDFS(
-            simgr, 0, exp_dir, nameFileShort, self
-        )
+        
         if self.expl_method == "CDFS":
             exploration_tech = ToolChainExplorerCDFS(
                 simgr, 0, exp_dir, nameFileShort, self
             )
         elif self.expl_method == "CBFS":
+            # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerCBFS(
                 simgr, 0, exp_dir, nameFileShort, self
             )
@@ -446,8 +446,15 @@ class ToolChainSCDG:
             exploration_tech = ToolChainExplorerBFS(
                 simgr, 0, exp_dir, nameFileShort, self
             )
-        elif self.expl_method == "SS":
-            exploration_tech = StochasticSearch()
+        elif self.expl_method == "STOCH":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerStochastic(
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        else:
+            exploration_tech = ToolChainExplorerDFS(
+            simgr, 0, exp_dir, nameFileShort, self
+        )
 
         simgr.use_technique(exploration_tech)
 
@@ -469,7 +476,6 @@ class ToolChainSCDG:
 
         elapsed_time = time.time() - self.start_time
         self.log.info("Total execution time to build scdg: " + str(elapsed_time))
-
 
         self.build_scdg_fin(exp_dir, nameFileShort, main_obj, state, simgr, discard_SCDG)
 

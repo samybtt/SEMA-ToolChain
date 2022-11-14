@@ -364,10 +364,11 @@ class ToolChainExplorer(ExplorationTechnique):
             for i in range(new_errors):
                 id_cur = simgr.errored[-i - 1].state.globals["id"]
                 self.log.info("End of the trace number " + str(id_cur) + " with errors")
-                simgr.errored[-i - 1]
+                last_error = simgr.errored[-i - 1]
                 if self.debug_error:
-                    # import pdb
-                    # pdb.set_trace()
+                    print("ERROR DEBUG")
+                    import pdb
+                    pdb.set_trace()
                     # last_error.debug()
                     pass
             self.errored = len(simgr.errored)
