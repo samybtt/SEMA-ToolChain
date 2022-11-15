@@ -1,5 +1,5 @@
 import logging
-import random
+from numpy import random
 from collections import defaultdict, deque
 import sys
 
@@ -40,8 +40,9 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         )
         self.start_state = simgr.one_active
         self.restart_prob = restart_prob
-        self._random = random.Random()
-        self._random.seed(42)
+        self._random = random.RandomState()
+        self.seed = 42
+        self._random.seed(self.seed)
         self.affinity = defaultdict(self._random.random)
         # self.pause_stash = deque()
         self.log = logging.getLogger("ToolChainExplorerStochastic")
@@ -83,28 +84,65 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         super().manage_deadended(simgr)
 
         super().mv_bad_active(simgr)
-        def weighted_pick(states):
+        # def weighted_pick(states):
+        #         """
+        #         param states: Diverging states.
+        #         """
+        #         # import pdb; pdb.set_trace()
+        #         assert len(states) >= 2
+        #         total_weight = sum((self.affinity[s.addr] for s in states))
+        #         selected = self._random.uniform(0, total_weight)
+        #         i = 0
+                
+        #         for i, state in enumerate(states):
+        #             weight = self.affinity[state.addr]
+        #             if selected < weight:
+        #                 break
+        #             else:
+        #                 selected -= weight
+        #         picked = states[i]
+        #         return picked
+        def weighted_pick(states, n=1):
                 """
                 param states: Diverging states.
                 """
                 # import pdb; pdb.set_trace()
                 assert len(states) >= 2
-                total_weight = sum((self.affinity[s.addr] for s in states))
-                selected = self._random.uniform(0, total_weight)
-                i = 0
+                for s in states:
+                    self.affinity[s.addr]
+
+                weights = []
+                population = []
+                # import pdb; pdb.set_trace()
+                for _, e in enumerate(states):
+                    population.append(e.addr)
+                    weights.append(self.affinity[e.addr])
+                # import pdb; pdb.set_trace()
+                total_weight = sum(weights)
+                norm_weights = [w/total_weight for w in weights]
+                if n > len(population):
+                    n = len(population)
+                picked_addr = self._random.choice(population, p=norm_weights, size=n, replace=False)
                 
+
+                picked_states = []
+                # import pdb; pdb.set_trace()
                 for i, state in enumerate(states):
-                    weight = self.affinity[state.addr]
-                    if selected < weight:
-                        break
-                    else:
-                        selected -= weight
-                picked = states[i]
+                    if state.addr in picked_addr and not (state in picked_states):
+                        picked_states.append(state)
+                        
+                # import pdb; pdb.set_trace()
+                picked = self._random.choice(picked_states, size=n)
                 return picked
 
+
         if self._random.random() < self.restart_prob:
+            print("RESTART")
+            # import pdb; pdb.set_trace()
             simgr.active = [self.start_state]
             self.affinity.clear()
+            self.seed += 1
+            self._random.seed(self.seed)
         elif not simgr.active:
             if len(simgr.stashes["pause"]) > 0:
                 moves = min(
@@ -117,37 +155,42 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
                         to_stash="active",
                         filter_func=lambda s: s.addr == simgr.stashes["pause"][m].addr
                     )
-            else:
-                simgr.active = [self.start_state]
-                self.affinity.clear()
 
 
-        if len(simgr.active) > 1:
+        if len(simgr.active) > self.max_simul_state:
+            # print("YOOOO MY FRIEND")
             # import pdb; pdb.set_trace()
-            picked = weighted_pick(simgr.stashes[stash])
+            # excess = len(simgr.active) - self.max_simul_state
+            to_keep = weighted_pick(simgr.active, self.max_simul_state)
             simgr.move(
                 from_stash="active",
                 to_stash="pause",
-                filter_func=lambda s: s != picked #and s not in simgr.stashes["pause"],
+                filter_func=lambda s: s.addr not in [e.addr for e in to_keep]
             )
             # import pdb; pdb.set_trace()
+
         # If limit of simultaneous state is not reached and we have some states available in pause stash
         if len(simgr.stashes["pause"]) > 0 and len(simgr.active) < self.max_simul_state:
             moves = min(
                 self.max_simul_state - len(simgr.active),
                 len(simgr.stashes["pause"]),
             )
-            for m in range(moves):
-                # import pdb; pdb.set_trace()
-                if len(simgr.stashes["pause"]) > 1:
-                    picked_from_pause = weighted_pick(simgr.stashes["pause"])
-                else:
-                    picked_from_pause = simgr.stashes["pause"][0]
-                simgr.move(
-                    from_stash="pause",
-                    to_stash="active",
-                    filter_func=lambda s: s == picked_from_pause
-                )
+            
+            # print("HELLLOOOO")
+            # import pdb; pdb.set_trace()
+            if len(simgr.stashes["pause"]) > 1:
+                picked_from_pause = weighted_pick(simgr.stashes["pause"], moves)
+            else:
+                # print("**** simul state : ", self.max_simul_state)
+                # print("**** active len : ", len(simgr.active))
+                # print("**** pause len : ", len(simgr.stashes["pause"]))
+                # print("**** diff : ", self.max_simul_state - len(simgr.active))
+                picked_from_pause = simgr.stashes["pause"]
+            simgr.move(
+                from_stash="pause",
+                to_stash="active",
+                filter_func=lambda s: s.addr in [e.addr for e in picked_from_pause]
+            )
 
         super().manage_pause(simgr)
 
