@@ -12,7 +12,7 @@ class ArgumentParserSCDG:
         self.group = self.parser.add_argument_group('SCDG module arguments')
         self.group.add_argument(
             "--method",
-            help="Method used for the analysis among (DFS,BFS,CBFS) (default : DFS)",
+            help="Method used for the analysis among (DFS,BFS,CBFS, STOCH, CSTOCH) (default : DFS)",
         )
         self.group.add_argument(
             "--n_args",
@@ -152,7 +152,12 @@ class ArgumentParserSCDG:
         )
         self.group.add_argument("binary", 
                 help="Name of the binary to analyze")
-
+        self.group.add_argument(
+            "--restart_prob",
+            help="Restart probability, only for STOCH and CSTOCH exploration methods (default : 0.0001)",
+            default=0.0001,
+            type=float
+        )
     
         self.tool_scdg = tool_scdg
 
@@ -163,7 +168,7 @@ class ArgumentParserSCDG:
         self.tool_scdg.debug_error = args.debug_error
         if args.method:
             expl_method = args.method.upper()
-            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH"]:
+            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH", "CSTOCH", "WSELECT", "DPP"]:
                 import pdb; pdb.set_trace()
                 self.tool_scdg.log.info("Method of exploration not recognized")
                 self.tool_scdg.log.info("Changed to default DFS")
@@ -215,6 +220,7 @@ class ArgumentParserSCDG:
         self.tool_scdg.expl_method = expl_method
         self.tool_scdg.familly = familly
         self.tool_scdg.memory_limit = args.memory_limit # Add custom value
+        self.tool_scdg.restart_prob = args.restart_prob
 
     def parse_arguments(self, allow_unk = False):
         args = None
