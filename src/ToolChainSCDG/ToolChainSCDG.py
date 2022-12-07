@@ -21,6 +21,8 @@ from capstone import *
 # Syscall table stuff
 import angr
 
+import pandas as pd
+
 # Personnal stuf
 try:
     from .helper.GraphBuilder import *
@@ -31,6 +33,9 @@ try:
     from .explorer.ToolChainExplorerBFS import ToolChainExplorerBFS
     from .explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
     from .explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
+    from .explorer.ToolChainExplorerCStochastic import ToolChainExplorerCStochastic
+    from .explorer.ToolChainExplorerWeightedSelect import ToolChainExplorerWeightedSelect
+    from .explorer.ToolChainExplorerDPP import ToolChainExplorerDPP
     from .clogging.CustomFormatter import CustomFormatter
     from .clogging.LogBookFormatter import *
     from .helper.ArgumentParserSCDG import ArgumentParserSCDG
@@ -43,6 +48,9 @@ except:
     from explorer.ToolChainExplorerBFS import ToolChainExplorerBFS
     from explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
     from explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
+    from explorer.ToolChainExplorerCStochastic import ToolChainExplorerCStochastic
+    from explorer.ToolChainExplorerWeightedSelect import ToolChainExplorerWeightedSelect
+    from explorer.ToolChainExplorerDPP import ToolChainExplorerDPP
     from clogging.CustomFormatter import CustomFormatter
     from clogging.LogBookFormatter import * # TODO
     from helper.ArgumentParserSCDG import ArgumentParserSCDG
@@ -115,6 +123,9 @@ class ToolChainSCDG:
 
         self.scdg = []
         self.scdg_fin = []
+
+        # Option for exploration evalutation
+        self.instr_count = {}
         
         logging.getLogger("angr").setLevel("WARNING")
         logging.getLogger('claripy').setLevel('WARNING')
@@ -133,6 +144,7 @@ class ToolChainSCDG:
         self.inputs = None
         self.expl_method = None
         self.familly = None
+        self.restart_prob = None
 
         self.call_sim = CustomSimProcedure(
             self.scdg, self.scdg_fin, 
@@ -140,6 +152,10 @@ class ToolChainSCDG:
             print_syscall=print_syscall, is_from_tc=is_from_tc
         )
         self.eval_time = False
+    
+    def new_instr(self, state):
+        self.instr_count[state.addr] = 1
+        # import pdb; pdb.set_trace()
 
     def build_scdg(self, args, is_fl=False):
         # Create directory to store SCDG if it doesn't exist
@@ -162,6 +178,7 @@ class ToolChainSCDG:
             verbose = args.verbose_scdg
             format_out = args.format_out
             discard_SCDG = args.discard_SCDG
+            restart_prob = args.restart_prob
         else:
             exp_dir = args["exp_dir"]
             nargs = args["n_args"]
@@ -174,6 +191,7 @@ class ToolChainSCDG:
             verbose = args["verbose_scdg"]
             format_out = args["format_out"]
             discard_SCDG = args["discard_SCDG"]
+            restart_prob = args["restart_prob"]
         try:
             os.stat(exp_dir)
         except:
@@ -363,6 +381,8 @@ class ToolChainSCDG:
         state.inspect.b("call", when=angr.BP_BEFORE, action=self.call_sim.add_addr_call)
         state.inspect.b("call", when=angr.BP_AFTER, action=self.call_sim.rm_addr_call)
 
+        state.inspect.b("instruction", when=angr.BP_AFTER, action=self.new_instr)
+
         dump_file = {}
         self.print_memory_info(main_obj, dump_file)
 
@@ -432,6 +452,8 @@ class ToolChainSCDG:
 
         simgr.stashes["temp"]
 
+        simgr.stashes["covered_blocks"] = []
+
         
         if self.expl_method == "CDFS":
             exploration_tech = ToolChainExplorerCDFS(
@@ -449,6 +471,22 @@ class ToolChainSCDG:
         elif self.expl_method == "STOCH":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerStochastic(
+                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+            )
+        elif self.expl_method == "CSTOCH":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerCStochastic(
+                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+            )
+        elif self.expl_method == "WSELECT":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerWeightedSelect(
+                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+            )
+        elif self.expl_method == "DPP":
+            # import pdb; pdb.set_trace()
+            state.options.add("LAZY_SOLVES")
+            exploration_tech = ToolChainExplorerDPP(
                 simgr, 0, exp_dir, nameFileShort, self
             )
         else:
@@ -476,6 +514,17 @@ class ToolChainSCDG:
 
         elapsed_time = time.time() - self.start_time
         self.log.info("Total execution time to build scdg: " + str(elapsed_time))
+        
+        frame = pd.DataFrame(columns = ["expl_method", "family", "nameFileShort", "tot_syscalls", "tot_uniq_syscalls", "nb_instructions", "covered_blocks", "active", "pause", "ExcessLoop", "elapsed_time"])
+        frame.loc[len(frame.index)] = [self.expl_method, self.familly, nameFileShort, sum(self.call_sim.syscall_found.values()), 
+                                        len(self.call_sim.syscall_found.keys()), len(self.instr_count.keys()), 
+                                        len(simgr.stashes["covered_blocks"]), len(simgr.stashes["active"]),
+                                        len(simgr.stashes["pause"]), len(simgr.stashes["ExcessLopp"]), elapsed_time]
+
+        if (os.path.exists("output/test_heuristics/"+self.familly+"/MYTEST.csv")):
+            frame.to_csv("output/test_heuristics/"+self.familly+"/MYTEST.csv", mode='a', index=False, header=False)
+        else:
+            frame.to_csv("output/test_heuristics/"+self.familly+"/MYTEST.csv", mode='a', index=False)
 
         self.build_scdg_fin(exp_dir, nameFileShort, main_obj, state, simgr, discard_SCDG)
 

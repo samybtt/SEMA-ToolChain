@@ -8,8 +8,9 @@ from .ToolChainExplorer import ToolChainExplorer
 
 l = logging.getLogger('syml')
 
+syscalls_hunters = ['RegCreateKeyExA', 'RegCreateKeyExW', 'RegSetValueExA', 'RegSetValueExW', 'RegCreateKeyA', 'RegCreateKeyW', 'RegDeleteKeyA', 'RegDeleteKeyW', 'RegCloseKey', 'CreateToolhelp32Snapshot', 'CreateProcessA', 'CreateThread', 'CreateFileA', 'CreateFileW', 'OpenFile', 'DeleteFileA', 'DeleteFileW', 'OpenProcess', 'CreateRemoteThread', 'CreateRemoteThreadEx', 'WriteProcessMemory', 'ReadProcessMemory', 'NtOpenFile', 'NtCreateFile', 'NtRenameKey', 'WinExec', 'LookupPrivilegeValueA', 'LookupPrivilegeValueW', 'ExitWindowsEx', 'SetWindowsHookExA', 'SetWindowsHookExW', 'CallNextHookEx', 'UnhookWindowsHookEx', 'GetAsyncKeyState', 'GetKeyState', 'GetKeyboardState', 'CryptBinaryToStringW', 'CreateEventA', 'CreateEventW', 'CreateEventExA', 'CryptDecrypt', 'CryptEncrypt', 'CryptDecryptMessage', 'CryptEncryptMessage', 'socket', 'send', 'recv', 'listen', 'connect', 'bind', 'gethostbyname', 'gethostbyaddr', 'URLDownloadToFile', 'HttpOpenRequestA', 'HttpOpenRequestW', 'HttpSendRequestA', 'HttpSendRequestW', 'InternetConnectA', 'InternetConnectW', 'InternetCrackUrlA', 'InternetCrackUrlW', 'InternetOpenA', 'InternetOpenW', 'InternetOpenUrlA', 'InternetOpenUrlW', 'IsDebuggerPresent', 'CheckRemoteDebuggerPresent', 'OutputDebugStringA', 'OutputDebugStringW', 'SecureZeroMemory', 'memcpy', 'wmemcpy', 'memcpy', 'wmemcpy', 'VirtualProtect', 'VirtualProtectEx', 'VirtualAlloc', 'VirtualAllocEx', 'VirtualQuery', 'VirtualQueryEx', 'LoadLibraryA', 'LoadLibraryW', 'LoadLibraryExA', 'LoadLibraryExW']
 
-class ToolChainExplorerStochastic(ToolChainExplorer):
+class ToolChainExplorerWeightedSelect(ToolChainExplorer):
     """
     Stochastic Search.
     Will only keep one path active at a time, any others will be discarded.
@@ -31,7 +32,7 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         :param start_state:  The initial state from which exploration stems.
         :param restart_prob: The probability of randomly restarting the search (default 0.0001).
         """
-        super(ToolChainExplorerStochastic, self).__init__(
+        super(ToolChainExplorerWeightedSelect, self).__init__(
             simgr,
             max_length,
             exp_dir,
@@ -43,10 +44,10 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         self._random = random.RandomState()
         self.seed = 42
         self._random.seed(self.seed)
-        self.affinity = defaultdict(self._random.random)
+        self.affinity = {}
         # self.pause_stash = deque()
         self.reset_stash = deque()
-        self.log = logging.getLogger("ToolChainExplorerStochastic")
+        self.log = logging.getLogger("ToolChainExplorerWeightedSelect")
         self.log.setLevel("INFO")
         self.last_scdg = defaultdict(int)
         self.discovery_counter = 0
@@ -88,6 +89,18 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
 
         super().mv_bad_active(simgr)
       
+        def count_syscall(state):
+            # return len(set([e["name"] for e in self.scdg[state.globals["id"]]]))/1000
+            # sys_calls = set([e["name"] for e in self.scdg[state.globals["id"]]])
+            sys_calls = [e["name"] for e in self.scdg[state.globals["id"]]]
+            counter = 0
+            for c in sys_calls:
+                if c in syscalls_hunters:
+                    counter += 2
+                else:
+                    counter += 1
+            return counter/1000
+            
         def weighted_pick(states, n=1):
                 """
                 param states: Diverging states.
@@ -97,35 +110,30 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
                     return states
 
                 for s in states:
-                    self.affinity[s.addr]
+                    if s.globals["id"] not in self.affinity:
+                        self.affinity[s.globals["id"]] = count_syscall(s)
                 weights = []
                 population = []
                 # import pdb; pdb.set_trace()
                 for _, e in enumerate(states):
-                    population.append(e.addr)
-                    weights.append(self.affinity[e.addr])
+                    population.append(e)
+                    # weights.append(self.affinity[e.globals["id"]])
                 # import pdb; pdb.set_trace()
-                total_weight = sum(weights)
-                norm_weights = [w/total_weight for w in weights]
+                # total_weight = sum(weights)
+                # norm_weights = [w/total_weight for w in weights]
                 if n > len(population):
                     n = len(population)
-                picked_addr = self._random.choice(population, p=norm_weights, size=n, replace=False)
-
-                picked_states = []
                 # import pdb; pdb.set_trace()
-                for i, state in enumerate(states):
-                    if state.addr in picked_addr and not (state in picked_states):
-                        picked_states.append(state)
-                        
+                sorted_list = sorted(population, key=lambda x: self.affinity[x.globals["id"]], reverse=True)
+                # picked = self._random.choice(population, p=norm_weights, size=n, replace=False)
+                picked = sorted_list[:n]
                 # import pdb; pdb.set_trace()
-                picked = self._random.choice(picked_states, size=n)
                 return picked
 
 
         if self._random.random() < self.restart_prob:
-            print("RESTART")
+            print("\n ########################################### \n RESTART \n ######################################### \n")
             # import pdb; pdb.set_trace()
-            # TODO reset stash
             simgr.active = [self.start_state]
             self.affinity.clear()
             self.seed += 1
@@ -136,7 +144,7 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
                 simgr.move(
                     from_stash="pause",
                     to_stash="active",
-                    filter_func=lambda s: s.addr in [elem.addr for elem in the_chosen_ones]
+                    filter_func=lambda s: s.globals["id"] in [elem.globals["id"] for elem in the_chosen_ones]
                 )
 
         # for state in simgr.active:
@@ -148,8 +156,10 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         #         break
         #     else:
         #         self.discovery_counter += 1
-        
-        if (len(simgr.active) > self.max_simul_state 
+
+        # print(self.restart_prob)
+        # import pdb; pdb.set_trace()
+        if (len(simgr.active) > self.max_simul_state
             # If limit of simultaneous state is exceeded
             or (len(simgr.stashes["pause"]) > 0 and len(simgr.active) < self.max_simul_state)):
             # If limit of simultaneous state is not reached and we have some states available in pause stash
@@ -164,7 +174,7 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
             simgr.move(
                 from_stash="pause",
                 to_stash="active",
-                filter_func=lambda s: s.addr in [elem.addr for elem in the_chosen_ones]
+                filter_func=lambda s: s.globals["id"] in [elem.globals["id"] for elem in the_chosen_ones]
             )
 
         super().manage_pause(simgr)
