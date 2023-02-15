@@ -25,7 +25,7 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
         exp_dir,
         nameFileShort,
         worker,
-        restart_prob=0.0001
+        # restart_prob=0.0001
     ):
         """
         :param start_state:  The initial state from which exploration stems.
@@ -39,17 +39,17 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
             worker
         )
         self.start_state = simgr.one_active
-        self.restart_prob = restart_prob
+        # self.restart_prob = restart_prob
         self._random = random.RandomState()
-        self.seed = 42
-        self._random.seed(self.seed)
+        # self.seed = 42
+        # self._random.seed(self.seed)
         self.affinity = defaultdict(self._random.random)
         # self.pause_stash = deque()
-        self.reset_stash = deque()
+        # self.reset_stash = deque()
         self.log = logging.getLogger("ToolChainExplorerStochastic")
         self.log.setLevel("INFO")
         self.last_scdg = defaultdict(int)
-        self.discovery_counter = 0
+        # self.discovery_counter = 0
 
     def step(self, simgr, stash='active', **kwargs):
         try:
@@ -122,15 +122,15 @@ class ToolChainExplorerStochastic(ToolChainExplorer):
                 return picked
 
 
-        if self._random.random() < self.restart_prob:
-            print("RESTART")
-            # import pdb; pdb.set_trace()
-            # TODO reset stash
-            simgr.active = [self.start_state]
-            self.affinity.clear()
-            self.seed += 1
-            self._random.seed(self.seed)
-        elif not simgr.active:
+        # if self._random.random() < self.restart_prob:
+        #     print("RESTART")
+        #     # import pdb; pdb.set_trace()
+        #     # TODO reset stash
+        #     simgr.active = [self.start_state]
+        #     self.affinity.clear()
+        #     self.seed += 1
+        #     self._random.seed(self.seed)
+        if not simgr.active:
             if len(simgr.stashes["pause"]) > 0:
                 the_chosen_ones = weighted_pick(simgr.stashes["pause"], self.max_simul_state) # Pick randomly states from pause stash
                 simgr.move(

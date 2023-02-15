@@ -34,7 +34,13 @@ try:
     from .explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
     from .explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
     from .explorer.ToolChainExplorerCStochastic import ToolChainExplorerCStochastic
+    from .explorer.ToolChainExplorerCStochasticBis import ToolChainExplorerCStochasticBis
     from .explorer.ToolChainExplorerWeightedSelect import ToolChainExplorerWeightedSelect
+    from .explorer.ToolChainExplorerWeightedSelectBis import ToolChainExplorerWeightedSelectBis
+    from .explorer.ToolChainExplorerCStochasticSet import ToolChainExplorerCStochasticSet
+    from .explorer.ToolChainExplorerCStochasticSetBis import ToolChainExplorerCStochasticSetBis
+    from .explorer.ToolChainExplorerWeightedSelectSet import ToolChainExplorerWeightedSelectSet
+    from .explorer.ToolChainExplorerWeightedSelectSetBis import ToolChainExplorerWeightedSelectSetBis
     from .explorer.ToolChainExplorerDPP import ToolChainExplorerDPP
     from .clogging.CustomFormatter import CustomFormatter
     from .clogging.LogBookFormatter import *
@@ -49,7 +55,13 @@ except:
     from explorer.ToolChainExplorerCBFS import ToolChainExplorerCBFS
     from explorer.ToolChainExplorerStochastic import ToolChainExplorerStochastic
     from explorer.ToolChainExplorerCStochastic import ToolChainExplorerCStochastic
+    from explorer.ToolChainExplorerCStochasticBis import ToolChainExplorerCStochasticBis
     from explorer.ToolChainExplorerWeightedSelect import ToolChainExplorerWeightedSelect
+    from explorer.ToolChainExplorerWeightedSelectBis import ToolChainExplorerWeightedSelectBis
+    from explorer.ToolChainExplorerCStochasticSet import ToolChainExplorerCStochasticSet
+    from explorer.ToolChainExplorerCStochasticSetBis import ToolChainExplorerCStochasticSetBis
+    from explorer.ToolChainExplorerWeightedSelectSet import ToolChainExplorerWeightedSelectSet
+    from explorer.ToolChainExplorerWeightedSelectSetBis import ToolChainExplorerWeightedSelectSetBis
     from explorer.ToolChainExplorerDPP import ToolChainExplorerDPP
     from clogging.CustomFormatter import CustomFormatter
     from clogging.LogBookFormatter import * # TODO
@@ -471,17 +483,47 @@ class ToolChainSCDG:
         elif self.expl_method == "STOCH":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerStochastic(
-                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+                simgr, 0, exp_dir, nameFileShort, self
             )
         elif self.expl_method == "CSTOCH":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerCStochastic(
-                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "CSTOCH2":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerCStochasticBis(
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "CSTOCHset":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerCStochasticSet(
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "CSTOCHset2":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerCStochasticSetBis(
+                simgr, 0, exp_dir, nameFileShort, self
             )
         elif self.expl_method == "WSELECT":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerWeightedSelect(
-                simgr, 0, exp_dir, nameFileShort, self, restart_prob=restart_prob
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "WSELECT2":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerWeightedSelectBis(
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "WSELECTset":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerWeightedSelectSet(
+                simgr, 0, exp_dir, nameFileShort, self
+            )
+        elif self.expl_method == "WSELECTset2":
+            # import pdb; pdb.set_trace()
+            exploration_tech = ToolChainExplorerWeightedSelectSetBis(
+                simgr, 0, exp_dir, nameFileShort, self
             )
         elif self.expl_method == "DPP":
             # import pdb; pdb.set_trace()
@@ -521,10 +563,10 @@ class ToolChainSCDG:
                                         len(simgr.stashes["covered_blocks"]), len(simgr.stashes["active"]),
                                         len(simgr.stashes["pause"]), len(simgr.stashes["ExcessLopp"]), elapsed_time]
 
-        if (os.path.exists("output/test_heuristics/"+self.familly+"/MYTEST.csv")):
-            frame.to_csv("output/test_heuristics/"+self.familly+"/MYTEST.csv", mode='a', index=False, header=False)
+        if (os.path.exists("output/eval_SCDG_n/measurements.csv")):
+            frame.to_csv("output/eval_SCDG_n/measurements.csv", mode='a', index=False, header=False)
         else:
-            frame.to_csv("output/test_heuristics/"+self.familly+"/MYTEST.csv", mode='a', index=False)
+            frame.to_csv("output/eval_SCDG_n/measurements.csv", mode='a', index=False)
 
         self.build_scdg_fin(exp_dir, nameFileShort, main_obj, state, simgr, discard_SCDG)
 

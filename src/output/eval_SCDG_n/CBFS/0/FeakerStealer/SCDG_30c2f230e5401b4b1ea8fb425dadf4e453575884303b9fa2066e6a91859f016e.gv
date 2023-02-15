@@ -1,0 +1,323 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4208088.main
+30c2f230e5401b4b1ea8fb425dadf4e453575884303b9fa2066e6a91859f016e"]
+	1 [label="4208123.SetErrorMode
+32769"]
+	2 [label="4208129.GetVersion
+"]
+	3 [label="4221144.GetSystemDirectoryW
+2147416292
+260"]
+	4 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235286"]
+	5 [label="4221223.LoadLibraryExW
+2147416292
+0
+8"]
+	3 -> 5 [label="(1-->1)"]
+	6 [label="4208180.lstrlenA
+UXTHEME"]
+	7 [label="4221203.wsprintfW
+2147416292
+4236768
+4235286"]
+	3 -> 7 [label="(1-->1)"]
+	5 -> 7 [label="(1-->1)"]
+	4 -> 7 [label="(2-->2)"]
+	4 -> 7 [label="(3-->3)"]
+	8 [label="4208180.lstrlenA
+USERENV"]
+	6 -> 8 [label="(0-->0)"]
+	9 [label="4208180.lstrlenA
+SETUPAPI"]
+	5 -> 9 [label="(3-->0)"]
+	10 [label="4208180.lstrlenA
+APPHELP"]
+	6 -> 10 [label="(0-->0)"]
+	8 -> 10 [label="(0-->0)"]
+	11 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32932_32
+4236768
+4235284"]
+	4 -> 11 [label="(2-->2)"]
+	7 -> 11 [label="(2-->2)"]
+	12 [label="4208180.lstrlenA
+PROPSYS"]
+	6 -> 12 [label="(0-->0)"]
+	8 -> 12 [label="(0-->0)"]
+	10 -> 12 [label="(0-->0)"]
+	13 [label="4208180.lstrlenA
+DWMAPI"]
+	14 [label="4208180.lstrlenA
+CRYPTBASE"]
+	15 [label="4208180.lstrlenA
+OLEACC"]
+	13 -> 15 [label="(0-->0)"]
+	16 [label="4208180.lstrlenA
+CLBCATQ"]
+	6 -> 16 [label="(0-->0)"]
+	8 -> 16 [label="(0-->0)"]
+	10 -> 16 [label="(0-->0)"]
+	12 -> 16 [label="(0-->0)"]
+	17 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32776_32
+4236768
+4235286"]
+	4 -> 17 [label="(2-->2)"]
+	4 -> 17 [label="(3-->3)"]
+	18 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32843_32
+4236768
+4235286"]
+	4 -> 18 [label="(2-->2)"]
+	7 -> 18 [label="(2-->2)"]
+	4 -> 18 [label="(3-->3)"]
+	7 -> 18 [label="(3-->3)"]
+	19 [label="4221251.GetModuleHandleA
+KERNEL32"]
+	20 [label="4221278.GetProcAddress
+6295592
+SetDefaultDllDirectories"]
+	19 -> 20 [label="(0-->1)"]
+	21 [label="4208166.SetDefaultDllDirectories
+3072"]
+	22 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32928_32
+4236768
+4235284"]
+	7 -> 22 [label="(2-->2)"]
+	23 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_34128_32
+4236768
+4235286"]
+	7 -> 23 [label="(2-->2)"]
+	22 -> 23 [label="(2-->2)"]
+	7 -> 23 [label="(3-->3)"]
+	24 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32793_32
+4236768
+4235284"]
+	7 -> 24 [label="(2-->2)"]
+	25 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_33072_32
+4236768
+4235284"]
+	7 -> 25 [label="(2-->2)"]
+	24 -> 25 [label="(2-->2)"]
+	24 -> 25 [label="(3-->3)"]
+	26 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32776_32
+4236768
+4235284"]
+	4 -> 26 [label="(2-->2)"]
+	27 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235284"]
+	28 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32779_32
+4236768
+4235284"]
+	27 -> 28 [label="(2-->2)"]
+	27 -> 28 [label="(3-->3)"]
+	29 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32779_32
+4236768
+4235286"]
+	27 -> 29 [label="(2-->2)"]
+	30 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32774_32
+4236768
+4235286"]
+	31 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32790_32
+4236768
+4235286"]
+	30 -> 31 [label="(2-->2)"]
+	30 -> 31 [label="(3-->3)"]
+	32 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235286"]
+	7 -> 32 [label="(2-->2)"]
+	7 -> 32 [label="(3-->3)"]
+	33 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32792_32
+4236768
+4235286"]
+	7 -> 33 [label="(2-->2)"]
+	32 -> 33 [label="(2-->2)"]
+	7 -> 33 [label="(3-->3)"]
+	32 -> 33 [label="(3-->3)"]
+	34 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32774_32
+4236768
+4235284"]
+	35 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32796_32
+4236768
+4235286"]
+	34 -> 35 [label="(2-->2)"]
+	36 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32790_32
+4236768
+4235284"]
+	30 -> 36 [label="(2-->2)"]
+	37 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235284"]
+	7 -> 37 [label="(2-->2)"]
+	38 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32797_32
+4236768
+4235286"]
+	7 -> 38 [label="(2-->2)"]
+	37 -> 38 [label="(2-->2)"]
+	7 -> 38 [label="(3-->3)"]
+	39 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32792_32
+4236768
+4235284"]
+	7 -> 39 [label="(2-->2)"]
+	32 -> 39 [label="(2-->2)"]
+	40 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32796_32
+4236768
+4235284"]
+	34 -> 40 [label="(2-->2)"]
+	34 -> 40 [label="(3-->3)"]
+	41 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32799_32
+4236768
+4235286"]
+	4 -> 41 [label="(2-->2)"]
+	7 -> 41 [label="(2-->2)"]
+	4 -> 41 [label="(3-->3)"]
+	7 -> 41 [label="(3-->3)"]
+	42 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32797_32
+4236768
+4235284"]
+	7 -> 42 [label="(2-->2)"]
+	37 -> 42 [label="(2-->2)"]
+	37 -> 42 [label="(3-->3)"]
+	43 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32804_32
+4236768
+4235286"]
+	7 -> 43 [label="(2-->2)"]
+	27 -> 43 [label="(2-->2)"]
+	7 -> 43 [label="(3-->3)"]
+	44 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32799_32
+4236768
+4235284"]
+	4 -> 44 [label="(2-->2)"]
+	7 -> 44 [label="(2-->2)"]
+	45 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32804_32
+4236768
+4235284"]
+	7 -> 45 [label="(2-->2)"]
+	27 -> 45 [label="(2-->2)"]
+	27 -> 45 [label="(3-->3)"]
+	46 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32830_32
+4236768
+4235286"]
+	7 -> 46 [label="(2-->2)"]
+	32 -> 46 [label="(2-->2)"]
+	7 -> 46 [label="(3-->3)"]
+	32 -> 46 [label="(3-->3)"]
+	47 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32793_32
+4236768
+4235286"]
+	7 -> 47 [label="(2-->2)"]
+	7 -> 47 [label="(3-->3)"]
+	48 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32833_32
+4236768
+4235286"]
+	7 -> 48 [label="(2-->2)"]
+	47 -> 48 [label="(2-->2)"]
+	7 -> 48 [label="(3-->3)"]
+	47 -> 48 [label="(3-->3)"]
+	49 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32832_32
+4236768
+4235286"]
+	7 -> 49 [label="(2-->2)"]
+	30 -> 49 [label="(2-->2)"]
+	7 -> 49 [label="(3-->3)"]
+	30 -> 49 [label="(3-->3)"]
+	50 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32830_32
+4236768
+4235284"]
+	7 -> 50 [label="(2-->2)"]
+	32 -> 50 [label="(2-->2)"]
+	51 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32794_32
+4236768
+4235286"]
+	7 -> 51 [label="(2-->2)"]
+	7 -> 51 [label="(3-->3)"]
+	52 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32839_32
+4236768
+4235286"]
+	7 -> 52 [label="(2-->2)"]
+	51 -> 52 [label="(2-->2)"]
+	7 -> 52 [label="(3-->3)"]
+	51 -> 52 [label="(3-->3)"]
+	53 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32832_32
+4236768
+4235284"]
+	7 -> 53 [label="(2-->2)"]
+	30 -> 53 [label="(2-->2)"]
+	54 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32837_32
+4236768
+4235286"]
+	7 -> 54 [label="(2-->2)"]
+	24 -> 54 [label="(2-->2)"]
+	7 -> 54 [label="(3-->3)"]
+	55 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32833_32
+4236768
+4235284"]
+	7 -> 55 [label="(2-->2)"]
+	47 -> 55 [label="(2-->2)"]
+	56 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32794_32
+4236768
+4235284"]
+	7 -> 56 [label="(2-->2)"]
+	57 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32841_32
+4236768
+4235286"]
+	7 -> 57 [label="(2-->2)"]
+	56 -> 57 [label="(2-->2)"]
+	7 -> 57 [label="(3-->3)"]
+	58 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32850_32
+4236768
+4235286"]
+	7 -> 58 [label="(2-->2)"]
+	34 -> 58 [label="(2-->2)"]
+	7 -> 58 [label="(3-->3)"]
+	59 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32846_32
+4236768
+4235286"]
+	7 -> 59 [label="(2-->2)"]
+	37 -> 59 [label="(2-->2)"]
+	7 -> 59 [label="(3-->3)"]
+}

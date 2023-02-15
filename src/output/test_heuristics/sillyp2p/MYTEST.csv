@@ -1,0 +1,4 @@
+expl_method,family,nameFileShort,tot_syscalls,tot_uniq_syscalls,nb_instructions,covered_blocks,active,pause,ExcessLoop,elapsed_time
+CSTOCH,sillyp2p,0000fccf1be8258fbc553920d940e978,879,20,1240,380,5,200,0,606.8376204967499
+CDFS,sillyp2p,0000fccf1be8258fbc553920d940e978,628,29,2722,0,5,0,0,606.776985168457
+CBFS,sillyp2p,0000fccf1be8258fbc553920d940e978,667,16,642,0,5,0,0,1107.82000041008

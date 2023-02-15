@@ -1,1 +1,813 @@
-{"0": {"status": "deadendend", "trace": [{"name": "main", "args": ["Example_SEMA_code1.exe"], "addr": 4199520, "ret": "symbolic", "addr_func": 4199520}, {"name": "GetModuleHandleA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242916", "addr": 4199247, "ret": 6295592}, {"name": "LoadLibraryA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242940", "addr": 4199272, "ret": 6295592}, {"name": "GetProcAddress", "args": [6295592, "__register_frame_info"], "addr_func": "5242920", "addr": 4199296, "ret": "<BV32 retval_GetProcAddress_32767_32>"}, {"name": "GetProcAddress", "args": [6295592, "__deregister_frame_info"], "addr_func": "5242920", "addr": 4199317, "ret": "<BV32 retval_GetProcAddress_32768_32>"}, {"name": "atexit", "args": [4199472], "addr_func": "5243032", "addr": 4199425, "ret": "<BV32 retval_atexit_32769_32>"}, {"name": "atexit", "args": [4201040], "addr_func": "5243032", "addr": 4201126, "ret": "<BV32 retval_atexit_32770_32>"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199542, "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"}, {"name": "Sleep", "args": [5000], "addr_func": "5242948", "addr": 4199564, "ret": "None"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199572, "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"}, {"name": "MessageBoxA", "args": [0, "Hello world !", "", 0], "addr_func": "5243096", "addr": 4199656, "ret": "<BV32 unconstrained_ret_MessageBoxA_32774_32{UNINITIALIZED}>"}, {"name": "exit", "args": [0], "addr_func": "5243040", "addr": 4199830, "ret": "None"}]}, "1": {"status": "deadendend", "trace": [{"name": "main", "args": ["Example_SEMA_code1.exe"], "addr": 4199520, "ret": "symbolic", "addr_func": 4199520}, {"name": "GetModuleHandleA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242916", "addr": 4199247, "ret": 6295592}, {"name": "LoadLibraryA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242940", "addr": 4199272, "ret": 6295592}, {"name": "GetProcAddress", "args": [6295592, "__register_frame_info"], "addr_func": "5242920", "addr": 4199296, "ret": "<BV32 retval_GetProcAddress_32767_32>"}, {"name": "GetProcAddress", "args": [6295592, "__deregister_frame_info"], "addr_func": "5242920", "addr": 4199317, "ret": "<BV32 retval_GetProcAddress_32768_32>"}, {"name": "atexit", "args": [4199472], "addr_func": "5243032", "addr": 4199425, "ret": "<BV32 retval_atexit_32769_32>"}, {"name": "atexit", "args": [4201040], "addr_func": "5243032", "addr": 4201126, "ret": "<BV32 retval_atexit_32770_32>"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199542, "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"}, {"name": "Sleep", "args": [5000], "addr_func": "5242948", "addr": 4199564, "ret": "None"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199572, "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"}, {"name": "IsDebuggerPresent", "args": [], "addr_func": "5242932", "addr": 4199616, "ret": "<BV32 retval_IsDebuggerPresent_32773_32>"}, {"name": "MessageBoxA", "args": [0, "Hello world !", "", 0], "addr_func": "5243096", "addr": 4199656, "ret": "<BV32 unconstrained_ret_MessageBoxA_32776_32{UNINITIALIZED}>"}, {"name": "exit", "args": [0], "addr_func": "5243040", "addr": 4199830, "ret": "None"}]}, "2": {"status": "deadendend", "trace": [{"name": "main", "args": ["Example_SEMA_code1.exe"], "addr": 4199520, "ret": "symbolic", "addr_func": 4199520}, {"name": "GetModuleHandleA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242916", "addr": 4199247, "ret": 6295592}, {"name": "LoadLibraryA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242940", "addr": 4199272, "ret": 6295592}, {"name": "GetProcAddress", "args": [6295592, "__register_frame_info"], "addr_func": "5242920", "addr": 4199296, "ret": "<BV32 retval_GetProcAddress_32767_32>"}, {"name": "GetProcAddress", "args": [6295592, "__deregister_frame_info"], "addr_func": "5242920", "addr": 4199317, "ret": "<BV32 retval_GetProcAddress_32768_32>"}, {"name": "atexit", "args": [4199472], "addr_func": "5243032", "addr": 4199425, "ret": "<BV32 retval_atexit_32769_32>"}, {"name": "atexit", "args": [4201040], "addr_func": "5243032", "addr": 4201126, "ret": "<BV32 retval_atexit_32770_32>"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199542, "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"}, {"name": "Sleep", "args": [5000], "addr_func": "5242948", "addr": 4199564, "ret": "None"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199572, "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"}, {"name": "IsDebuggerPresent", "args": [], "addr_func": "5242932", "addr": 4199616, "ret": "<BV32 retval_IsDebuggerPresent_32775_32>"}, {"name": "MessageBoxA", "args": [0, "Hello world !", "", 0], "addr_func": "5243096", "addr": 4199656, "ret": "<BV32 unconstrained_ret_MessageBoxA_32777_32{UNINITIALIZED}>"}, {"name": "exit", "args": [0], "addr_func": "5243040", "addr": 4199830, "ret": "None"}]}, "3": {"status": "deadendend", "trace": [{"name": "main", "args": ["Example_SEMA_code1.exe"], "addr": 4199520, "ret": "symbolic", "addr_func": 4199520}, {"name": "GetModuleHandleA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242916", "addr": 4199247, "ret": 6295592}, {"name": "LoadLibraryA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242940", "addr": 4199272, "ret": 6295592}, {"name": "GetProcAddress", "args": [6295592, "__register_frame_info"], "addr_func": "5242920", "addr": 4199296, "ret": "<BV32 retval_GetProcAddress_32767_32>"}, {"name": "GetProcAddress", "args": [6295592, "__deregister_frame_info"], "addr_func": "5242920", "addr": 4199317, "ret": "<BV32 retval_GetProcAddress_32768_32>"}, {"name": "atexit", "args": [4199472], "addr_func": "5243032", "addr": 4199425, "ret": "<BV32 retval_atexit_32769_32>"}, {"name": "atexit", "args": [4201040], "addr_func": "5243032", "addr": 4201126, "ret": "<BV32 retval_atexit_32770_32>"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199542, "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"}, {"name": "Sleep", "args": [5000], "addr_func": "5242948", "addr": 4199564, "ret": "None"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199572, "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"}, {"name": "IsDebuggerPresent", "args": [], "addr_func": "5242932", "addr": 4199616, "ret": "<BV32 retval_IsDebuggerPresent_32773_32>"}, {"name": "LoadLibraryA", "args": ["msvcrt.dll"], "addr_func": "5242940", "addr": 4199711, "ret": 6295604}, {"name": "GetProcAddress", "args": [6295604, "strcat"], "addr_func": "5242920", "addr": 4199736, "ret": 6295608}, {"name": "strcat", "args": ["", "I'm "], "addr_func": "6295608", "addr": 4199764, "ret": "I'm "}, {"name": "strcat", "args": ["I'm ", "evil !!"], "addr_func": "6295608", "addr": 4199783, "ret": "I'm evil !!"}, {"name": "MessageBoxA", "args": [0, "I'm evil !!", "", 0], "addr_func": "5243096", "addr": 4199815, "ret": "<BV32 unconstrained_ret_MessageBoxA_32778_32{UNINITIALIZED}>"}, {"name": "exit", "args": [0], "addr_func": "5243040", "addr": 4199830, "ret": "None"}]}, "4": {"status": "deadendend", "trace": [{"name": "main", "args": ["Example_SEMA_code1.exe"], "addr": 4199520, "ret": "symbolic", "addr_func": 4199520}, {"name": "GetModuleHandleA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242916", "addr": 4199247, "ret": 6295592}, {"name": "LoadLibraryA", "args": ["libgcc_s_dw2-1.dll"], "addr_func": "5242940", "addr": 4199272, "ret": 6295592}, {"name": "GetProcAddress", "args": [6295592, "__register_frame_info"], "addr_func": "5242920", "addr": 4199296, "ret": "<BV32 retval_GetProcAddress_32767_32>"}, {"name": "GetProcAddress", "args": [6295592, "__deregister_frame_info"], "addr_func": "5242920", "addr": 4199317, "ret": "<BV32 retval_GetProcAddress_32768_32>"}, {"name": "atexit", "args": [4199472], "addr_func": "5243032", "addr": 4199425, "ret": "<BV32 retval_atexit_32769_32>"}, {"name": "atexit", "args": [4201040], "addr_func": "5243032", "addr": 4201126, "ret": "<BV32 retval_atexit_32770_32>"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199542, "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"}, {"name": "Sleep", "args": [5000], "addr_func": "5242948", "addr": 4199564, "ret": "None"}, {"name": "GetTickCount", "args": [], "addr_func": "5242924", "addr": 4199572, "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"}, {"name": "IsDebuggerPresent", "args": [], "addr_func": "5242932", "addr": 4199616, "ret": "<BV32 retval_IsDebuggerPresent_32775_32>"}, {"name": "LoadLibraryA", "args": ["msvcrt.dll"], "addr_func": "5242940", "addr": 4199711, "ret": 6295604}, {"name": "GetProcAddress", "args": [6295604, "strcat"], "addr_func": "5242920", "addr": 4199736, "ret": 6295608}, {"name": "strcat", "args": ["", "I'm "], "addr_func": "6295608", "addr": 4199764, "ret": "I'm "}, {"name": "strcat", "args": ["I'm ", "evil !!"], "addr_func": "6295608", "addr": 4199783, "ret": "I'm evil !!"}, {"name": "MessageBoxA", "args": [0, "I'm evil !!", "", 0], "addr_func": "5243096", "addr": 4199815, "ret": "<BV32 unconstrained_ret_MessageBoxA_32779_32{UNINITIALIZED}>"}, {"name": "exit", "args": [0], "addr_func": "5243040", "addr": 4199830, "ret": "None"}]}, "sections": {".text": {"vaddr": 4198400, "memsize": 11476, "is_readable": true, "is_writable": false, "is_executable": true}, ".data": {"vaddr": 4210688, "memsize": 28, "is_readable": true, "is_writable": true, "is_executable": false}, ".rdata": {"vaddr": 4214784, "memsize": 768, "is_readable": true, "is_writable": false, "is_executable": false}, "/4": {"vaddr": 4218880, "memsize": 2472, "is_readable": true, "is_writable": false, "is_executable": false}, ".bss": {"vaddr": 4222976, "memsize": 112, "is_readable": true, "is_writable": true, "is_executable": false}, ".idata": {"vaddr": 4227072, "memsize": 1612, "is_readable": true, "is_writable": true, "is_executable": false}, ".CRT": {"vaddr": 4231168, "memsize": 24, "is_readable": true, "is_writable": true, "is_executable": false}, ".tls": {"vaddr": 4235264, "memsize": 32, "is_readable": true, "is_writable": true, "is_executable": false}, "/14": {"vaddr": 4239360, "memsize": 88, "is_readable": true, "is_writable": false, "is_executable": false}, "/29": {"vaddr": 4243456, "memsize": 13945, "is_readable": true, "is_writable": false, "is_executable": false}, "/41": {"vaddr": 4259840, "memsize": 534, "is_readable": true, "is_writable": false, "is_executable": false}, "/55": {"vaddr": 4263936, "memsize": 739, "is_readable": true, "is_writable": false, "is_executable": false}, "/67": {"vaddr": 4268032, "memsize": 56, "is_readable": true, "is_writable": false, "is_executable": false}}}
+{
+    "0": {
+        "status": "deadendend",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4199472
+                ],
+                "addr_func": "5243032",
+                "addr": 4199425,
+                "ret": "<BV32 retval_atexit_32769_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4201040
+                ],
+                "addr_func": "5243032",
+                "addr": 4201126,
+                "ret": "<BV32 retval_atexit_32770_32>"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199542,
+                "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "Sleep",
+                "args": [
+                    5000
+                ],
+                "addr_func": "5242948",
+                "addr": 4199564,
+                "ret": "None"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199572,
+                "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "MessageBoxA",
+                "args": [
+                    0,
+                    "Hello world !",
+                    "",
+                    0
+                ],
+                "addr_func": "5243096",
+                "addr": 4199656,
+                "ret": 1
+            },
+            {
+                "name": "exit",
+                "args": [],
+                "addr_func": "5243040",
+                "addr": 4199830,
+                "ret": "None"
+            }
+        ]
+    },
+    "1": {
+        "status": "deadendend",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4199472
+                ],
+                "addr_func": "5243032",
+                "addr": 4199425,
+                "ret": "<BV32 retval_atexit_32769_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4201040
+                ],
+                "addr_func": "5243032",
+                "addr": 4201126,
+                "ret": "<BV32 retval_atexit_32770_32>"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199542,
+                "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "Sleep",
+                "args": [
+                    5000
+                ],
+                "addr_func": "5242948",
+                "addr": 4199564,
+                "ret": "None"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199572,
+                "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "IsDebuggerPresent",
+                "args": [],
+                "addr_func": "5242932",
+                "addr": 4199616,
+                "ret": "<BV32 retval_IsDebuggerPresent_32773_32>"
+            },
+            {
+                "name": "MessageBoxA",
+                "args": [
+                    0,
+                    "Hello world !",
+                    "",
+                    0
+                ],
+                "addr_func": "5243096",
+                "addr": 4199656,
+                "ret": 1
+            },
+            {
+                "name": "exit",
+                "args": [],
+                "addr_func": "5243040",
+                "addr": 4199830,
+                "ret": "None"
+            }
+        ]
+    },
+    "2": {
+        "status": "deadendend",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4199472
+                ],
+                "addr_func": "5243032",
+                "addr": 4199425,
+                "ret": "<BV32 retval_atexit_32769_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4201040
+                ],
+                "addr_func": "5243032",
+                "addr": 4201126,
+                "ret": "<BV32 retval_atexit_32770_32>"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199542,
+                "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "Sleep",
+                "args": [
+                    5000
+                ],
+                "addr_func": "5242948",
+                "addr": 4199564,
+                "ret": "None"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199572,
+                "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "IsDebuggerPresent",
+                "args": [],
+                "addr_func": "5242932",
+                "addr": 4199616,
+                "ret": "<BV32 retval_IsDebuggerPresent_32775_32>"
+            },
+            {
+                "name": "MessageBoxA",
+                "args": [
+                    0,
+                    "Hello world !",
+                    "",
+                    0
+                ],
+                "addr_func": "5243096",
+                "addr": 4199656,
+                "ret": 1
+            },
+            {
+                "name": "exit",
+                "args": [],
+                "addr_func": "5243040",
+                "addr": 4199830,
+                "ret": "None"
+            }
+        ]
+    },
+    "3": {
+        "status": "deadendend",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4199472
+                ],
+                "addr_func": "5243032",
+                "addr": 4199425,
+                "ret": "<BV32 retval_atexit_32769_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4201040
+                ],
+                "addr_func": "5243032",
+                "addr": 4201126,
+                "ret": "<BV32 retval_atexit_32770_32>"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199542,
+                "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "Sleep",
+                "args": [
+                    5000
+                ],
+                "addr_func": "5242948",
+                "addr": 4199564,
+                "ret": "None"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199572,
+                "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "IsDebuggerPresent",
+                "args": [],
+                "addr_func": "5242932",
+                "addr": 4199616,
+                "ret": "<BV32 retval_IsDebuggerPresent_32773_32>"
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "msvcrt.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199711,
+                "ret": 6295604
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295604,
+                    "strcat"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199736,
+                "ret": 6295608
+            },
+            {
+                "name": "strcat",
+                "args": [
+                    "",
+                    "I'm "
+                ],
+                "addr_func": "6295608",
+                "addr": 4199764,
+                "ret": "I'm "
+            },
+            {
+                "name": "strcat",
+                "args": [
+                    "I'm ",
+                    "evil !!"
+                ],
+                "addr_func": "6295608",
+                "addr": 4199783,
+                "ret": "I'm evil !!"
+            },
+            {
+                "name": "MessageBoxA",
+                "args": [
+                    0,
+                    "I'm evil !!",
+                    "",
+                    0
+                ],
+                "addr_func": "5243096",
+                "addr": 4199815,
+                "ret": 1
+            },
+            {
+                "name": "exit",
+                "args": [],
+                "addr_func": "5243040",
+                "addr": 4199830,
+                "ret": "None"
+            }
+        ]
+    },
+    "4": {
+        "status": "deadendend",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4199472
+                ],
+                "addr_func": "5243032",
+                "addr": 4199425,
+                "ret": "<BV32 retval_atexit_32769_32>"
+            },
+            {
+                "name": "atexit",
+                "args": [
+                    4201040
+                ],
+                "addr_func": "5243032",
+                "addr": 4201126,
+                "ret": "<BV32 retval_atexit_32770_32>"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199542,
+                "ret": "<BV32 retval_GetTickCount_32771_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "Sleep",
+                "args": [
+                    5000
+                ],
+                "addr_func": "5242948",
+                "addr": 4199564,
+                "ret": "None"
+            },
+            {
+                "name": "GetTickCount",
+                "args": [],
+                "addr_func": "5242924",
+                "addr": 4199572,
+                "ret": "<BV32 retval_GetTickCount_32772_32{UNINITIALIZED}>"
+            },
+            {
+                "name": "IsDebuggerPresent",
+                "args": [],
+                "addr_func": "5242932",
+                "addr": 4199616,
+                "ret": "<BV32 retval_IsDebuggerPresent_32775_32>"
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "msvcrt.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199711,
+                "ret": 6295604
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295604,
+                    "strcat"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199736,
+                "ret": 6295608
+            },
+            {
+                "name": "strcat",
+                "args": [
+                    "",
+                    "I'm "
+                ],
+                "addr_func": "6295608",
+                "addr": 4199764,
+                "ret": "I'm "
+            },
+            {
+                "name": "strcat",
+                "args": [
+                    "I'm ",
+                    "evil !!"
+                ],
+                "addr_func": "6295608",
+                "addr": 4199783,
+                "ret": "I'm evil !!"
+            },
+            {
+                "name": "MessageBoxA",
+                "args": [
+                    0,
+                    "I'm evil !!",
+                    "",
+                    0
+                ],
+                "addr_func": "5243096",
+                "addr": 4199815,
+                "ret": 1
+            },
+            {
+                "name": "exit",
+                "args": [],
+                "addr_func": "5243040",
+                "addr": 4199830,
+                "ret": "None"
+            }
+        ]
+    },
+    "5": {
+        "status": "errored",
+        "trace": [
+            {
+                "name": "main",
+                "args": [
+                    "Example_SEMA_code1.exe"
+                ],
+                "addr": 4199520,
+                "ret": "symbolic",
+                "addr_func": 4199520
+            },
+            {
+                "name": "GetModuleHandleA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242916",
+                "addr": 4199247,
+                "ret": 6295592
+            },
+            {
+                "name": "LoadLibraryA",
+                "args": [
+                    "libgcc_s_dw2-1.dll"
+                ],
+                "addr_func": "5242940",
+                "addr": 4199272,
+                "ret": 6295592
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__register_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199296,
+                "ret": "<BV32 retval_GetProcAddress_32767_32>"
+            },
+            {
+                "name": "GetProcAddress",
+                "args": [
+                    6295592,
+                    "__deregister_frame_info"
+                ],
+                "addr_func": "5242920",
+                "addr": 4199317,
+                "ret": "<BV32 retval_GetProcAddress_32768_32>"
+            }
+        ]
+    },
+    "sections": {
+        ".text": {
+            "vaddr": 4198400,
+            "memsize": 11476,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": true
+        },
+        ".data": {
+            "vaddr": 4210688,
+            "memsize": 28,
+            "is_readable": true,
+            "is_writable": true,
+            "is_executable": false
+        },
+        ".rdata": {
+            "vaddr": 4214784,
+            "memsize": 768,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        "/4": {
+            "vaddr": 4218880,
+            "memsize": 2472,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        ".bss": {
+            "vaddr": 4222976,
+            "memsize": 112,
+            "is_readable": true,
+            "is_writable": true,
+            "is_executable": false
+        },
+        ".idata": {
+            "vaddr": 4227072,
+            "memsize": 1612,
+            "is_readable": true,
+            "is_writable": true,
+            "is_executable": false
+        },
+        ".CRT": {
+            "vaddr": 4231168,
+            "memsize": 24,
+            "is_readable": true,
+            "is_writable": true,
+            "is_executable": false
+        },
+        ".tls": {
+            "vaddr": 4235264,
+            "memsize": 32,
+            "is_readable": true,
+            "is_writable": true,
+            "is_executable": false
+        },
+        "/14": {
+            "vaddr": 4239360,
+            "memsize": 88,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        "/29": {
+            "vaddr": 4243456,
+            "memsize": 13945,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        "/41": {
+            "vaddr": 4259840,
+            "memsize": 534,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        "/55": {
+            "vaddr": 4263936,
+            "memsize": 739,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        },
+        "/67": {
+            "vaddr": 4268032,
+            "memsize": 56,
+            "is_readable": true,
+            "is_writable": false,
+            "is_executable": false
+        }
+    }
+}

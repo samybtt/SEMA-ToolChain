@@ -40,17 +40,17 @@ class ToolChainExplorerCStochastic(ToolChainExplorer):
             worker
         )
         self.start_state = simgr.one_active
-        self.restart_prob = restart_prob
+        # self.restart_prob = restart_prob
         self._random = random.RandomState()
-        self.seed = 42
+        # self.seed = 42
         # self._random.seed(self.seed)
         self.affinity = {}
         # self.pause_stash = deque()
-        self.reset_stash = deque()
+        # self.reset_stash = deque()
         self.log = logging.getLogger("ToolChainExplorerCStochastic")
         self.log.setLevel("INFO")
         self.last_scdg = defaultdict(int)
-        self.discovery_counter = 0
+        # self.discovery_counter = 0
 
     def step(self, simgr, stash='active', **kwargs):
         try:
@@ -135,14 +135,15 @@ class ToolChainExplorerCStochastic(ToolChainExplorer):
                 return picked
 
 
-        if self._random.random() < self.restart_prob:
-            print("RESTART")
-            # import pdb; pdb.set_trace()
-            simgr.active = [self.start_state]
-            self.affinity.clear()
-            # self.seed += 1
-            # self._random.seed(self.seed)
-        elif not simgr.active:
+        # if self._random.random() < self.restart_prob:
+        #     print("RESTART")
+        #     # import pdb; pdb.set_trace()
+        #     simgr.active = [self.start_state]
+        #     self.affinity.clear()
+        #     # self.seed += 1
+        #     # self._random.seed(self.seed)
+        # elif not simgr.active:
+        if not simgr.active:
             if len(simgr.stashes["pause"]) > 0:
                 the_chosen_ones = weighted_pick(simgr.stashes["pause"], self.max_simul_state) # Pick randomly states from pause stash
                 simgr.move(

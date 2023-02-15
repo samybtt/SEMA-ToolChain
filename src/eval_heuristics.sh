@@ -1,12 +1,20 @@
-search_dir="/media/sambt/1341-CC90/final/"
-for family in $(ls $search_dir)
+search_dir="/root/final/"
+# MethodArray=("CSTOCH CDFS CBFS STOCH WSELECT DFS BFS")
+MethodArray=("CSTOCH CDFS CBFS STOCH WSELECT")
+# FamArray=("delf nitol bancteian gandcrab ircbot lamer RedLineStealer RemcosRAT sfone simbot Sodinokibi sytro sillyp2p wabot FeakerStealer")
+FamArray=("lamer RedLineStealer Sodinokibi sillyp2p")
+
+for family in ${FamArray[*]}
 do
     echo $family
-    for file in $(ls $search_dir/$entry | head -n 3)
+    for file in $(ls $search_dir/$family | head -n 4)
     do
-        for method in 
+        echo $file
+        for method in ${MethodArray[*]}
         do 
-            $(python ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family)
+            echo $method
+            echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG/$method --restart_prob=0.00001"
+            $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG/$method --restart_prob=0.00001)
         done
         # echo $file
     done

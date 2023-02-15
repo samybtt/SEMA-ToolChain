@@ -168,7 +168,7 @@ class ArgumentParserSCDG:
         self.tool_scdg.debug_error = args.debug_error
         if args.method:
             expl_method = args.method.upper()
-            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH", "CSTOCH", "WSELECT", "DPP"]:
+            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH", "CSTOCH", "CSTOCH2", "CSTOCHSET", "CSTOCHSET2", "WSELECT", "WSELECT2", "WSELECTSET", "WSELECTSET2", "DPP"]:
                 import pdb; pdb.set_trace()
                 self.tool_scdg.log.info("Method of exploration not recognized")
                 self.tool_scdg.log.info("Changed to default DFS")
