@@ -1,0 +1,19 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4206418.main
+001dd6db2773cdc7b76868c0ac5e4c83"]
+	1 [label="4206484.__p__fmode
+"]
+	2 [label="4206498.__p__commode
+"]
+	3 [label="4206802._controlfp
+"]
+	4 [label="4206599.__getmainargs
+2147417672
+2147417656
+2147417668
+0
+2147417660"]
+	5 [label="4198437.ordinal.561.b'mfc42.dll'
+"]
+}
