@@ -1,0 +1,594 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4198610.main
+0065664fb6d0d646a7900c1629319f4f"]
+	1 [label="4199763.GetModuleHandleA
+0"]
+	2 [label="4199795.InitializeCriticalSection
+4211528"]
+	3 [label="4199816.VirtualProtect
+4194644
+4
+64
+2147417172"]
+	4 [label="4199834.VirtualProtect
+4194644
+4
+4
+2147417172"]
+	3 -> 4 [label="(1-->1)"]
+	3 -> 4 [label="(2-->2)"]
+	3 -> 4 [label="(2-->3)"]
+	3 -> 4 [label="(4-->4)"]
+	3 -> 4 [label="(0-->0)"]
+	5 [label="4199837.EnterCriticalSection
+4211528"]
+	2 -> 5 [label="(1-->1)"]
+	2 -> 5 [label="(0-->0)"]
+	6 [label="4199852.lstrcpyA
+kernel32
+kernel32"]
+	7 [label="4199870.lstrcatA
+kernel32.
+."]
+	8 [label="4199876.lstrcatA
+kernel32.BeginUpdateResourceA
+BeginUpdateResourceA"]
+	9 [label="4199886.GetProcAddress
+4194304
+szFile"]
+	1 -> 9 [label="(0-->1)"]
+	10 [label="4199895.LeaveCriticalSection
+4211528"]
+	2 -> 10 [label="(1-->1)"]
+	5 -> 10 [label="(1-->1)"]
+	2 -> 10 [label="(0-->0)"]
+	5 -> 10 [label="(0-->0)"]
+	11 [label="4199876.lstrcatA
+kernel32.UpdateResourceA
+UpdateResourceA"]
+	12 [label="4199876.lstrcatA
+kernel32.EndUpdateResourceA
+EndUpdateResourceA"]
+	13 [label="4200153.FindResourceA
+0
+
+RT_RCDATA"]
+	2 -> 13 [label="(0-->0)"]
+	5 -> 13 [label="(0-->0)"]
+	10 -> 13 [label="(0-->0)"]
+	14 [label="4200168.SizeofResource
+0
+retval_FindResourceA_32767_32"]
+	2 -> 14 [label="(0-->0)"]
+	5 -> 14 [label="(0-->0)"]
+	10 -> 14 [label="(0-->0)"]
+	13 -> 14 [label="(0-->0)"]
+	15 [label="4200191.LoadResource
+0
+retval_FindResourceA_32767_32"]
+	14 -> 15 [label="(2-->2)"]
+	16 [label="4200198.LockResource
+retval_LoadResource_32769_32"]
+	17 [label="4198891.GetModuleFileNameA
+0
+0065664fb6d0d646a7900c1629319f4f
+260"]
+	0 -> 17 [label="(1-->2)"]
+	18 [label="4200352.OpenSCManagerA
+0
+0
+2147483648"]
+	19 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32772_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	20 [label="4200245.CryptAcquireContextA
+2147397644
+0
+0
+1
+0"]
+	3 -> 20 [label="(0-->4)"]
+	4 -> 20 [label="(0-->4)"]
+	21 [label="4200289.CryptGenRandom
+0
+4
+2147397640"]
+	3 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(3-->2)"]
+	22 [label="4200431.StrChrA
+0
+32"]
+	17 -> 22 [label="(0-->2)"]
+	23 [label="4200691.wsprintfA
+%s
+%s
+4211128"]
+	24 [label="4200700.GetTickCount
+"]
+	25 [label="4200735.ExpandEnvironmentStringsA
+%tmp%
+
+260"]
+	26 [label="4200748.PathRemoveFileSpecA
+"]
+	27 [label="4200773.lstrcpyA
+0065664fb6d0d646a7900c1629319f4f
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 27 [label="(1-->1)"]
+	0 -> 27 [label="(1-->2)"]
+	0 -> 27 [label="(1-->0)"]
+	28 [label="4200782.PathRemoveFileSpecA
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 28 [label="(1-->1)"]
+	27 -> 28 [label="(1-->1)"]
+	27 -> 28 [label="(2-->1)"]
+	27 -> 28 [label="(0-->1)"]
+	29 [label="4200803.GetLongPathNameA
+
+
+260"]
+	25 -> 29 [label="(3-->3)"]
+	30 [label="4200824.GetLongPathNameA
+0065664fb6d0d646a7900c1629319f4f
+0065664fb6d0d646a7900c1629319f4f
+260"]
+	0 -> 30 [label="(1-->1)"]
+	27 -> 30 [label="(1-->1)"]
+	27 -> 30 [label="(2-->1)"]
+	27 -> 30 [label="(0-->1)"]
+	28 -> 30 [label="(1-->1)"]
+	0 -> 30 [label="(1-->2)"]
+	27 -> 30 [label="(1-->2)"]
+	27 -> 30 [label="(2-->2)"]
+	27 -> 30 [label="(0-->2)"]
+	28 -> 30 [label="(1-->2)"]
+	25 -> 30 [label="(3-->3)"]
+	29 -> 30 [label="(3-->3)"]
+	31 [label="4200844.lstrcmpiA
+
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 31 [label="(1-->2)"]
+	27 -> 31 [label="(1-->2)"]
+	27 -> 31 [label="(2-->2)"]
+	27 -> 31 [label="(0-->2)"]
+	28 -> 31 [label="(1-->2)"]
+	30 -> 31 [label="(1-->2)"]
+	30 -> 31 [label="(2-->2)"]
+	32 [label="4200251.GetLastError
+"]
+	33 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32774_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	34 [label="4200454.lstrcpyA
+
+0"]
+	35 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32771_32"]
+	36 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32771_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	37 [label="4201217.lstrlenA
+rwbinru/dyd"]
+	38 [label="4201249.lstrlenA
+rwbinru/dyd"]
+	37 -> 38 [label="(1-->1)"]
+	37 -> 38 [label="(0-->0)"]
+	39 [label="4199852.lstrcpyA
+ntdll
+ntdll"]
+	40 [label="4199870.lstrcatA
+ntdll.
+."]
+	7 -> 40 [label="(2-->2)"]
+	41 [label="4199876.lstrcatA
+ntdll.ZwUnmapViewOfSection
+ZwUnmapViewOfSection"]
+	42 [label="4199876.lstrcatA
+kernel32.CreateProcessA
+CreateProcessA"]
+	43 [label="4199876.lstrcatA
+kernel32.GetThreadContext
+GetThreadContext"]
+	44 [label="4199876.lstrcatA
+kernel32.ReadProcessMemory
+ReadProcessMemory"]
+	45 [label="4199876.lstrcatA
+kernel32.VirtualQueryEx
+VirtualQueryEx"]
+	46 [label="4199876.lstrcatA
+kernel32.VirtualProtectEx
+VirtualProtectEx"]
+	47 [label="4199876.lstrcatA
+kernel32.WriteProcessMemory
+WriteProcessMemory"]
+	48 [label="4199876.lstrcatA
+kernel32.SetThreadContext
+SetThreadContext"]
+	49 [label="4199876.lstrcatA
+kernel32.ResumeThread
+ResumeThread"]
+	50 [label="4202086.lstrlenA
+svchost.exe"]
+	37 -> 50 [label="(0-->0)"]
+	38 -> 50 [label="(0-->0)"]
+	51 [label="4200876.lstrcatA
+\
+\"]
+	52 [label="4200892.lstrcatA
+\%s
+%s"]
+	23 -> 52 [label="(1-->2)"]
+	23 -> 52 [label="(2-->2)"]
+	53 [label="4200906.lstrcatA
+\%s.exe
+.exe"]
+	54 [label="4200915.DeleteFileA
+\%s.exe"]
+	53 -> 54 [label="(1-->1)"]
+	53 -> 54 [label="(0-->1)"]
+	55 [label="4200929.MoveFileA
+0065664fb6d0d646a7900c1629319f4f
+\%s.exe"]
+	0 -> 55 [label="(1-->1)"]
+	27 -> 55 [label="(1-->1)"]
+	27 -> 55 [label="(2-->1)"]
+	27 -> 55 [label="(0-->1)"]
+	28 -> 55 [label="(1-->1)"]
+	30 -> 55 [label="(1-->1)"]
+	30 -> 55 [label="(2-->1)"]
+	31 -> 55 [label="(2-->1)"]
+	53 -> 55 [label="(1-->2)"]
+	53 -> 55 [label="(0-->2)"]
+	54 -> 55 [label="(1-->2)"]
+	56 [label="4200961.lstrcpyA
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"]
+	57 [label="4202944.lstrlenA
+\%s.exe"]
+	53 -> 57 [label="(1-->1)"]
+	53 -> 57 [label="(0-->1)"]
+	54 -> 57 [label="(1-->1)"]
+	55 -> 57 [label="(2-->1)"]
+	58 [label="4202984.lstrlenA
+\%s.exe"]
+	53 -> 58 [label="(1-->1)"]
+	53 -> 58 [label="(0-->1)"]
+	54 -> 58 [label="(1-->1)"]
+	55 -> 58 [label="(2-->1)"]
+	57 -> 58 [label="(1-->1)"]
+	57 -> 58 [label="(0-->0)"]
+	59 [label="4203017.wsprintfA
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+2147416132
+2147416392
+2147415312"]
+	60 [label="4203043.ExpandEnvironmentStringsA
+%tmp%\
+
+260"]
+	25 -> 60 [label="(3-->3)"]
+	29 -> 60 [label="(3-->3)"]
+	30 -> 60 [label="(3-->3)"]
+	61 [label="4203067.lstrcatA
+~dfds3.reg
+~dfds3.reg"]
+	62 [label="4203092.CreateFileA
+~dfds3.reg
+3221225472
+2
+0
+2
+128
+0"]
+	61 -> 62 [label="(1-->1)"]
+	61 -> 62 [label="(2-->1)"]
+	61 -> 62 [label="(0-->1)"]
+	23 -> 62 [label="(0-->3)"]
+	36 -> 62 [label="(3-->3)"]
+	23 -> 62 [label="(0-->5)"]
+	36 -> 62 [label="(3-->5)"]
+	63 [label="4203122.lstrlenA
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+"]
+	59 -> 63 [label="(1-->1)"]
+	59 -> 63 [label="(2-->1)"]
+	59 -> 63 [label="(0-->0)"]
+	64 [label="4203135.WriteFile
+3
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+57
+2147416092
+0"]
+	62 -> 64 [label="(0-->1)"]
+	59 -> 64 [label="(1-->2)"]
+	59 -> 64 [label="(2-->2)"]
+	63 -> 64 [label="(1-->2)"]
+	59 -> 64 [label="(0-->3)"]
+	63 -> 64 [label="(0-->3)"]
+	3 -> 64 [label="(0-->0)"]
+	4 -> 64 [label="(0-->0)"]
+	65 [label="4203144.CloseHandle
+3"]
+	62 -> 65 [label="(0-->1)"]
+	64 -> 65 [label="(1-->1)"]
+	66 [label="4203162.lstrcpyA
+regedit.exe /s 
+regedit.exe /s "]
+	67 [label="4203182.lstrcatA
+regedit.exe /s ~dfds3.reg
+~dfds3.reg"]
+	61 -> 67 [label="(1-->2)"]
+	61 -> 67 [label="(2-->2)"]
+	61 -> 67 [label="(0-->2)"]
+	62 -> 67 [label="(1-->2)"]
+	68 [label="4203193.WinExec
+regedit.exe /s ~dfds3.reg
+5"]
+	67 -> 68 [label="(1-->1)"]
+	67 -> 68 [label="(0-->1)"]
+	69 [label="4203204.Sleep
+1000"]
+	2 -> 69 [label="(0-->0)"]
+	5 -> 69 [label="(0-->0)"]
+	10 -> 69 [label="(0-->0)"]
+	13 -> 69 [label="(0-->0)"]
+	70 [label="4203217.DeleteFileA
+~dfds3.reg"]
+	61 -> 70 [label="(1-->1)"]
+	61 -> 70 [label="(2-->1)"]
+	61 -> 70 [label="(0-->1)"]
+	62 -> 70 [label="(1-->1)"]
+	67 -> 70 [label="(2-->1)"]
+	71 [label="4201000.lstrcpyA
+\%s.exe
+\%s.exe"]
+	53 -> 71 [label="(1-->1)"]
+	53 -> 71 [label="(0-->1)"]
+	54 -> 71 [label="(1-->1)"]
+	55 -> 71 [label="(2-->1)"]
+	57 -> 71 [label="(1-->1)"]
+	58 -> 71 [label="(1-->1)"]
+	53 -> 71 [label="(1-->2)"]
+	53 -> 71 [label="(0-->2)"]
+	54 -> 71 [label="(1-->2)"]
+	55 -> 71 [label="(2-->2)"]
+	57 -> 71 [label="(1-->2)"]
+	58 -> 71 [label="(1-->2)"]
+	53 -> 71 [label="(1-->0)"]
+	53 -> 71 [label="(0-->0)"]
+	54 -> 71 [label="(1-->0)"]
+	55 -> 71 [label="(2-->0)"]
+	57 -> 71 [label="(1-->0)"]
+	58 -> 71 [label="(1-->0)"]
+	72 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32780_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	73 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32774_32"]
+	74 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32772_32"]
+	75 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32780_32"]
+	76 [label="4200892.lstrcatA
+\
+"]
+	51 -> 76 [label="(1-->1)"]
+	51 -> 76 [label="(2-->1)"]
+	51 -> 76 [label="(0-->1)"]
+	77 [label="4200906.lstrcatA
+\.exe
+.exe"]
+	78 [label="4200915.DeleteFileA
+\.exe"]
+	77 -> 78 [label="(1-->1)"]
+	77 -> 78 [label="(0-->1)"]
+	79 [label="4200929.MoveFileA
+0065664fb6d0d646a7900c1629319f4f
+\.exe"]
+	0 -> 79 [label="(1-->1)"]
+	17 -> 79 [label="(2-->1)"]
+	27 -> 79 [label="(1-->1)"]
+	27 -> 79 [label="(2-->1)"]
+	27 -> 79 [label="(0-->1)"]
+	28 -> 79 [label="(1-->1)"]
+	30 -> 79 [label="(1-->1)"]
+	30 -> 79 [label="(2-->1)"]
+	31 -> 79 [label="(2-->1)"]
+	77 -> 79 [label="(1-->2)"]
+	77 -> 79 [label="(0-->2)"]
+	78 -> 79 [label="(1-->2)"]
+	80 [label="4200947.lstrcpyA
+0065664fb6d0d646a7900c1629319f4f
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 80 [label="(1-->1)"]
+	17 -> 80 [label="(2-->1)"]
+	27 -> 80 [label="(1-->1)"]
+	27 -> 80 [label="(2-->1)"]
+	27 -> 80 [label="(0-->1)"]
+	28 -> 80 [label="(1-->1)"]
+	30 -> 80 [label="(1-->1)"]
+	30 -> 80 [label="(2-->1)"]
+	31 -> 80 [label="(2-->1)"]
+	79 -> 80 [label="(1-->1)"]
+	0 -> 80 [label="(1-->2)"]
+	17 -> 80 [label="(2-->2)"]
+	27 -> 80 [label="(1-->2)"]
+	27 -> 80 [label="(2-->2)"]
+	27 -> 80 [label="(0-->2)"]
+	28 -> 80 [label="(1-->2)"]
+	30 -> 80 [label="(1-->2)"]
+	30 -> 80 [label="(2-->2)"]
+	31 -> 80 [label="(2-->2)"]
+	79 -> 80 [label="(1-->2)"]
+	0 -> 80 [label="(1-->0)"]
+	17 -> 80 [label="(2-->0)"]
+	27 -> 80 [label="(1-->0)"]
+	27 -> 80 [label="(2-->0)"]
+	27 -> 80 [label="(0-->0)"]
+	28 -> 80 [label="(1-->0)"]
+	30 -> 80 [label="(1-->0)"]
+	30 -> 80 [label="(2-->0)"]
+	31 -> 80 [label="(2-->0)"]
+	79 -> 80 [label="(1-->0)"]
+	81 [label="4202944.lstrlenA
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 81 [label="(1-->1)"]
+	17 -> 81 [label="(2-->1)"]
+	27 -> 81 [label="(1-->1)"]
+	27 -> 81 [label="(2-->1)"]
+	27 -> 81 [label="(0-->1)"]
+	28 -> 81 [label="(1-->1)"]
+	30 -> 81 [label="(1-->1)"]
+	30 -> 81 [label="(2-->1)"]
+	31 -> 81 [label="(2-->1)"]
+	79 -> 81 [label="(1-->1)"]
+	80 -> 81 [label="(1-->1)"]
+	80 -> 81 [label="(2-->1)"]
+	80 -> 81 [label="(0-->1)"]
+	17 -> 81 [label="(0-->0)"]
+	22 -> 81 [label="(2-->0)"]
+	82 [label="4202984.lstrlenA
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 82 [label="(1-->1)"]
+	17 -> 82 [label="(2-->1)"]
+	27 -> 82 [label="(1-->1)"]
+	27 -> 82 [label="(2-->1)"]
+	27 -> 82 [label="(0-->1)"]
+	28 -> 82 [label="(1-->1)"]
+	30 -> 82 [label="(1-->1)"]
+	30 -> 82 [label="(2-->1)"]
+	31 -> 82 [label="(2-->1)"]
+	79 -> 82 [label="(1-->1)"]
+	80 -> 82 [label="(1-->1)"]
+	80 -> 82 [label="(2-->1)"]
+	80 -> 82 [label="(0-->1)"]
+	81 -> 82 [label="(1-->1)"]
+	17 -> 82 [label="(0-->0)"]
+	22 -> 82 [label="(2-->0)"]
+	81 -> 82 [label="(0-->0)"]
+	83 [label="4201000.lstrcpyA
+0065664fb6d0d646a7900c1629319f4f
+0065664fb6d0d646a7900c1629319f4f"]
+	0 -> 83 [label="(1-->1)"]
+	17 -> 83 [label="(2-->1)"]
+	27 -> 83 [label="(1-->1)"]
+	27 -> 83 [label="(2-->1)"]
+	27 -> 83 [label="(0-->1)"]
+	28 -> 83 [label="(1-->1)"]
+	30 -> 83 [label="(1-->1)"]
+	30 -> 83 [label="(2-->1)"]
+	31 -> 83 [label="(2-->1)"]
+	79 -> 83 [label="(1-->1)"]
+	80 -> 83 [label="(1-->1)"]
+	80 -> 83 [label="(2-->1)"]
+	80 -> 83 [label="(0-->1)"]
+	81 -> 83 [label="(1-->1)"]
+	82 -> 83 [label="(1-->1)"]
+	0 -> 83 [label="(1-->2)"]
+	17 -> 83 [label="(2-->2)"]
+	27 -> 83 [label="(1-->2)"]
+	27 -> 83 [label="(2-->2)"]
+	27 -> 83 [label="(0-->2)"]
+	28 -> 83 [label="(1-->2)"]
+	30 -> 83 [label="(1-->2)"]
+	30 -> 83 [label="(2-->2)"]
+	31 -> 83 [label="(2-->2)"]
+	79 -> 83 [label="(1-->2)"]
+	80 -> 83 [label="(1-->2)"]
+	80 -> 83 [label="(2-->2)"]
+	80 -> 83 [label="(0-->2)"]
+	81 -> 83 [label="(1-->2)"]
+	82 -> 83 [label="(1-->2)"]
+	0 -> 83 [label="(1-->0)"]
+	17 -> 83 [label="(2-->0)"]
+	27 -> 83 [label="(1-->0)"]
+	27 -> 83 [label="(2-->0)"]
+	27 -> 83 [label="(0-->0)"]
+	28 -> 83 [label="(1-->0)"]
+	30 -> 83 [label="(1-->0)"]
+	30 -> 83 [label="(2-->0)"]
+	31 -> 83 [label="(2-->0)"]
+	79 -> 83 [label="(1-->0)"]
+	80 -> 83 [label="(1-->0)"]
+	80 -> 83 [label="(2-->0)"]
+	80 -> 83 [label="(0-->0)"]
+	81 -> 83 [label="(1-->0)"]
+	82 -> 83 [label="(1-->0)"]
+	84 [label="4202944.lstrlenA
+\.exe"]
+	77 -> 84 [label="(1-->1)"]
+	77 -> 84 [label="(0-->1)"]
+	78 -> 84 [label="(1-->1)"]
+	79 -> 84 [label="(2-->1)"]
+	85 [label="4202984.lstrlenA
+\.exe"]
+	77 -> 85 [label="(1-->1)"]
+	77 -> 85 [label="(0-->1)"]
+	78 -> 85 [label="(1-->1)"]
+	79 -> 85 [label="(2-->1)"]
+	84 -> 85 [label="(1-->1)"]
+	84 -> 85 [label="(0-->0)"]
+	86 [label="4201000.lstrcpyA
+\.exe
+\.exe"]
+	77 -> 86 [label="(1-->1)"]
+	77 -> 86 [label="(0-->1)"]
+	78 -> 86 [label="(1-->1)"]
+	79 -> 86 [label="(2-->1)"]
+	84 -> 86 [label="(1-->1)"]
+	85 -> 86 [label="(1-->1)"]
+	77 -> 86 [label="(1-->2)"]
+	77 -> 86 [label="(0-->2)"]
+	78 -> 86 [label="(1-->2)"]
+	79 -> 86 [label="(2-->2)"]
+	84 -> 86 [label="(1-->2)"]
+	85 -> 86 [label="(1-->2)"]
+	77 -> 86 [label="(1-->0)"]
+	77 -> 86 [label="(0-->0)"]
+	78 -> 86 [label="(1-->0)"]
+	79 -> 86 [label="(2-->0)"]
+	84 -> 86 [label="(1-->0)"]
+	85 -> 86 [label="(1-->0)"]
+}

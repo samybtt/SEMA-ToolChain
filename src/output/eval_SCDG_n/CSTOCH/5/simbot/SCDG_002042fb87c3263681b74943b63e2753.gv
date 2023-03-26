@@ -1,0 +1,328 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4198610.main
+002042fb87c3263681b74943b63e2753"]
+	1 [label="4199763.GetModuleHandleA
+0"]
+	2 [label="4199795.InitializeCriticalSection
+4211528"]
+	3 [label="4199816.VirtualProtect
+4194644
+4
+64
+2147417172"]
+	4 [label="4199834.VirtualProtect
+4194644
+4
+4
+2147417172"]
+	3 -> 4 [label="(1-->1)"]
+	3 -> 4 [label="(2-->2)"]
+	3 -> 4 [label="(2-->3)"]
+	3 -> 4 [label="(4-->4)"]
+	3 -> 4 [label="(0-->0)"]
+	5 [label="4199837.EnterCriticalSection
+4211528"]
+	2 -> 5 [label="(1-->1)"]
+	2 -> 5 [label="(0-->0)"]
+	6 [label="4199852.lstrcpyA
+kernel32
+kernel32"]
+	7 [label="4199870.lstrcatA
+kernel32.
+."]
+	8 [label="4199876.lstrcatA
+kernel32.BeginUpdateResourceA
+BeginUpdateResourceA"]
+	9 [label="4199886.GetProcAddress
+4194304
+szFile"]
+	1 -> 9 [label="(0-->1)"]
+	10 [label="4199895.LeaveCriticalSection
+4211528"]
+	2 -> 10 [label="(1-->1)"]
+	5 -> 10 [label="(1-->1)"]
+	2 -> 10 [label="(0-->0)"]
+	5 -> 10 [label="(0-->0)"]
+	11 [label="4199876.lstrcatA
+kernel32.UpdateResourceA
+UpdateResourceA"]
+	12 [label="4199876.lstrcatA
+kernel32.EndUpdateResourceA
+EndUpdateResourceA"]
+	13 [label="4200153.FindResourceA
+0
+
+RT_RCDATA"]
+	2 -> 13 [label="(0-->0)"]
+	5 -> 13 [label="(0-->0)"]
+	10 -> 13 [label="(0-->0)"]
+	14 [label="4200168.SizeofResource
+0
+retval_FindResourceA_32767_32"]
+	2 -> 14 [label="(0-->0)"]
+	5 -> 14 [label="(0-->0)"]
+	10 -> 14 [label="(0-->0)"]
+	13 -> 14 [label="(0-->0)"]
+	15 [label="4200191.LoadResource
+0
+retval_FindResourceA_32767_32"]
+	14 -> 15 [label="(2-->2)"]
+	16 [label="4200198.LockResource
+retval_LoadResource_32769_32"]
+	17 [label="4198891.GetModuleFileNameA
+0
+002042fb87c3263681b74943b63e2753
+260"]
+	0 -> 17 [label="(1-->2)"]
+	18 [label="4200352.OpenSCManagerA
+0
+0
+2147483648"]
+	19 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32772_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	20 [label="4200245.CryptAcquireContextA
+2147397644
+0
+0
+1
+0"]
+	3 -> 20 [label="(0-->4)"]
+	4 -> 20 [label="(0-->4)"]
+	21 [label="4200289.CryptGenRandom
+0
+4
+2147397640"]
+	3 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(3-->2)"]
+	22 [label="4200431.StrChrA
+0
+32"]
+	17 -> 22 [label="(0-->2)"]
+	23 [label="4200691.wsprintfA
+%s
+%s
+4211128"]
+	24 [label="4200700.GetTickCount
+"]
+	25 [label="4200251.GetLastError
+"]
+	26 [label="4200454.lstrcpyA
+
+0"]
+	27 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32771_32"]
+	28 [label="4200735.ExpandEnvironmentStringsA
+%tmp%
+
+260"]
+	17 -> 28 [label="(3-->3)"]
+	29 [label="4200748.PathRemoveFileSpecA
+"]
+	30 [label="4200773.lstrcpyA
+002042fb87c3263681b74943b63e2753
+002042fb87c3263681b74943b63e2753"]
+	0 -> 30 [label="(1-->1)"]
+	17 -> 30 [label="(2-->1)"]
+	0 -> 30 [label="(1-->2)"]
+	17 -> 30 [label="(2-->2)"]
+	0 -> 30 [label="(1-->0)"]
+	17 -> 30 [label="(2-->0)"]
+	31 [label="4200782.PathRemoveFileSpecA
+002042fb87c3263681b74943b63e2753"]
+	0 -> 31 [label="(1-->1)"]
+	17 -> 31 [label="(2-->1)"]
+	30 -> 31 [label="(1-->1)"]
+	30 -> 31 [label="(2-->1)"]
+	30 -> 31 [label="(0-->1)"]
+	32 [label="4200803.GetLongPathNameA
+
+
+260"]
+	17 -> 32 [label="(3-->3)"]
+	28 -> 32 [label="(3-->3)"]
+	33 [label="4200824.GetLongPathNameA
+002042fb87c3263681b74943b63e2753
+002042fb87c3263681b74943b63e2753
+260"]
+	0 -> 33 [label="(1-->1)"]
+	17 -> 33 [label="(2-->1)"]
+	30 -> 33 [label="(1-->1)"]
+	30 -> 33 [label="(2-->1)"]
+	30 -> 33 [label="(0-->1)"]
+	31 -> 33 [label="(1-->1)"]
+	0 -> 33 [label="(1-->2)"]
+	17 -> 33 [label="(2-->2)"]
+	30 -> 33 [label="(1-->2)"]
+	30 -> 33 [label="(2-->2)"]
+	30 -> 33 [label="(0-->2)"]
+	31 -> 33 [label="(1-->2)"]
+	17 -> 33 [label="(3-->3)"]
+	28 -> 33 [label="(3-->3)"]
+	32 -> 33 [label="(3-->3)"]
+	34 [label="4200844.lstrcmpiA
+
+002042fb87c3263681b74943b63e2753"]
+	0 -> 34 [label="(1-->2)"]
+	17 -> 34 [label="(2-->2)"]
+	30 -> 34 [label="(1-->2)"]
+	30 -> 34 [label="(2-->2)"]
+	30 -> 34 [label="(0-->2)"]
+	31 -> 34 [label="(1-->2)"]
+	33 -> 34 [label="(1-->2)"]
+	33 -> 34 [label="(2-->2)"]
+	35 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32777_32"]
+	36 [label="4201217.lstrlenA
+rwbinru/dyd"]
+	37 [label="4201249.lstrlenA
+rwbinru/dyd"]
+	36 -> 37 [label="(1-->1)"]
+	36 -> 37 [label="(0-->0)"]
+	38 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32771_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	39 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32772_32"]
+	40 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32777_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	41 [label="4200947.lstrcpyA
+002042fb87c3263681b74943b63e2753
+002042fb87c3263681b74943b63e2753"]
+	0 -> 41 [label="(1-->1)"]
+	17 -> 41 [label="(2-->1)"]
+	0 -> 41 [label="(1-->2)"]
+	17 -> 41 [label="(2-->2)"]
+	0 -> 41 [label="(1-->0)"]
+	17 -> 41 [label="(2-->0)"]
+	42 [label="4200961.lstrcpyA
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"]
+	43 [label="4199852.lstrcpyA
+ntdll
+ntdll"]
+	44 [label="4199870.lstrcatA
+ntdll.
+."]
+	7 -> 44 [label="(2-->2)"]
+	45 [label="4199876.lstrcatA
+ntdll.ZwUnmapViewOfSection
+ZwUnmapViewOfSection"]
+	46 [label="4199876.lstrcatA
+kernel32.CreateProcessA
+CreateProcessA"]
+	47 [label="4199876.lstrcatA
+kernel32.GetThreadContext
+GetThreadContext"]
+	48 [label="4199876.lstrcatA
+kernel32.ReadProcessMemory
+ReadProcessMemory"]
+	49 [label="4199876.lstrcatA
+kernel32.VirtualQueryEx
+VirtualQueryEx"]
+	50 [label="4199876.lstrcatA
+kernel32.VirtualProtectEx
+VirtualProtectEx"]
+	51 [label="4199876.lstrcatA
+kernel32.WriteProcessMemory
+WriteProcessMemory"]
+	52 [label="4199876.lstrcatA
+kernel32.SetThreadContext
+SetThreadContext"]
+	53 [label="4199876.lstrcatA
+kernel32.ResumeThread
+ResumeThread"]
+	54 [label="4202086.lstrlenA
+svchost.exe"]
+	36 -> 54 [label="(0-->0)"]
+	37 -> 54 [label="(0-->0)"]
+	55 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32774_32"]
+	56 [label="4200876.lstrcatA
+\
+\"]
+	57 [label="4200892.lstrcatA
+\
+"]
+	56 -> 57 [label="(1-->1)"]
+	56 -> 57 [label="(2-->1)"]
+	56 -> 57 [label="(0-->1)"]
+	58 [label="4200906.lstrcatA
+\.exe
+.exe"]
+	59 [label="4200915.DeleteFileA
+\.exe"]
+	58 -> 59 [label="(1-->1)"]
+	58 -> 59 [label="(0-->1)"]
+	60 [label="4200929.MoveFileA
+002042fb87c3263681b74943b63e2753
+\.exe"]
+	0 -> 60 [label="(1-->1)"]
+	17 -> 60 [label="(2-->1)"]
+	30 -> 60 [label="(1-->1)"]
+	30 -> 60 [label="(2-->1)"]
+	30 -> 60 [label="(0-->1)"]
+	31 -> 60 [label="(1-->1)"]
+	33 -> 60 [label="(1-->1)"]
+	33 -> 60 [label="(2-->1)"]
+	34 -> 60 [label="(2-->1)"]
+	58 -> 60 [label="(1-->2)"]
+	58 -> 60 [label="(0-->2)"]
+	59 -> 60 [label="(1-->2)"]
+	61 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32774_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	62 [label="4200892.lstrcatA
+\%s
+%s"]
+	23 -> 62 [label="(1-->2)"]
+	23 -> 62 [label="(2-->2)"]
+	63 [label="4200906.lstrcatA
+\%s.exe
+.exe"]
+	64 [label="4200915.DeleteFileA
+\%s.exe"]
+	63 -> 64 [label="(1-->1)"]
+	63 -> 64 [label="(0-->1)"]
+	65 [label="4200929.MoveFileA
+002042fb87c3263681b74943b63e2753
+\%s.exe"]
+	0 -> 65 [label="(1-->1)"]
+	30 -> 65 [label="(1-->1)"]
+	30 -> 65 [label="(2-->1)"]
+	30 -> 65 [label="(0-->1)"]
+	31 -> 65 [label="(1-->1)"]
+	33 -> 65 [label="(1-->1)"]
+	33 -> 65 [label="(2-->1)"]
+	34 -> 65 [label="(2-->1)"]
+	63 -> 65 [label="(1-->2)"]
+	63 -> 65 [label="(0-->2)"]
+	64 -> 65 [label="(1-->2)"]
+}

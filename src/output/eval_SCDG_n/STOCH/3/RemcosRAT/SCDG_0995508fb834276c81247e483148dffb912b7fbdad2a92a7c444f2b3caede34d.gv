@@ -1,0 +1,159 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4757932.main
+0995508fb834276c81247e483148dffb912b7fbdad2a92a7c444f2b3caede34d"]
+	1 [label="4222108.GetModuleHandleA
+0"]
+	2 [label="4208477.GetKeyboardType
+0"]
+	3 [label="4755564.GetCommandLineA
+"]
+	4 [label="4199398.GetStartupInfoA
+2147417464"]
+	5 [label="4755584.GetACP
+"]
+	6 [label="4755594.GetCurrentThreadId
+"]
+	7 [label="4218886.GetModuleFileNameA
+4194304
+.ZM
+261"]
+	1 -> 7 [label="(0-->1)"]
+	8 [label="4219496.GetModuleFileNameA
+0
+0995508fb834276c81247e483148dffb912b7fbdad2a92a7c444f2b3caede34d
+261"]
+	0 -> 8 [label="(1-->2)"]
+	7 -> 8 [label="(3-->3)"]
+	9 [label="4219526.RegOpenKeyExA
+2147483649
+Software\Borland\Locales
+0
+983065
+2147413080"]
+	10 [label="4219045.GetModuleHandleA
+kernel32.dll"]
+	11 [label="4219068.GetProcAddress
+6295592
+GetLongPathNameA"]
+	10 -> 11 [label="(0-->1)"]
+	12 [label="4219095.GetLongPathNameA
+0995508fb834276c81247e483148dffb912b7fbdad2a92a7c444f2b3caede34d
+
+261"]
+	0 -> 12 [label="(1-->1)"]
+	8 -> 12 [label="(2-->1)"]
+	7 -> 12 [label="(3-->3)"]
+	8 -> 12 [label="(3-->3)"]
+	13 [label="4219116.lstrcpynA
+
+
+261"]
+	7 -> 13 [label="(3-->3)"]
+	8 -> 13 [label="(3-->3)"]
+	12 -> 13 [label="(3-->3)"]
+	14 [label="4219659.RegQueryValueExA
+4218891
+
+0
+0
+2147413070
+2147413064"]
+	15 [label="4219723.RegCloseKey
+4218891"]
+	14 -> 15 [label="(1-->1)"]
+	16 [label="4219752.lstrcpynA
+.ZM
+.ZM
+261"]
+	7 -> 16 [label="(2-->1)"]
+	7 -> 16 [label="(2-->2)"]
+	7 -> 16 [label="(3-->3)"]
+	8 -> 16 [label="(3-->3)"]
+	12 -> 16 [label="(3-->3)"]
+	13 -> 16 [label="(3-->3)"]
+	7 -> 16 [label="(2-->0)"]
+	17 [label="4219765.GetThreadLocale
+"]
+	18 [label="4219771.GetLocaleInfoA
+retval_GetThreadLocale_32781_32
+3
+
+5"]
+	7 -> 18 [label="(0-->2)"]
+	19 [label="4221758.LoadStringA
+4194304
+65479
+p|@
+4096"]
+	1 -> 19 [label="(0-->1)"]
+	7 -> 19 [label="(1-->1)"]
+	20 [label="4221758.LoadStringA
+4194304
+65478
+h|@
+4096"]
+	1 -> 20 [label="(0-->1)"]
+	7 -> 20 [label="(1-->1)"]
+	19 -> 20 [label="(1-->1)"]
+	19 -> 20 [label="(4-->4)"]
+	21 [label="4219556.RegOpenKeyExA
+2147483650
+Software\Borland\Locales
+0
+983065
+2147413080"]
+	9 -> 21 [label="(2-->2)"]
+	9 -> 21 [label="(4-->4)"]
+	9 -> 21 [label="(5-->5)"]
+	22 [label="4219586.RegOpenKeyExA
+2147483649
+Software\Borland\Delphi\Locales
+0
+983065
+2147413080"]
+	9 -> 22 [label="(1-->1)"]
+	9 -> 22 [label="(4-->4)"]
+	21 -> 22 [label="(4-->4)"]
+	9 -> 22 [label="(5-->5)"]
+	21 -> 22 [label="(5-->5)"]
+	23 [label="4219771.GetLocaleInfoA
+retval_GetThreadLocale_32772_32
+3
+
+5"]
+	7 -> 23 [label="(0-->2)"]
+	24 [label="4200238.VirtualAlloc
+0
+1310720
+4096
+4"]
+	19 -> 24 [label="(4-->3)"]
+	20 -> 24 [label="(4-->3)"]
+	2 -> 24 [label="(0-->4)"]
+	25 [label="4221758.LoadStringA
+4194304
+65476
+X|@
+4096"]
+	1 -> 25 [label="(0-->1)"]
+	7 -> 25 [label="(1-->1)"]
+	19 -> 25 [label="(1-->1)"]
+	20 -> 25 [label="(1-->1)"]
+	19 -> 25 [label="(4-->4)"]
+	20 -> 25 [label="(4-->4)"]
+	26 [label="4221758.LoadStringA
+4194304
+65477
+`|@
+4096"]
+	1 -> 26 [label="(0-->1)"]
+	7 -> 26 [label="(1-->1)"]
+	19 -> 26 [label="(1-->1)"]
+	20 -> 26 [label="(1-->1)"]
+	25 -> 26 [label="(1-->1)"]
+	19 -> 26 [label="(4-->4)"]
+	20 -> 26 [label="(4-->4)"]
+	24 -> 26 [label="(3-->4)"]
+	25 -> 26 [label="(4-->4)"]
+}
