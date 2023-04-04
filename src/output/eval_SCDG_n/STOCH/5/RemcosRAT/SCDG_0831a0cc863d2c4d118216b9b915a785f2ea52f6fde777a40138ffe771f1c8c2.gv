@@ -1,0 +1,412 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4690404.main
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	1 [label="4220712.GetModuleHandleA
+0"]
+	2 [label="4207981.GetKeyboardType
+0"]
+	3 [label="4220371.GetCommandLineA
+"]
+	4 [label="4199246.GetStartupInfoA
+2147417460"]
+	5 [label="4220391.GetVersion
+"]
+	6 [label="4220408.GetVersion
+"]
+	7 [label="4220468.GetCurrentThreadId
+"]
+	8 [label="4217062.GetModuleFileNameA
+4194304
+.ZM
+261"]
+	1 -> 8 [label="(0-->1)"]
+	9 [label="4217719.GetModuleFileNameA
+0
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+261"]
+	0 -> 9 [label="(1-->2)"]
+	8 -> 9 [label="(3-->3)"]
+	10 [label="4217749.RegOpenKeyExA
+2147483649
+Software\Borland\Locales
+0
+983065
+2147413072"]
+	11 [label="4217779.RegOpenKeyExA
+2147483650
+Software\Borland\Locales
+0
+983065
+2147413072"]
+	10 -> 11 [label="(2-->2)"]
+	10 -> 11 [label="(4-->4)"]
+	10 -> 11 [label="(5-->5)"]
+	12 [label="4217249.GetModuleHandleA
+kernel32.dll"]
+	13 [label="4217266.GetProcAddress
+6295592
+GetLongPathNameA"]
+	12 -> 13 [label="(0-->1)"]
+	14 [label="4217296.GetLongPathNameA
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+
+261"]
+	0 -> 14 [label="(1-->1)"]
+	9 -> 14 [label="(2-->1)"]
+	8 -> 14 [label="(3-->3)"]
+	9 -> 14 [label="(3-->3)"]
+	15 [label="4217431.lstrcpynA
+08
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+3"]
+	0 -> 15 [label="(1-->2)"]
+	9 -> 15 [label="(2-->2)"]
+	14 -> 15 [label="(1-->2)"]
+	8 -> 15 [label="(0-->3)"]
+	16 [label="4217192.CharNextA
+1a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	17 [label="4217192.CharNextA
+a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	16 -> 17 [label="(0-->1)"]
+	18 [label="4217192.CharNextA
+0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	17 -> 18 [label="(0-->1)"]
+	19 [label="4217192.CharNextA
+cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	18 -> 19 [label="(0-->1)"]
+	20 [label="4217192.CharNextA
+c863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	19 -> 20 [label="(0-->1)"]
+	21 [label="4217192.CharNextA
+863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	20 -> 21 [label="(0-->1)"]
+	22 [label="4217192.CharNextA
+63d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	21 -> 22 [label="(0-->1)"]
+	23 [label="4217192.CharNextA
+3d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	22 -> 23 [label="(0-->1)"]
+	24 [label="4217192.CharNextA
+d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	23 -> 24 [label="(0-->1)"]
+	25 [label="4217192.CharNextA
+2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	24 -> 25 [label="(0-->1)"]
+	26 [label="4217192.CharNextA
+c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	25 -> 26 [label="(0-->1)"]
+	27 [label="4217192.CharNextA
+4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	26 -> 27 [label="(0-->1)"]
+	28 [label="4217192.CharNextA
+d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	27 -> 28 [label="(0-->1)"]
+	29 [label="4217192.CharNextA
+118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	28 -> 29 [label="(0-->1)"]
+	30 [label="4217192.CharNextA
+18216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	29 -> 30 [label="(0-->1)"]
+	31 [label="4217192.CharNextA
+8216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	30 -> 31 [label="(0-->1)"]
+	32 [label="4217192.CharNextA
+216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	31 -> 32 [label="(0-->1)"]
+	33 [label="4217192.CharNextA
+16b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	32 -> 33 [label="(0-->1)"]
+	34 [label="4217192.CharNextA
+6b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	33 -> 34 [label="(0-->1)"]
+	35 [label="4217192.CharNextA
+b9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	34 -> 35 [label="(0-->1)"]
+	36 [label="4217192.CharNextA
+9b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	35 -> 36 [label="(0-->1)"]
+	37 [label="4217192.CharNextA
+b915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	36 -> 37 [label="(0-->1)"]
+	38 [label="4217192.CharNextA
+915a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	37 -> 38 [label="(0-->1)"]
+	39 [label="4217192.CharNextA
+15a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	38 -> 39 [label="(0-->1)"]
+	40 [label="4217192.CharNextA
+5a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	39 -> 40 [label="(0-->1)"]
+	41 [label="4217192.CharNextA
+a785f2ea52f6fde777a40138ffe771f1c8c2"]
+	40 -> 41 [label="(0-->1)"]
+	42 [label="4217192.CharNextA
+785f2ea52f6fde777a40138ffe771f1c8c2"]
+	41 -> 42 [label="(0-->1)"]
+	43 [label="4217192.CharNextA
+85f2ea52f6fde777a40138ffe771f1c8c2"]
+	42 -> 43 [label="(0-->1)"]
+	44 [label="4217192.CharNextA
+5f2ea52f6fde777a40138ffe771f1c8c2"]
+	43 -> 44 [label="(0-->1)"]
+	45 [label="4217192.CharNextA
+f2ea52f6fde777a40138ffe771f1c8c2"]
+	44 -> 45 [label="(0-->1)"]
+	46 [label="4217192.CharNextA
+2ea52f6fde777a40138ffe771f1c8c2"]
+	45 -> 46 [label="(0-->1)"]
+	47 [label="4217192.CharNextA
+ea52f6fde777a40138ffe771f1c8c2"]
+	46 -> 47 [label="(0-->1)"]
+	48 [label="4217192.CharNextA
+a52f6fde777a40138ffe771f1c8c2"]
+	47 -> 48 [label="(0-->1)"]
+	49 [label="4217192.CharNextA
+52f6fde777a40138ffe771f1c8c2"]
+	48 -> 49 [label="(0-->1)"]
+	50 [label="4217192.CharNextA
+2f6fde777a40138ffe771f1c8c2"]
+	49 -> 50 [label="(0-->1)"]
+	51 [label="4217192.CharNextA
+f6fde777a40138ffe771f1c8c2"]
+	50 -> 51 [label="(0-->1)"]
+	52 [label="4217192.CharNextA
+6fde777a40138ffe771f1c8c2"]
+	51 -> 52 [label="(0-->1)"]
+	53 [label="4217192.CharNextA
+fde777a40138ffe771f1c8c2"]
+	52 -> 53 [label="(0-->1)"]
+	54 [label="4217192.CharNextA
+de777a40138ffe771f1c8c2"]
+	53 -> 54 [label="(0-->1)"]
+	55 [label="4217192.CharNextA
+e777a40138ffe771f1c8c2"]
+	54 -> 55 [label="(0-->1)"]
+	56 [label="4217192.CharNextA
+777a40138ffe771f1c8c2"]
+	55 -> 56 [label="(0-->1)"]
+	57 [label="4217192.CharNextA
+77a40138ffe771f1c8c2"]
+	56 -> 57 [label="(0-->1)"]
+	58 [label="4217192.CharNextA
+7a40138ffe771f1c8c2"]
+	57 -> 58 [label="(0-->1)"]
+	59 [label="4217192.CharNextA
+a40138ffe771f1c8c2"]
+	58 -> 59 [label="(0-->1)"]
+	60 [label="4217192.CharNextA
+40138ffe771f1c8c2"]
+	59 -> 60 [label="(0-->1)"]
+	61 [label="4217192.CharNextA
+0138ffe771f1c8c2"]
+	60 -> 61 [label="(0-->1)"]
+	62 [label="4217192.CharNextA
+138ffe771f1c8c2"]
+	61 -> 62 [label="(0-->1)"]
+	63 [label="4217192.CharNextA
+38ffe771f1c8c2"]
+	62 -> 63 [label="(0-->1)"]
+	64 [label="4217192.CharNextA
+8ffe771f1c8c2"]
+	63 -> 64 [label="(0-->1)"]
+	65 [label="4217192.CharNextA
+ffe771f1c8c2"]
+	64 -> 65 [label="(0-->1)"]
+	66 [label="4217192.CharNextA
+fe771f1c8c2"]
+	65 -> 66 [label="(0-->1)"]
+	67 [label="4217192.CharNextA
+e771f1c8c2"]
+	66 -> 67 [label="(0-->1)"]
+	68 [label="4217192.CharNextA
+771f1c8c2"]
+	67 -> 68 [label="(0-->1)"]
+	69 [label="4217192.CharNextA
+71f1c8c2"]
+	68 -> 69 [label="(0-->1)"]
+	70 [label="4217192.CharNextA
+1f1c8c2"]
+	69 -> 70 [label="(0-->1)"]
+	71 [label="4217192.CharNextA
+f1c8c2"]
+	70 -> 71 [label="(0-->1)"]
+	72 [label="4217192.CharNextA
+1c8c2"]
+	71 -> 72 [label="(0-->1)"]
+	73 [label="4217192.CharNextA
+c8c2"]
+	72 -> 73 [label="(0-->1)"]
+	74 [label="4217192.CharNextA
+8c2"]
+	73 -> 74 [label="(0-->1)"]
+	75 [label="4217192.CharNextA
+c2"]
+	74 -> 75 [label="(0-->1)"]
+	76 [label="4217192.CharNextA
+2"]
+	75 -> 76 [label="(0-->1)"]
+	77 [label="4217490.lstrcpynA
+31a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+31a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+63"]
+	78 [label="4217509.FindFirstFileA
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+2147412422"]
+	0 -> 78 [label="(1-->1)"]
+	9 -> 78 [label="(2-->1)"]
+	14 -> 78 [label="(1-->1)"]
+	15 -> 78 [label="(2-->1)"]
+	79 [label="4217522.FindClose
+retval_FindFirstFileA_32796_32"]
+	80 [label="4217534.lstrlenA
+"]
+	81 [label="4217586.lstrcpynA
+
+
+258"]
+	76 -> 81 [label="(0-->0)"]
+	82 [label="4217598.lstrlenA
+"]
+	83 [label="4217639.lstrcpynA
+08\
+08\
+261"]
+	8 -> 83 [label="(3-->3)"]
+	9 -> 83 [label="(3-->3)"]
+	14 -> 83 [label="(3-->3)"]
+	84 [label="4217882.RegQueryValueExA
+4217067
+08\
+0
+0
+2147413062
+2147413056"]
+	83 -> 84 [label="(1-->2)"]
+	83 -> 84 [label="(2-->2)"]
+	83 -> 84 [label="(0-->2)"]
+	85 [label="4217946.RegCloseKey
+4217067"]
+	84 -> 85 [label="(1-->1)"]
+	86 [label="4217975.lstrcpynA
+.ZM
+.ZM
+261"]
+	8 -> 86 [label="(2-->1)"]
+	8 -> 86 [label="(2-->2)"]
+	8 -> 86 [label="(3-->3)"]
+	9 -> 86 [label="(3-->3)"]
+	14 -> 86 [label="(3-->3)"]
+	83 -> 86 [label="(3-->3)"]
+	8 -> 86 [label="(2-->0)"]
+	87 [label="4217988.GetThreadLocale
+"]
+	88 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32814_32
+3
+
+5"]
+	8 -> 88 [label="(0-->2)"]
+	15 -> 88 [label="(3-->2)"]
+	89 [label="4220030.LoadStringA
+4194304
+65472
+2147413396
+4096"]
+	1 -> 89 [label="(0-->1)"]
+	8 -> 89 [label="(1-->1)"]
+	90 [label="4220030.LoadStringA
+4194304
+65503
+2147413396
+4096"]
+	1 -> 90 [label="(0-->1)"]
+	8 -> 90 [label="(1-->1)"]
+	89 -> 90 [label="(1-->1)"]
+	89 -> 90 [label="(3-->3)"]
+	89 -> 90 [label="(4-->4)"]
+	91 [label="4217882.RegQueryValueExA
+4217067
+0831a0cc863d2c4d118216b9b915a785f2ea52f6fde777a40138ffe771f1c8c2
+0
+0
+2147413062
+2147413056"]
+	0 -> 91 [label="(1-->2)"]
+	9 -> 91 [label="(2-->2)"]
+	14 -> 91 [label="(1-->2)"]
+	15 -> 91 [label="(2-->2)"]
+	78 -> 91 [label="(1-->2)"]
+	92 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32842_32
+3
+
+5"]
+	8 -> 92 [label="(0-->2)"]
+	15 -> 92 [label="(3-->2)"]
+	93 [label="4217912.RegQueryValueExA
+4217067
+
+0
+0
+2147413062
+2147413056"]
+	91 -> 93 [label="(1-->1)"]
+	91 -> 93 [label="(5-->5)"]
+	91 -> 93 [label="(6-->6)"]
+	94 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32843_32
+3
+
+5"]
+	8 -> 94 [label="(0-->2)"]
+	15 -> 94 [label="(3-->2)"]
+	95 [label="4217809.RegOpenKeyExA
+2147483649
+Software\Borland\Delphi\Locales
+0
+983065
+2147413072"]
+	10 -> 95 [label="(1-->1)"]
+	10 -> 95 [label="(4-->4)"]
+	11 -> 95 [label="(4-->4)"]
+	10 -> 95 [label="(5-->5)"]
+	11 -> 95 [label="(5-->5)"]
+	96 [label="4217522.FindClose
+retval_FindFirstFileA_32791_32"]
+	97 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32812_32
+3
+
+5"]
+	8 -> 97 [label="(0-->2)"]
+	15 -> 97 [label="(3-->2)"]
+	98 [label="4220030.LoadStringA
+4194304
+65501
+2147413396
+4096"]
+	1 -> 98 [label="(0-->1)"]
+	8 -> 98 [label="(1-->1)"]
+	89 -> 98 [label="(1-->1)"]
+	90 -> 98 [label="(1-->1)"]
+	89 -> 98 [label="(3-->3)"]
+	90 -> 98 [label="(3-->3)"]
+	89 -> 98 [label="(4-->4)"]
+	90 -> 98 [label="(4-->4)"]
+	99 [label="4217522.FindClose
+retval_FindFirstFileA_32792_32"]
+	100 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32813_32
+3
+
+5"]
+	8 -> 100 [label="(0-->2)"]
+	15 -> 100 [label="(3-->2)"]
+	101 [label="4217994.GetLocaleInfoA
+retval_GetThreadLocale_32778_32
+3
+
+5"]
+	8 -> 101 [label="(0-->2)"]
+}
