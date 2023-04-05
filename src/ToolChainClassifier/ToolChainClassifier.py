@@ -8,12 +8,15 @@ try:
     from helper.ArgumentParserClassifier import ArgumentParserClassifier
     from classifier.SVM.SVMInriaClassifier import SVMInriaClassifier
     from classifier.SVM.SVMWLClassifier import SVMWLClassifier
+    # from classifier.GNN.GraphSAGEClassifier import GraphSAGE
+    from classifier.GNN.GNNTrainer import GNNTrainer
     from clogging.CustomFormatter import CustomFormatter
 except:
     from .classifier.GM.GSpanClassifier import GSpanClassifier
     from .helper.ArgumentParserClassifier import ArgumentParserClassifier
     from .classifier.SVM.SVMInriaClassifier import SVMInriaClassifier
     from .classifier.SVM.SVMWLClassifier import SVMWLClassifier
+    from .classifier.GNN.GNNTrainer import GNNTrainer
     from .clogging.CustomFormatter import CustomFormatter
 
 
@@ -73,6 +76,7 @@ class ToolChainClassifier:
             elif self.classifier_name == "inria": 
                 self.classifier = SVMInriaClassifier(path=ROOT_DIR,threshold=threshold,families=families)
             elif self.classifier_name == "wl": 
+                # import pdb; pdb.set_trace()
                 self.classifier = SVMWLClassifier(path=ROOT_DIR,threshold=threshold,families=families)
             elif self.classifier_name == "dl": # not working with pypy
                 try:
@@ -80,6 +84,12 @@ class ToolChainClassifier:
                 except:
                     from .classifier.DL.DLTrainerClassifier import DLTrainerClassifier
                 self.classifier = DLTrainerClassifier(path=ROOT_DIR,epoch=epoch,shared_type=shared_type)
+            elif self.classifier_name == "gin":
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="gin", threshold=threshold, families=families)
+            elif self.classifier_name == "sage":
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="sage", threshold=threshold, families=families)
+            elif self.classifier_name == "ginjk":
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="ginjk", threshold=threshold, families=families)
             else:
                 self.log.info("Error: Unrecognize classifer (gspan|inria|wl|dl)")
                 exit(-1)    
@@ -96,6 +106,12 @@ class ToolChainClassifier:
                 except:
                     from .classifier.DL.DLTrainerClassifier import DLTrainerClassifier
                 self.classifier = self.load_model(ROOT_DIR + "/classifier/saved_model/dl_model.pkl")
+            elif self.classifier_name == "gin":
+                self.classifier = self.load_model(ROOT_DIR + "/classifier/saved_model/gin_model.pkl")
+            elif self.classifier_name == "sage":
+                self.classifier = self.load_model(ROOT_DIR + "/classifier/saved_model/sage_model.pkl")
+            elif self.classifier_name == "ginjk":
+                self.classifier = self.load_model(ROOT_DIR + "/classifier/saved_model/ginjk_model.pkl")
             else:
                 self.log.info("Error: Unrecognize classifer (gspan|inria|wl|dl)")
                 exit(-1)   
@@ -156,6 +172,7 @@ def main():
         tc.classifier.get_stat_classifier()
     elif tc.mode == "detection":
         tc.detect()
+        tc.classifier.get_stat_classifier()
     
     elapsed_time = time.time() - tc.start_time
     tc.log.info("Total "+ tc.mode +" time: " + str(elapsed_time))
