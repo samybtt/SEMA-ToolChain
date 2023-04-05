@@ -1,0 +1,4 @@
+expl_method,family,nameFileShort,tot_syscalls,tot_uniq_syscalls,nb_instructions,covered_blocks,active,pause,ExcessLoop,timeout,elapsed_time
+CSTOCH,bancteian,00013b0490c8d79ad771da5d99544dc2,220,27,1349,452,5,86,0,60,112.38568067550659
+CSTOCH2,bancteian,00013b0490c8d79ad771da5d99544dc2,260,24,1305,465,5,101,0,60,110.37020826339722
+CSTOCHSET2,bancteian,00013b0490c8d79ad771da5d99544dc2,174,29,1736,0,5,103,0,60,110.05054807662964
