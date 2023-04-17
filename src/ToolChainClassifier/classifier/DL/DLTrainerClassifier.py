@@ -108,6 +108,8 @@ class DLTrainerClassifier(Classifier):
 			data_classify = DLDataset(path, self.mappath, self.apipath, self.vector_size)
 			self.test_dataset = DataLoader(data_classify,num_workers=ncpu)
 			self.stat_dataset = self.test_dataset
+
+			import pdb; pdb.set_trace()
 		
 		self.y_true = list()
 		self.y_pred = list()

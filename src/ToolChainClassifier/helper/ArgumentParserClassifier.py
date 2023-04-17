@@ -104,7 +104,7 @@ class ArgumentParserClassifier:
         sys.setrecursionlimit(2000)
         if args.classifier:
             class_method = args.classifier
-            if class_method.lower() not in ["gspan","inria","wl","dl"]:
+            if class_method.lower() not in ["gspan","inria","wl","dl","sage", "gin", "ginjk"]:
                 self.tcw.classifier_name = "wl"
             else:
                 self.tcw.classifier_name = class_method

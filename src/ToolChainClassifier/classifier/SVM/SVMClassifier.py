@@ -88,6 +88,7 @@ class SVMClassifier(Classifier):
                         else:
                             if len(G.node_labels) > 1:
                                 self.label.append(family)
+        # import pdb; pdb.set_trace()
         bar.finish()
     
     def split_dataset(self):
@@ -124,7 +125,8 @@ class SVMClassifier(Classifier):
             plt.ylabel('True Positive Rate')
             plt.xlabel('False Positive Rate')
             plt.show()
-            #plt.savefig(self.original_path + "figure_binary.png")
+            print("OOOOOOHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+            # plt.savefig(self.original_path + "figure_binary.png")
 
         else:
             conf = confusion_matrix(self.label,self.y_pred,labels=self.fam_idx)
@@ -149,6 +151,8 @@ class SVMClassifier(Classifier):
         plt.ylabel('True label')
         plt.xlabel('Predicted label')
         plt.show()
-        #plt.savefig(self.original_path + "figure.png")
+        print("AAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+        # plt.savefig(self.original_path + "figure.png")
+        plt.savefig("/home/sambt/Desktop/figure.png")
         return f_score
     
