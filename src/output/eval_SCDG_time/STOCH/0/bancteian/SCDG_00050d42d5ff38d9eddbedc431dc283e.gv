@@ -1,0 +1,91 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="6850628.main
+00050d42d5ff38d9eddbedc431dc283e"]
+	1 [label="4254480.GetModuleHandleW
+0"]
+	2 [label="6844434.SetThreadLocale
+1024"]
+	3 [label="4243965.InitializeCriticalSection
+6917004"]
+	4 [label="4243979.GetVersion
+"]
+	5 [label="4250188.GetSystemInfo
+2147417660"]
+	3 -> 5 [label="(0-->0)"]
+	6 [label="6844540.GetCommandLineW
+"]
+	7 [label="4214413.GetStartupInfoW
+2147417624"]
+	3 -> 7 [label="(0-->0)"]
+	5 -> 7 [label="(0-->0)"]
+	8 [label="6844560.GetACP
+"]
+	9 [label="6844580.GetCurrentThreadId
+"]
+	10 [label="4250204.GetVersion
+"]
+	11 [label="4276690.GetVersionExW
+2147417420"]
+	12 [label="4243306.GetModuleFileNameW
+4194304
+2147408904
+522"]
+	1 -> 12 [label="(0-->1)"]
+	13 [label="4248064.GetModuleFileNameW
+0
+2147408370
+261"]
+	14 [label="4215383.VirtualAlloc
+0
+1310704
+4096
+4"]
+	15 [label="4246338.RegOpenKeyExW
+2147483649
+4246772
+0
+983065
+2147408236"]
+	16 [label="4246372.RegOpenKeyExW
+2147483650
+4246772
+0
+983065
+2147408236"]
+	15 -> 16 [label="(2-->2)"]
+	15 -> 16 [label="(4-->4)"]
+	15 -> 16 [label="(5-->5)"]
+	17 [label="4245741.GetModuleHandleW
+4246160"]
+	18 [label="4245758.GetProcAddress
+9441320
+GetLongPathNameW"]
+	17 -> 18 [label="(0-->1)"]
+	19 [label="4245785.GetLongPathNameW
+2147407710
+2147406542
+261"]
+	13 -> 19 [label="(3-->3)"]
+	20 [label="4246556.RegQueryValueExW
+0
+2147407710
+0
+0
+0
+2147408232"]
+	19 -> 20 [label="(1-->2)"]
+	21 [label="4245683.CharNextW
+2147407716"]
+	22 [label="4246402.RegOpenKeyExW
+2147483649
+4246832
+0
+983065
+2147408236"]
+	15 -> 22 [label="(1-->1)"]
+	15 -> 22 [label="(4-->4)"]
+	16 -> 22 [label="(4-->4)"]
+	15 -> 22 [label="(5-->5)"]
+	16 -> 22 [label="(5-->5)"]
+}

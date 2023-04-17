@@ -1,0 +1,9 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="6850628.main
+00050d42d5ff38d9eddbedc431dc283e"]
+	1 [label="4254480.GetModuleHandleW
+0"]
+	2 [label="6844434.SetThreadLocale
+1024"]
+}

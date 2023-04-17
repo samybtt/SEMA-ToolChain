@@ -1,0 +1,179 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4208088.main
+30c2f230e5401b4b1ea8fb425dadf4e453575884303b9fa2066e6a91859f016e"]
+	1 [label="4208123.SetErrorMode
+32769"]
+	2 [label="4208129.GetVersion
+"]
+	3 [label="4221144.GetSystemDirectoryW
+2147416292
+260"]
+	4 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235284"]
+	5 [label="4221223.LoadLibraryExW
+2147416292
+0
+8"]
+	3 -> 5 [label="(1-->1)"]
+	6 [label="4208180.lstrlenA
+UXTHEME"]
+	7 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32789_32
+4236768
+4235286"]
+	4 -> 7 [label="(2-->2)"]
+	8 [label="4208180.lstrlenA
+USERENV"]
+	6 -> 8 [label="(0-->0)"]
+	9 [label="4221203.wsprintfW
+2147416292
+4236768
+4235286"]
+	3 -> 9 [label="(1-->1)"]
+	5 -> 9 [label="(1-->1)"]
+	4 -> 9 [label="(2-->2)"]
+	7 -> 9 [label="(2-->2)"]
+	7 -> 9 [label="(3-->3)"]
+	10 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235286"]
+	11 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235286"]
+	10 -> 11 [label="(2-->2)"]
+	10 -> 11 [label="(3-->3)"]
+	12 [label="4208180.lstrlenA
+SETUPAPI"]
+	5 -> 12 [label="(3-->0)"]
+	13 [label="4208180.lstrlenA
+APPHELP"]
+	6 -> 13 [label="(0-->0)"]
+	8 -> 13 [label="(0-->0)"]
+	14 [label="4208180.lstrlenA
+PROPSYS"]
+	6 -> 14 [label="(0-->0)"]
+	8 -> 14 [label="(0-->0)"]
+	13 -> 14 [label="(0-->0)"]
+	15 [label="4208180.lstrlenA
+DWMAPI"]
+	16 [label="4208180.lstrlenA
+CRYPTBASE"]
+	17 [label="4208180.lstrlenA
+OLEACC"]
+	15 -> 17 [label="(0-->0)"]
+	18 [label="4208180.lstrlenA
+CLBCATQ"]
+	6 -> 18 [label="(0-->0)"]
+	8 -> 18 [label="(0-->0)"]
+	13 -> 18 [label="(0-->0)"]
+	14 -> 18 [label="(0-->0)"]
+	19 [label="4208180.lstrlenA
+NTMARTA"]
+	6 -> 19 [label="(0-->0)"]
+	8 -> 19 [label="(0-->0)"]
+	13 -> 19 [label="(0-->0)"]
+	14 -> 19 [label="(0-->0)"]
+	18 -> 19 [label="(0-->0)"]
+	20 [label="4221251.GetModuleHandleA
+VERSION"]
+	21 [label="4221278.GetProcAddress
+6295604
+GetFileVersionInfoW"]
+	20 -> 21 [label="(0-->1)"]
+	22 [label="4221251.GetModuleHandleA
+SHFOLDER"]
+	23 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32776_32
+4236768
+4235284"]
+	9 -> 23 [label="(2-->2)"]
+	24 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32787_32
+4236768
+4235284"]
+	9 -> 24 [label="(2-->2)"]
+	23 -> 24 [label="(2-->2)"]
+	23 -> 24 [label="(3-->3)"]
+	25 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32784_32
+4236768
+4235284"]
+	9 -> 25 [label="(2-->2)"]
+	26 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235284"]
+	10 -> 26 [label="(2-->2)"]
+	27 [label="4221278.GetProcAddress
+6295612
+SHGetFolderPathW"]
+	22 -> 27 [label="(0-->1)"]
+	28 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32776_32
+4236768
+4235286"]
+	9 -> 28 [label="(2-->2)"]
+	9 -> 28 [label="(3-->3)"]
+	29 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32794_32
+4236768
+4235286"]
+	9 -> 29 [label="(2-->2)"]
+	28 -> 29 [label="(2-->2)"]
+	9 -> 29 [label="(3-->3)"]
+	28 -> 29 [label="(3-->3)"]
+	30 [label="4221251.GetModuleHandleA
+KERNEL32"]
+	31 [label="4221278.GetProcAddress
+6295592
+SetDefaultDllDirectories"]
+	30 -> 31 [label="(0-->1)"]
+	32 [label="4208166.SetDefaultDllDirectories
+3072"]
+	33 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32774_32
+4236768
+4235286"]
+	34 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32782_32
+4236768
+4235286"]
+	33 -> 34 [label="(2-->2)"]
+	33 -> 34 [label="(3-->3)"]
+	35 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32801_32
+4236768
+4235284"]
+	9 -> 35 [label="(2-->2)"]
+	23 -> 35 [label="(2-->2)"]
+	23 -> 35 [label="(3-->3)"]
+	36 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32794_32
+4236768
+4235284"]
+	9 -> 36 [label="(2-->2)"]
+	28 -> 36 [label="(2-->2)"]
+	37 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32789_32
+4236768
+4235284"]
+	4 -> 37 [label="(2-->2)"]
+	4 -> 37 [label="(3-->3)"]
+	38 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32783_32
+4236768
+4235286"]
+	9 -> 38 [label="(2-->2)"]
+	9 -> 38 [label="(3-->3)"]
+	39 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32813_32
+4236768
+4235284"]
+	9 -> 39 [label="(2-->2)"]
+	38 -> 39 [label="(2-->2)"]
+}

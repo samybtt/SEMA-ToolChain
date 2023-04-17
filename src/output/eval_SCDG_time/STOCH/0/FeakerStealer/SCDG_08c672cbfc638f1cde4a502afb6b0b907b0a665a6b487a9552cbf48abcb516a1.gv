@@ -1,0 +1,189 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4208088.main
+08c672cbfc638f1cde4a502afb6b0b907b0a665a6b487a9552cbf48abcb516a1"]
+	1 [label="4208123.SetErrorMode
+32769"]
+	2 [label="4208129.GetVersion
+"]
+	3 [label="4221144.GetSystemDirectoryW
+2147416292
+260"]
+	4 [label="4221203.wsprintfW
+2147416292
+4236768
+4235286"]
+	3 -> 4 [label="(1-->1)"]
+	5 [label="4221223.LoadLibraryExW
+2147416292
+0
+8"]
+	3 -> 5 [label="(1-->1)"]
+	4 -> 5 [label="(1-->1)"]
+	6 [label="4208180.lstrlenA
+UXTHEME"]
+	7 [label="4208180.lstrlenA
+USERENV"]
+	6 -> 7 [label="(0-->0)"]
+	8 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32789_32
+4236768
+4235284"]
+	4 -> 8 [label="(2-->2)"]
+	9 [label="4208180.lstrlenA
+SETUPAPI"]
+	5 -> 9 [label="(3-->0)"]
+	10 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235284"]
+	11 [label="4221251.GetModuleHandleA
+KERNEL32"]
+	12 [label="4221278.GetProcAddress
+6295592
+SetDefaultDllDirectories"]
+	11 -> 12 [label="(0-->1)"]
+	13 [label="4208166.SetDefaultDllDirectories
+3072"]
+	14 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32769_32
+4236768
+4235286"]
+	15 [label="4208180.lstrlenA
+APPHELP"]
+	6 -> 15 [label="(0-->0)"]
+	7 -> 15 [label="(0-->0)"]
+	16 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32776_32
+4236768
+4235284"]
+	4 -> 16 [label="(2-->2)"]
+	17 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32774_32
+4236768
+4235286"]
+	18 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32782_32
+4236768
+4235286"]
+	17 -> 18 [label="(2-->2)"]
+	17 -> 18 [label="(3-->3)"]
+	19 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235286"]
+	14 -> 19 [label="(2-->2)"]
+	14 -> 19 [label="(3-->3)"]
+	20 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32788_32
+4236768
+4235286"]
+	4 -> 20 [label="(2-->2)"]
+	14 -> 20 [label="(2-->2)"]
+	4 -> 20 [label="(3-->3)"]
+	14 -> 20 [label="(3-->3)"]
+	21 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32775_32
+4236768
+4235284"]
+	14 -> 21 [label="(2-->2)"]
+	22 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32788_32
+4236768
+4235284"]
+	4 -> 22 [label="(2-->2)"]
+	14 -> 22 [label="(2-->2)"]
+	23 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32791_32
+4236768
+4235284"]
+	4 -> 23 [label="(2-->2)"]
+	17 -> 23 [label="(2-->2)"]
+	24 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32789_32
+4236768
+4235286"]
+	4 -> 24 [label="(2-->2)"]
+	4 -> 24 [label="(3-->3)"]
+	25 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32800_32
+4236768
+4235286"]
+	4 -> 25 [label="(2-->2)"]
+	24 -> 25 [label="(2-->2)"]
+	4 -> 25 [label="(3-->3)"]
+	24 -> 25 [label="(3-->3)"]
+	26 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32817_32
+4236768
+4235286"]
+	4 -> 26 [label="(2-->2)"]
+	14 -> 26 [label="(2-->2)"]
+	4 -> 26 [label="(3-->3)"]
+	14 -> 26 [label="(3-->3)"]
+	27 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32819_32
+4236768
+4235286"]
+	4 -> 27 [label="(2-->2)"]
+	16 -> 27 [label="(2-->2)"]
+	4 -> 27 [label="(3-->3)"]
+	28 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32821_32
+4236768
+4235286"]
+	4 -> 28 [label="(2-->2)"]
+	8 -> 28 [label="(2-->2)"]
+	4 -> 28 [label="(3-->3)"]
+	29 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32803_32
+4236768
+4235286"]
+	4 -> 29 [label="(2-->2)"]
+	10 -> 29 [label="(2-->2)"]
+	4 -> 29 [label="(3-->3)"]
+	30 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32782_32
+4236768
+4235284"]
+	17 -> 30 [label="(2-->2)"]
+	31 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32800_32
+4236768
+4235284"]
+	4 -> 31 [label="(2-->2)"]
+	24 -> 31 [label="(2-->2)"]
+	32 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32817_32
+4236768
+4235284"]
+	4 -> 32 [label="(2-->2)"]
+	14 -> 32 [label="(2-->2)"]
+	33 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32819_32
+4236768
+4235284"]
+	4 -> 33 [label="(2-->2)"]
+	16 -> 33 [label="(2-->2)"]
+	16 -> 33 [label="(3-->3)"]
+	34 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32830_32
+4236768
+4235286"]
+	4 -> 34 [label="(2-->2)"]
+	14 -> 34 [label="(2-->2)"]
+	4 -> 34 [label="(3-->3)"]
+	14 -> 34 [label="(3-->3)"]
+	35 [label="4208180.lstrlenA
+PROPSYS"]
+	6 -> 35 [label="(0-->0)"]
+	7 -> 35 [label="(0-->0)"]
+	15 -> 35 [label="(0-->0)"]
+	36 [label="4221203.wsprintfW
+retval_GetSystemDirectoryW_32832_32
+4236768
+4235286"]
+	4 -> 36 [label="(2-->2)"]
+	16 -> 36 [label="(2-->2)"]
+	4 -> 36 [label="(3-->3)"]
+}

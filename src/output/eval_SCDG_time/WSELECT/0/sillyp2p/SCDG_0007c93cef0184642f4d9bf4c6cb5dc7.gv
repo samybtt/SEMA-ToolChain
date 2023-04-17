@@ -1,0 +1,163 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4204370.main
+0007c93cef0184642f4d9bf4c6cb5dc7"]
+	1 [label="4204408.GetVersion
+"]
+	2 [label="4204706.HeapCreate
+1
+4096
+0"]
+	3 [label="4204762.HeapAlloc
+1
+0
+320"]
+	2 -> 3 [label="(1-->1)"]
+	2 -> 3 [label="(0-->1)"]
+	4 [label="4206534.HeapAlloc
+1
+8
+16836"]
+	2 -> 4 [label="(1-->1)"]
+	2 -> 4 [label="(0-->1)"]
+	3 -> 4 [label="(1-->1)"]
+	5 [label="4206560.VirtualAlloc
+0
+1048576
+8192
+4"]
+	6 [label="4206700.VirtualAlloc
+3222798336
+32768
+4096
+4"]
+	5 -> 6 [label="(0-->1)"]
+	2 -> 6 [label="(2-->3)"]
+	5 -> 6 [label="(4-->4)"]
+	5 -> 6 [label="(0-->0)"]
+	7 [label="4214290.GetStartupInfoA
+2147417580"]
+	8 [label="4214545.GetStdHandle
+4294967286"]
+	9 [label="4214559.GetFileType
+1000"]
+	8 -> 9 [label="(0-->1)"]
+	10 [label="4214545.GetStdHandle
+4294967285"]
+	11 [label="4214559.GetFileType
+1001"]
+	10 -> 11 [label="(0-->1)"]
+	12 [label="4214545.GetStdHandle
+4294967284"]
+	13 [label="4214559.GetFileType
+1002"]
+	12 -> 13 [label="(0-->1)"]
+	14 [label="4214614.SetHandleCount
+32"]
+	15 [label="4204486.GetCommandLineA
+"]
+	16 [label="4213922.GetEnvironmentStringsW
+"]
+	17 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+20
+0
+0
+0
+0"]
+	16 -> 17 [label="(0-->3)"]
+	18 [label="4214101.FreeEnvironmentStringsW
+3221225480"]
+	16 -> 18 [label="(0-->1)"]
+	17 -> 18 [label="(3-->1)"]
+	19 [label="4218515.GetACP
+"]
+	20 [label="4213341.GetModuleFileNameA
+0
+0007c93cef0184642f4d9bf4c6cb5dc7
+260"]
+	0 -> 20 [label="(1-->2)"]
+	14 -> 20 [label="(1-->0)"]
+	21 [label="4219955.HeapAlloc
+1
+8
+2048"]
+	2 -> 21 [label="(1-->1)"]
+	2 -> 21 [label="(0-->1)"]
+	3 -> 21 [label="(1-->1)"]
+	4 -> 21 [label="(1-->1)"]
+	4 -> 21 [label="(2-->2)"]
+	22 [label="4204529.GetStartupInfoA
+2147417676"]
+	7 -> 22 [label="(0-->0)"]
+	23 [label="4204564.GetModuleHandleA
+0"]
+	24 [label="4217563.CreateFileA
+C:\Gusanillo QueBonito@Compartir.es
+2147483648
+3
+2147417480
+3
+128
+0"]
+	25 [label="4217576.GetFileType
+3"]
+	24 -> 25 [label="(3-->1)"]
+	24 -> 25 [label="(5-->1)"]
+	24 -> 25 [label="(0-->1)"]
+	26 [label="4206971.CloseHandle
+3"]
+	24 -> 26 [label="(3-->1)"]
+	24 -> 26 [label="(5-->1)"]
+	24 -> 26 [label="(0-->1)"]
+	25 -> 26 [label="(1-->1)"]
+	27 [label="4206981.GetLastError
+"]
+	28 [label="4198492.MessageBoxA
+0
+4231888
+Ole!
+32"]
+	14 -> 28 [label="(1-->4)"]
+	20 -> 28 [label="(0-->4)"]
+	2 -> 28 [label="(1-->0)"]
+	2 -> 28 [label="(0-->0)"]
+	3 -> 28 [label="(1-->0)"]
+	4 -> 28 [label="(1-->0)"]
+	21 -> 28 [label="(1-->0)"]
+	29 [label="4217587.CloseHandle
+3"]
+	24 -> 29 [label="(3-->1)"]
+	24 -> 29 [label="(5-->1)"]
+	24 -> 29 [label="(0-->1)"]
+	25 -> 29 [label="(1-->1)"]
+	30 [label="4217593.GetLastError
+"]
+	31 [label="4199323.GetModuleHandleA
+0"]
+	23 -> 31 [label="(0-->0)"]
+	32 [label="4199330.GetModuleFileNameA
+4194304
+2147415548
+2048"]
+	23 -> 32 [label="(0-->1)"]
+	31 -> 32 [label="(0-->1)"]
+	21 -> 32 [label="(3-->3)"]
+	24 -> 32 [label="(3-->0)"]
+	24 -> 32 [label="(5-->0)"]
+	24 -> 32 [label="(0-->0)"]
+	25 -> 32 [label="(1-->0)"]
+	29 -> 32 [label="(1-->0)"]
+	33 [label="4199363.GetWindowsDirectoryA
+C:\Windows
+2048"]
+	21 -> 33 [label="(3-->2)"]
+	32 -> 33 [label="(3-->2)"]
+	34 [label="4221580.CreateDirectoryA
+C:/Windows/Intelx386
+0"]
+	35 [label="4221590.GetLastError
+"]
+}

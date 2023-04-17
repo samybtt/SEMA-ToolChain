@@ -1,0 +1,122 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4249708.main
+002059a0a55742617beae3281e25c5e3"]
+	1 [label="4212820.GetModuleHandleA
+0"]
+	2 [label="4207289.GetKeyboardType
+0"]
+	3 [label="4212580.GetCommandLineA
+"]
+	4 [label="4198722.GetStartupInfoA
+2147417628"]
+	5 [label="4212600.GetCurrentThreadId
+"]
+	6 [label="4216002.GetSystemDirectoryA
+C:\Windows\System32
+256"]
+	7 [label="4200510.InitializeCriticalSection
+4257200"]
+	4 -> 7 [label="(0-->0)"]
+	8 [label="4200571.LocalAlloc
+0
+4088"]
+	9 [label="4199279.VirtualAlloc
+0
+1048576
+8192
+1"]
+	10 [label="4198831.LocalAlloc
+0
+1604"]
+	11 [label="4199745.VirtualAlloc
+3222798336
+16384
+4096
+4"]
+	9 -> 11 [label="(0-->1)"]
+	2 -> 11 [label="(0-->4)"]
+	9 -> 11 [label="(0-->0)"]
+	12 [label="4204380.GetModuleFileNameA
+0
+002059a0a55742617beae3281e25c5e3
+261"]
+	0 -> 12 [label="(1-->2)"]
+	13 [label="4214387.CopyFileA
+002059a0a55742617beae3281e25c5e3
+C:\Windows\System32\sIRC4.exe
+0"]
+	0 -> 13 [label="(1-->1)"]
+	12 -> 13 [label="(2-->1)"]
+	14 [label="4213082.CreateMutexA
+0
+0
+sIRC4"]
+	9 -> 14 [label="(4-->0)"]
+	15 [label="4199874.VirtualFree
+3222798336
+16384
+16384"]
+	9 -> 15 [label="(0-->1)"]
+	11 -> 15 [label="(1-->1)"]
+	11 -> 15 [label="(0-->1)"]
+	11 -> 15 [label="(2-->2)"]
+	11 -> 15 [label="(2-->3)"]
+	16 [label="4199552.VirtualFree
+3222798336
+0
+32768"]
+	9 -> 16 [label="(0-->1)"]
+	11 -> 16 [label="(1-->1)"]
+	11 -> 16 [label="(0-->1)"]
+	15 -> 16 [label="(1-->1)"]
+	17 [label="4209664.MessageBoxA
+0
+Runtime error 204 at 00402514
+Error
+0"]
+	9 -> 17 [label="(4-->0)"]
+	14 -> 17 [label="(0-->0)"]
+	18 [label="4204932.CreateFileA
+C:\marijuana.txt
+1073741824
+1
+0
+2
+128
+0"]
+	9 -> 18 [label="(4-->3)"]
+	14 -> 18 [label="(0-->3)"]
+	19 [label="4205165.GetFileType
+3"]
+	18 -> 19 [label="(0-->1)"]
+	20 [label="4205192.CloseHandle
+3"]
+	18 -> 20 [label="(0-->1)"]
+	19 -> 20 [label="(1-->1)"]
+	21 [label="4209664.MessageBoxA
+0
+Runtime error 105 at 0040D8A4
+Error
+0"]
+	9 -> 21 [label="(4-->0)"]
+	14 -> 21 [label="(0-->0)"]
+	18 -> 21 [label="(3-->0)"]
+	22 [label="4204719.WriteFile
+3
+31ff%3vcc%%112c23J33c22322332crc3cr233J2fJffJv%1[J33JccJccfcc2fc2JfJ223rrcrrJ2cc3f2r3r233Jcf2rf3ffJfrJrr3f2]fr[2rvJ23%1JJJc1fc22
+128
+2147417712
+0"]
+	18 -> 22 [label="(0-->1)"]
+	19 -> 22 [label="(1-->1)"]
+	18 -> 22 [label="(6-->3)"]
+	9 -> 22 [label="(4-->0)"]
+	14 -> 22 [label="(0-->0)"]
+	18 -> 22 [label="(3-->0)"]
+	23 [label="4214436.WritePrivateProfileStringA
+boot
+shell
+Explorer.exe sIRC4.exe
+system.ini"]
+}

@@ -1,0 +1,130 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4213792.main
+01248ce9d9ae6da24a4887b7475baeb5"]
+	1 [label="4214265.HeapCreate
+1
+4096
+0"]
+	2 [label="4218869.GetSystemTimeAsFileTime
+4288292"]
+	3 [label="4214116.VirtualAlloc
+0
+33554432
+8192
+1"]
+	1 -> 3 [label="(1-->4)"]
+	1 -> 3 [label="(0-->4)"]
+	4 [label="4214147.VirtualQuery
+
+2147417352
+28"]
+	5 [label="4214333.HeapAlloc
+1
+1
+256"]
+	1 -> 5 [label="(1-->1)"]
+	1 -> 5 [label="(0-->1)"]
+	3 -> 5 [label="(4-->1)"]
+	1 -> 5 [label="(1-->2)"]
+	1 -> 5 [label="(0-->2)"]
+	3 -> 5 [label="(4-->2)"]
+	6 [label="4219047.GetStartupInfoA
+2147417564"]
+	2 -> 6 [label="(0-->0)"]
+	7 [label="4219368.GetStdHandle
+4294967286"]
+	8 [label="4219392.GetFileType
+1000"]
+	7 -> 8 [label="(0-->1)"]
+	9 [label="4219368.GetStdHandle
+4294967285"]
+	10 [label="4219392.GetFileType
+1001"]
+	9 -> 10 [label="(0-->1)"]
+	11 [label="4219368.GetStdHandle
+4294967284"]
+	12 [label="4219392.GetFileType
+1002"]
+	11 -> 12 [label="(0-->1)"]
+	13 [label="4219405.GetCurrentProcess
+"]
+	14 [label="4219414.GetCurrentProcess
+"]
+	15 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32781_32
+1002
+retval_GetCurrentProcess_32782_32
+2147417556
+0
+1
+2"]
+	11 -> 15 [label="(0-->2)"]
+	12 -> 15 [label="(1-->2)"]
+	1 -> 15 [label="(1-->6)"]
+	1 -> 15 [label="(0-->6)"]
+	3 -> 15 [label="(4-->6)"]
+	5 -> 15 [label="(1-->6)"]
+	5 -> 15 [label="(2-->6)"]
+	16 [label="4219524.SetHandleCount
+32"]
+	17 [label="4220059.GetCommandLineA
+"]
+	18 [label="4214333.HeapAlloc
+1
+1
+17"]
+	1 -> 18 [label="(1-->1)"]
+	1 -> 18 [label="(0-->1)"]
+	3 -> 18 [label="(4-->1)"]
+	5 -> 18 [label="(1-->1)"]
+	5 -> 18 [label="(2-->1)"]
+	15 -> 18 [label="(6-->1)"]
+	1 -> 18 [label="(1-->2)"]
+	1 -> 18 [label="(0-->2)"]
+	3 -> 18 [label="(4-->2)"]
+	5 -> 18 [label="(1-->2)"]
+	5 -> 18 [label="(2-->2)"]
+	15 -> 18 [label="(6-->2)"]
+	19 [label="4220217.GetEnvironmentStrings
+"]
+	20 [label="4214333.HeapAlloc
+1
+1
+37"]
+	1 -> 20 [label="(1-->1)"]
+	1 -> 20 [label="(0-->1)"]
+	3 -> 20 [label="(4-->1)"]
+	5 -> 20 [label="(1-->1)"]
+	5 -> 20 [label="(2-->1)"]
+	15 -> 20 [label="(6-->1)"]
+	18 -> 20 [label="(1-->1)"]
+	18 -> 20 [label="(2-->1)"]
+	1 -> 20 [label="(1-->2)"]
+	1 -> 20 [label="(0-->2)"]
+	3 -> 20 [label="(4-->2)"]
+	5 -> 20 [label="(1-->2)"]
+	5 -> 20 [label="(2-->2)"]
+	15 -> 20 [label="(6-->2)"]
+	18 -> 20 [label="(1-->2)"]
+	18 -> 20 [label="(2-->2)"]
+	21 [label="4220387.FreeEnvironmentStringsA
+3221225480"]
+	19 -> 21 [label="(0-->1)"]
+	22 [label="4213922.GetStartupInfoA
+2147417676"]
+	2 -> 22 [label="(0-->0)"]
+	6 -> 22 [label="(0-->0)"]
+	23 [label="4213930.GetModuleHandleA
+0"]
+	24 [label="4220401.GetCommandLineA
+"]
+	17 -> 24 [label="(0-->0)"]
+	25 [label="4201373.GetLocalTime
+2147417604"]
+	2 -> 25 [label="(0-->0)"]
+	6 -> 25 [label="(0-->0)"]
+	22 -> 25 [label="(0-->0)"]
+	26 [label="4201674.GetVersionExA
+2147417444"]
+}

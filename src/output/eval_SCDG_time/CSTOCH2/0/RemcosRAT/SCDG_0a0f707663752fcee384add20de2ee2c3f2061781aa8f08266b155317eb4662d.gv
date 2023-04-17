@@ -1,0 +1,181 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4589636.main
+0a0f707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	1 [label="4220400.GetModuleHandleA
+0"]
+	2 [label="4208181.GetKeyboardType
+0"]
+	3 [label="4587628.GetCommandLineA
+"]
+	4 [label="4199190.GetStartupInfoA
+2147417464"]
+	5 [label="4587648.GetACP
+"]
+	6 [label="4587658.GetCurrentThreadId
+"]
+	7 [label="4217178.GetModuleFileNameA
+4194304
+.ZM
+261"]
+	1 -> 7 [label="(0-->1)"]
+	8 [label="4217788.GetModuleFileNameA
+0
+0a0f707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d
+261"]
+	0 -> 8 [label="(1-->2)"]
+	7 -> 8 [label="(3-->3)"]
+	9 [label="4217818.RegOpenKeyExA
+2147483649
+Software\Borland\Locales
+0
+983065
+2147413080"]
+	10 [label="4217848.RegOpenKeyExA
+2147483650
+Software\Borland\Locales
+0
+983065
+2147413080"]
+	9 -> 10 [label="(2-->2)"]
+	9 -> 10 [label="(4-->4)"]
+	9 -> 10 [label="(5-->5)"]
+	11 [label="4217337.GetModuleHandleA
+kernel32.dll"]
+	12 [label="4217360.GetProcAddress
+6295592
+GetLongPathNameA"]
+	11 -> 12 [label="(0-->1)"]
+	13 [label="4217387.GetLongPathNameA
+0a0f707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d
+
+261"]
+	0 -> 13 [label="(1-->1)"]
+	8 -> 13 [label="(2-->1)"]
+	7 -> 13 [label="(3-->3)"]
+	8 -> 13 [label="(3-->3)"]
+	14 [label="4217508.lstrcpynA
+0a
+0a0f707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d
+3"]
+	0 -> 14 [label="(1-->2)"]
+	8 -> 14 [label="(2-->2)"]
+	13 -> 14 [label="(1-->2)"]
+	7 -> 14 [label="(0-->3)"]
+	15 [label="4217283.CharNextA
+f707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	16 [label="4217283.CharNextA
+707663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	15 -> 16 [label="(0-->1)"]
+	17 [label="4217283.CharNextA
+07663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	16 -> 17 [label="(0-->1)"]
+	18 [label="4217283.CharNextA
+7663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	17 -> 18 [label="(0-->1)"]
+	19 [label="4217283.CharNextA
+663752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	18 -> 19 [label="(0-->1)"]
+	20 [label="4217283.CharNextA
+63752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	19 -> 20 [label="(0-->1)"]
+	21 [label="4217283.CharNextA
+3752fcee384add20de2ee2c3f2061781aa8f08266b155317eb4662d"]
+	20 -> 21 [label="(0-->1)"]
+	22 [label="4217878.RegOpenKeyExA
+2147483649
+Software\Borland\Delphi\Locales
+0
+983065
+2147413080"]
+	9 -> 22 [label="(1-->1)"]
+	9 -> 22 [label="(4-->4)"]
+	10 -> 22 [label="(4-->4)"]
+	9 -> 22 [label="(5-->5)"]
+	10 -> 22 [label="(5-->5)"]
+	23 [label="4217408.lstrcpynA
+
+
+261"]
+	7 -> 23 [label="(3-->3)"]
+	8 -> 23 [label="(3-->3)"]
+	13 -> 23 [label="(3-->3)"]
+	24 [label="4217951.RegQueryValueExA
+4217183
+
+0
+0
+2147413070
+2147413064"]
+	25 [label="4217981.RegQueryValueExA
+4217183
+
+0
+0
+2147413070
+2147413064"]
+	24 -> 25 [label="(1-->1)"]
+	24 -> 25 [label="(5-->5)"]
+	24 -> 25 [label="(6-->6)"]
+	26 [label="4218015.RegCloseKey
+4217183"]
+	24 -> 26 [label="(1-->1)"]
+	25 -> 26 [label="(1-->1)"]
+	27 [label="4218044.lstrcpynA
+.ZM
+.ZM
+261"]
+	7 -> 27 [label="(2-->1)"]
+	7 -> 27 [label="(2-->2)"]
+	7 -> 27 [label="(3-->3)"]
+	8 -> 27 [label="(3-->3)"]
+	13 -> 27 [label="(3-->3)"]
+	23 -> 27 [label="(3-->3)"]
+	7 -> 27 [label="(2-->0)"]
+	28 [label="4218057.GetThreadLocale
+"]
+	29 [label="4218063.GetLocaleInfoA
+retval_GetThreadLocale_32793_32
+3
+
+5"]
+	7 -> 29 [label="(0-->2)"]
+	30 [label="4220050.LoadStringA
+4194304
+65503
+Ht@
+4096"]
+	1 -> 30 [label="(0-->1)"]
+	7 -> 30 [label="(1-->1)"]
+	31 [label="4200030.VirtualAlloc
+0
+1310720
+4096
+4"]
+	30 -> 31 [label="(4-->3)"]
+	2 -> 31 [label="(0-->4)"]
+	32 [label="4218063.GetLocaleInfoA
+retval_GetThreadLocale_32791_32
+3
+
+5"]
+	7 -> 32 [label="(0-->2)"]
+	33 [label="4200224.VirtualAlloc
+0
+retval_LoadStringA_32801_32
+1052672
+4"]
+	2 -> 33 [label="(0-->4)"]
+	34 [label="4218063.GetLocaleInfoA
+retval_GetThreadLocale_32790_32
+3
+
+5"]
+	7 -> 34 [label="(0-->2)"]
+	35 [label="4218063.GetLocaleInfoA
+retval_GetThreadLocale_32796_32
+3
+
+5"]
+	7 -> 35 [label="(0-->2)"]
+}

@@ -1,0 +1,137 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4252464.main
+034746c0102d77408b3dbeeb233c9743"]
+	1 [label="4217755.GetModuleHandleA
+0"]
+	2 [label="4217699.GetModuleFileNameA
+4194304
+PZM
+261"]
+	1 -> 2 [label="(0-->1)"]
+	3 [label="4212692.GetModuleFileNameA
+0
+034746c0102d77408b3dbeeb233c9743
+261"]
+	0 -> 3 [label="(1-->2)"]
+	2 -> 3 [label="(3-->3)"]
+	4 [label="4212722.RegOpenKeyExA
+2147483649
+Software\Borland\Locales
+0
+983103
+2147417456"]
+	5 [label="4212266.GetModuleHandleA
+kernel32.dll"]
+	6 [label="4212283.GetProcAddress
+6295592
+GetLongPathNameA"]
+	5 -> 6 [label="(0-->1)"]
+	7 [label="4212313.GetLongPathNameA
+034746c0102d77408b3dbeeb233c9743
+
+261"]
+	0 -> 7 [label="(1-->1)"]
+	3 -> 7 [label="(2-->1)"]
+	2 -> 7 [label="(3-->3)"]
+	3 -> 7 [label="(3-->3)"]
+	8 [label="4212331.lstrcpyA
+
+"]
+	9 [label="4212810.RegQueryValueExA
+4217704
+
+0
+0
+2147417446
+2147417440"]
+	10 [label="4212862.RegCloseKey
+4217704"]
+	9 -> 10 [label="(1-->1)"]
+	11 [label="4212886.lstrcpyA
+PZM
+PZM"]
+	2 -> 11 [label="(2-->1)"]
+	2 -> 11 [label="(2-->2)"]
+	2 -> 11 [label="(2-->0)"]
+	12 [label="4212899.GetThreadLocale
+"]
+	13 [label="4212905.GetLocaleInfoA
+retval_GetThreadLocale_32779_32
+3
+
+5"]
+	2 -> 13 [label="(0-->2)"]
+	14 [label="4204949.GetKeyboardType
+0"]
+	15 [label="4217428.GetCommandLineA
+"]
+	16 [label="4198942.GetStartupInfoA
+2147417620"]
+	17 [label="4217448.GetCurrentThreadId
+"]
+	18 [label="4213585.LoadStringA
+4194304
+65493
+
+1024"]
+	1 -> 18 [label="(0-->1)"]
+	2 -> 18 [label="(1-->1)"]
+	19 [label="4200730.InitializeCriticalSection
+4260912"]
+	16 -> 19 [label="(0-->0)"]
+	20 [label="4200791.LocalAlloc
+0
+4088"]
+	21 [label="4212840.RegQueryValueExA
+4217704
+
+0
+0
+2147417446
+2147417440"]
+	9 -> 21 [label="(1-->1)"]
+	9 -> 21 [label="(5-->5)"]
+	9 -> 21 [label="(6-->6)"]
+	22 [label="4212905.GetLocaleInfoA
+retval_GetThreadLocale_32782_32
+3
+
+5"]
+	2 -> 22 [label="(0-->2)"]
+	23 [label="4212752.RegOpenKeyExA
+2147483649
+Software\Borland\Delphi\Locales
+0
+983103
+2147417456"]
+	4 -> 23 [label="(1-->1)"]
+	4 -> 23 [label="(4-->4)"]
+	4 -> 23 [label="(5-->5)"]
+	24 [label="4212905.GetLocaleInfoA
+retval_GetThreadLocale_32784_32
+3
+
+5"]
+	2 -> 24 [label="(0-->2)"]
+	25 [label="4213585.LoadStringA
+4194304
+65492
+
+1024"]
+	1 -> 25 [label="(0-->1)"]
+	2 -> 25 [label="(1-->1)"]
+	18 -> 25 [label="(1-->1)"]
+	18 -> 25 [label="(4-->4)"]
+	26 [label="4213585.LoadStringA
+4194304
+65490
+
+1024"]
+	1 -> 26 [label="(0-->1)"]
+	2 -> 26 [label="(1-->1)"]
+	18 -> 26 [label="(1-->1)"]
+	25 -> 26 [label="(1-->1)"]
+	18 -> 26 [label="(4-->4)"]
+	25 -> 26 [label="(4-->4)"]
+}

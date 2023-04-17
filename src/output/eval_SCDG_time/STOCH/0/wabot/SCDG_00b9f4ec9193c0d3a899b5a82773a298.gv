@@ -1,0 +1,147 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4249708.main
+00b9f4ec9193c0d3a899b5a82773a298"]
+	1 [label="4212820.GetModuleHandleA
+0"]
+	2 [label="4207289.GetKeyboardType
+0"]
+	3 [label="4212580.GetCommandLineA
+"]
+	4 [label="4198722.GetStartupInfoA
+2147417628"]
+	5 [label="4212600.GetCurrentThreadId
+"]
+	6 [label="4216002.GetSystemDirectoryA
+C:\Windows\System32
+256"]
+	7 [label="4200510.InitializeCriticalSection
+4257200"]
+	4 -> 7 [label="(0-->0)"]
+	8 [label="4200571.LocalAlloc
+0
+4088"]
+	9 [label="4199279.VirtualAlloc
+0
+1048576
+8192
+1"]
+	10 [label="4198831.LocalAlloc
+0
+1604"]
+	11 [label="4199745.VirtualAlloc
+3222798336
+16384
+4096
+4"]
+	9 -> 11 [label="(0-->1)"]
+	2 -> 11 [label="(0-->4)"]
+	9 -> 11 [label="(0-->0)"]
+	12 [label="4204380.GetModuleFileNameA
+0
+00b9f4ec9193c0d3a899b5a82773a298
+261"]
+	0 -> 12 [label="(1-->2)"]
+	13 [label="4214387.CopyFileA
+00b9f4ec9193c0d3a899b5a82773a298
+C:\Windows\System32\sIRC4.exe
+0"]
+	0 -> 13 [label="(1-->1)"]
+	12 -> 13 [label="(2-->1)"]
+	14 [label="4214436.WritePrivateProfileStringA
+boot
+shell
+Explorer.exe sIRC4.exe
+system.ini"]
+	15 [label="4213082.CreateMutexA
+0
+0
+sIRC4"]
+	9 -> 15 [label="(4-->0)"]
+	16 [label="4199874.VirtualFree
+3222798336
+16384
+16384"]
+	9 -> 16 [label="(0-->1)"]
+	11 -> 16 [label="(1-->1)"]
+	11 -> 16 [label="(0-->1)"]
+	11 -> 16 [label="(2-->2)"]
+	11 -> 16 [label="(2-->3)"]
+	17 [label="4199552.VirtualFree
+3222798336
+0
+32768"]
+	9 -> 17 [label="(0-->1)"]
+	11 -> 17 [label="(1-->1)"]
+	11 -> 17 [label="(0-->1)"]
+	16 -> 17 [label="(1-->1)"]
+	18 [label="4204932.CreateFileA
+C:\marijuana.txt
+1073741824
+1
+0
+2
+128
+0"]
+	9 -> 18 [label="(4-->3)"]
+	15 -> 18 [label="(0-->3)"]
+	19 [label="4205165.GetFileType
+3"]
+	18 -> 19 [label="(0-->1)"]
+	20 [label="4204719.WriteFile
+3
+31ff%3vcc%%112c23J33c22322332crc3cr233J2fJffJv%1[J33JccJccfcc2fc2JfJ223rrcrrJ2cc3f2r3r233Jcf2rf3ffJfrJrr3f2]fr[2rvJ23%1JJJc1fc22
+128
+2147417712
+0"]
+	18 -> 20 [label="(0-->1)"]
+	19 -> 20 [label="(1-->1)"]
+	18 -> 20 [label="(6-->3)"]
+	9 -> 20 [label="(4-->0)"]
+	15 -> 20 [label="(0-->0)"]
+	18 -> 20 [label="(3-->0)"]
+	21 [label="4204719.WriteFile
+3
+%J[rr]ff2rr2%ff32f2J23r323223J2rc333cc2fJJ3JJ2ccrfrJr2r3JJrcfc322f3cr3rcJ33f33rcrrrcf3cfrffJ2cff2r22fJJf3rr33rJ2f3cJJc33r3crrcf3
+128
+2147417712
+0"]
+	18 -> 21 [label="(0-->1)"]
+	19 -> 21 [label="(1-->1)"]
+	20 -> 21 [label="(1-->1)"]
+	18 -> 21 [label="(6-->3)"]
+	20 -> 21 [label="(3-->3)"]
+	20 -> 21 [label="(4-->4)"]
+	9 -> 21 [label="(4-->0)"]
+	15 -> 21 [label="(0-->0)"]
+	18 -> 21 [label="(3-->0)"]
+	20 -> 21 [label="(0-->0)"]
+	22 [label="4204719.WriteFile
+3
+3cJJrffr2fJ2f22fc3ffrrJ32cJf
+]2]3r]31111rfr2crcJ3[%%]]vJf3233Jr22fJrvvv[v[Jc3Jc3rcccrfJ3ccfffJ3c32Jfrc2ffr3cJ222JcfrJrJ322r2ff3
+128
+2147417712
+0"]
+	18 -> 22 [label="(0-->1)"]
+	19 -> 22 [label="(1-->1)"]
+	20 -> 22 [label="(1-->1)"]
+	21 -> 22 [label="(1-->1)"]
+	18 -> 22 [label="(6-->3)"]
+	20 -> 22 [label="(3-->3)"]
+	21 -> 22 [label="(3-->3)"]
+	20 -> 22 [label="(4-->4)"]
+	21 -> 22 [label="(4-->4)"]
+	9 -> 22 [label="(4-->0)"]
+	15 -> 22 [label="(0-->0)"]
+	18 -> 22 [label="(3-->0)"]
+	20 -> 22 [label="(0-->0)"]
+	21 -> 22 [label="(0-->0)"]
+	23 [label="4209664.MessageBoxA
+0
+Runtime error 204 at 00402514
+Error
+0"]
+	9 -> 23 [label="(4-->0)"]
+	15 -> 23 [label="(0-->0)"]
+}

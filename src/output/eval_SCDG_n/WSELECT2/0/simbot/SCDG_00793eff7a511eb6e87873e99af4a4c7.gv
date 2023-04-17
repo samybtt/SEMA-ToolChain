@@ -1,0 +1,478 @@
+// Global SCDG with merge call
+digraph {
+	0 [label="4198610.main
+00793eff7a511eb6e87873e99af4a4c7"]
+	1 [label="4199763.GetModuleHandleA
+0"]
+	2 [label="4199795.InitializeCriticalSection
+4211528"]
+	3 [label="4199816.VirtualProtect
+4194644
+4
+64
+2147417172"]
+	4 [label="4199834.VirtualProtect
+4194644
+4
+4
+2147417172"]
+	3 -> 4 [label="(1-->1)"]
+	3 -> 4 [label="(2-->2)"]
+	3 -> 4 [label="(2-->3)"]
+	3 -> 4 [label="(4-->4)"]
+	3 -> 4 [label="(0-->0)"]
+	5 [label="4199837.EnterCriticalSection
+4211528"]
+	2 -> 5 [label="(1-->1)"]
+	2 -> 5 [label="(0-->0)"]
+	6 [label="4199852.lstrcpyA
+kernel32
+kernel32"]
+	7 [label="4199870.lstrcatA
+kernel32.
+."]
+	8 [label="4199876.lstrcatA
+kernel32.BeginUpdateResourceA
+BeginUpdateResourceA"]
+	9 [label="4199886.GetProcAddress
+4194304
+szFile"]
+	1 -> 9 [label="(0-->1)"]
+	10 [label="4199895.LeaveCriticalSection
+4211528"]
+	2 -> 10 [label="(1-->1)"]
+	5 -> 10 [label="(1-->1)"]
+	2 -> 10 [label="(0-->0)"]
+	5 -> 10 [label="(0-->0)"]
+	11 [label="4199876.lstrcatA
+kernel32.UpdateResourceA
+UpdateResourceA"]
+	12 [label="4199876.lstrcatA
+kernel32.EndUpdateResourceA
+EndUpdateResourceA"]
+	13 [label="4200153.FindResourceA
+0
+
+RT_RCDATA"]
+	2 -> 13 [label="(0-->0)"]
+	5 -> 13 [label="(0-->0)"]
+	10 -> 13 [label="(0-->0)"]
+	14 [label="4200168.SizeofResource
+0
+retval_FindResourceA_32767_32"]
+	2 -> 14 [label="(0-->0)"]
+	5 -> 14 [label="(0-->0)"]
+	10 -> 14 [label="(0-->0)"]
+	13 -> 14 [label="(0-->0)"]
+	15 [label="4200191.LoadResource
+0
+retval_FindResourceA_32767_32"]
+	14 -> 15 [label="(2-->2)"]
+	16 [label="4200198.LockResource
+retval_LoadResource_32769_32"]
+	17 [label="4198891.GetModuleFileNameA
+0
+00793eff7a511eb6e87873e99af4a4c7
+260"]
+	0 -> 17 [label="(1-->2)"]
+	18 [label="4200352.OpenSCManagerA
+0
+0
+2147483648"]
+	19 [label="4200393.EnumServicesStatusA
+retval_OpenSCManagerA_32772_32
+48
+2
+2147397664
+18432
+2147416096
+2147416104
+2147416100"]
+	20 [label="4200245.CryptAcquireContextA
+2147397644
+0
+0
+1
+0"]
+	3 -> 20 [label="(0-->4)"]
+	4 -> 20 [label="(0-->4)"]
+	21 [label="4200289.CryptGenRandom
+0
+4
+2147397640"]
+	3 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(2-->2)"]
+	4 -> 21 [label="(3-->2)"]
+	22 [label="4200691.wsprintfA
+%s
+%s
+4211128"]
+	23 [label="4200700.GetTickCount
+"]
+	24 [label="4200454.lstrcpyA
+
+0"]
+	25 [label="4200461.CloseServiceHandle
+retval_OpenSCManagerA_32772_32"]
+	26 [label="4200735.ExpandEnvironmentStringsA
+%tmp%
+
+260"]
+	17 -> 26 [label="(3-->3)"]
+	27 [label="4200748.PathRemoveFileSpecA
+"]
+	28 [label="4200773.lstrcpyA
+00793eff7a511eb6e87873e99af4a4c7
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 28 [label="(1-->1)"]
+	17 -> 28 [label="(2-->1)"]
+	0 -> 28 [label="(1-->2)"]
+	17 -> 28 [label="(2-->2)"]
+	0 -> 28 [label="(1-->0)"]
+	17 -> 28 [label="(2-->0)"]
+	29 [label="4200782.PathRemoveFileSpecA
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 29 [label="(1-->1)"]
+	17 -> 29 [label="(2-->1)"]
+	28 -> 29 [label="(1-->1)"]
+	28 -> 29 [label="(2-->1)"]
+	28 -> 29 [label="(0-->1)"]
+	30 [label="4200803.GetLongPathNameA
+
+
+260"]
+	17 -> 30 [label="(3-->3)"]
+	26 -> 30 [label="(3-->3)"]
+	31 [label="4200824.GetLongPathNameA
+00793eff7a511eb6e87873e99af4a4c7
+00793eff7a511eb6e87873e99af4a4c7
+260"]
+	0 -> 31 [label="(1-->1)"]
+	17 -> 31 [label="(2-->1)"]
+	28 -> 31 [label="(1-->1)"]
+	28 -> 31 [label="(2-->1)"]
+	28 -> 31 [label="(0-->1)"]
+	29 -> 31 [label="(1-->1)"]
+	0 -> 31 [label="(1-->2)"]
+	17 -> 31 [label="(2-->2)"]
+	28 -> 31 [label="(1-->2)"]
+	28 -> 31 [label="(2-->2)"]
+	28 -> 31 [label="(0-->2)"]
+	29 -> 31 [label="(1-->2)"]
+	17 -> 31 [label="(3-->3)"]
+	26 -> 31 [label="(3-->3)"]
+	30 -> 31 [label="(3-->3)"]
+	32 [label="4200844.lstrcmpiA
+
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 32 [label="(1-->2)"]
+	17 -> 32 [label="(2-->2)"]
+	28 -> 32 [label="(1-->2)"]
+	28 -> 32 [label="(2-->2)"]
+	28 -> 32 [label="(0-->2)"]
+	29 -> 32 [label="(1-->2)"]
+	31 -> 32 [label="(1-->2)"]
+	31 -> 32 [label="(2-->2)"]
+	33 [label="4200251.GetLastError
+"]
+	34 [label="4200431.StrChrA
+0
+32"]
+	17 -> 34 [label="(0-->2)"]
+	35 [label="4200876.lstrcatA
+\
+\"]
+	36 [label="4200892.lstrcatA
+\
+"]
+	35 -> 36 [label="(1-->1)"]
+	35 -> 36 [label="(2-->1)"]
+	35 -> 36 [label="(0-->1)"]
+	37 [label="4200906.lstrcatA
+\.exe
+.exe"]
+	38 [label="4200915.DeleteFileA
+\.exe"]
+	37 -> 38 [label="(1-->1)"]
+	37 -> 38 [label="(0-->1)"]
+	39 [label="4200929.MoveFileA
+00793eff7a511eb6e87873e99af4a4c7
+\.exe"]
+	0 -> 39 [label="(1-->1)"]
+	17 -> 39 [label="(2-->1)"]
+	28 -> 39 [label="(1-->1)"]
+	28 -> 39 [label="(2-->1)"]
+	28 -> 39 [label="(0-->1)"]
+	29 -> 39 [label="(1-->1)"]
+	31 -> 39 [label="(1-->1)"]
+	31 -> 39 [label="(2-->1)"]
+	32 -> 39 [label="(2-->1)"]
+	37 -> 39 [label="(1-->2)"]
+	37 -> 39 [label="(0-->2)"]
+	38 -> 39 [label="(1-->2)"]
+	40 [label="4200961.lstrcpyA
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"]
+	41 [label="4200947.lstrcpyA
+00793eff7a511eb6e87873e99af4a4c7
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 41 [label="(1-->1)"]
+	17 -> 41 [label="(2-->1)"]
+	28 -> 41 [label="(1-->1)"]
+	28 -> 41 [label="(2-->1)"]
+	28 -> 41 [label="(0-->1)"]
+	29 -> 41 [label="(1-->1)"]
+	31 -> 41 [label="(1-->1)"]
+	31 -> 41 [label="(2-->1)"]
+	32 -> 41 [label="(2-->1)"]
+	0 -> 41 [label="(1-->2)"]
+	17 -> 41 [label="(2-->2)"]
+	28 -> 41 [label="(1-->2)"]
+	28 -> 41 [label="(2-->2)"]
+	28 -> 41 [label="(0-->2)"]
+	29 -> 41 [label="(1-->2)"]
+	31 -> 41 [label="(1-->2)"]
+	31 -> 41 [label="(2-->2)"]
+	32 -> 41 [label="(2-->2)"]
+	0 -> 41 [label="(1-->0)"]
+	17 -> 41 [label="(2-->0)"]
+	28 -> 41 [label="(1-->0)"]
+	28 -> 41 [label="(2-->0)"]
+	28 -> 41 [label="(0-->0)"]
+	29 -> 41 [label="(1-->0)"]
+	31 -> 41 [label="(1-->0)"]
+	31 -> 41 [label="(2-->0)"]
+	32 -> 41 [label="(2-->0)"]
+	42 [label="4202944.lstrlenA
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 42 [label="(1-->1)"]
+	17 -> 42 [label="(2-->1)"]
+	28 -> 42 [label="(1-->1)"]
+	28 -> 42 [label="(2-->1)"]
+	28 -> 42 [label="(0-->1)"]
+	29 -> 42 [label="(1-->1)"]
+	31 -> 42 [label="(1-->1)"]
+	31 -> 42 [label="(2-->1)"]
+	32 -> 42 [label="(2-->1)"]
+	41 -> 42 [label="(1-->1)"]
+	41 -> 42 [label="(2-->1)"]
+	41 -> 42 [label="(0-->1)"]
+	17 -> 42 [label="(0-->0)"]
+	34 -> 42 [label="(2-->0)"]
+	43 [label="4202984.lstrlenA
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 43 [label="(1-->1)"]
+	17 -> 43 [label="(2-->1)"]
+	28 -> 43 [label="(1-->1)"]
+	28 -> 43 [label="(2-->1)"]
+	28 -> 43 [label="(0-->1)"]
+	29 -> 43 [label="(1-->1)"]
+	31 -> 43 [label="(1-->1)"]
+	31 -> 43 [label="(2-->1)"]
+	32 -> 43 [label="(2-->1)"]
+	41 -> 43 [label="(1-->1)"]
+	41 -> 43 [label="(2-->1)"]
+	41 -> 43 [label="(0-->1)"]
+	42 -> 43 [label="(1-->1)"]
+	17 -> 43 [label="(0-->0)"]
+	34 -> 43 [label="(2-->0)"]
+	42 -> 43 [label="(0-->0)"]
+	44 [label="4201217.lstrlenA
+rwbinru/dyd"]
+	45 [label="4201249.lstrlenA
+rwbinru/dyd"]
+	44 -> 45 [label="(1-->1)"]
+	44 -> 45 [label="(0-->0)"]
+	46 [label="4199852.lstrcpyA
+ntdll
+ntdll"]
+	47 [label="4199870.lstrcatA
+ntdll.
+."]
+	7 -> 47 [label="(2-->2)"]
+	48 [label="4199876.lstrcatA
+ntdll.ZwUnmapViewOfSection
+ZwUnmapViewOfSection"]
+	49 [label="4199876.lstrcatA
+kernel32.CreateProcessA
+CreateProcessA"]
+	50 [label="4199876.lstrcatA
+kernel32.GetThreadContext
+GetThreadContext"]
+	51 [label="4199876.lstrcatA
+kernel32.ReadProcessMemory
+ReadProcessMemory"]
+	52 [label="4199876.lstrcatA
+kernel32.VirtualQueryEx
+VirtualQueryEx"]
+	53 [label="4199876.lstrcatA
+kernel32.VirtualProtectEx
+VirtualProtectEx"]
+	54 [label="4199876.lstrcatA
+kernel32.WriteProcessMemory
+WriteProcessMemory"]
+	55 [label="4199876.lstrcatA
+kernel32.SetThreadContext
+SetThreadContext"]
+	56 [label="4199876.lstrcatA
+kernel32.ResumeThread
+ResumeThread"]
+	57 [label="4202086.lstrlenA
+svchost.exe"]
+	44 -> 57 [label="(0-->0)"]
+	45 -> 57 [label="(0-->0)"]
+	58 [label="4203017.wsprintfA
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+2147416132
+2147416392
+2147415312"]
+	59 [label="4203043.ExpandEnvironmentStringsA
+%tmp%\
+
+260"]
+	17 -> 59 [label="(3-->3)"]
+	60 [label="4203067.lstrcatA
+~dfds3.reg
+~dfds3.reg"]
+	61 [label="4203092.CreateFileA
+~dfds3.reg
+3221225472
+2
+0
+2
+128
+0"]
+	60 -> 61 [label="(1-->1)"]
+	60 -> 61 [label="(2-->1)"]
+	60 -> 61 [label="(0-->1)"]
+	22 -> 61 [label="(0-->3)"]
+	22 -> 61 [label="(0-->5)"]
+	62 [label="4203122.lstrlenA
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+"]
+	58 -> 62 [label="(1-->1)"]
+	58 -> 62 [label="(2-->1)"]
+	58 -> 62 [label="(0-->0)"]
+	63 [label="4203135.WriteFile
+3
+Windows Registry Editor Version 5.00
+
+[%s]
+\"%s\"=\"%s\"
+
+57
+2147416092
+0"]
+	61 -> 63 [label="(0-->1)"]
+	58 -> 63 [label="(1-->2)"]
+	58 -> 63 [label="(2-->2)"]
+	62 -> 63 [label="(1-->2)"]
+	58 -> 63 [label="(0-->3)"]
+	62 -> 63 [label="(0-->3)"]
+	3 -> 63 [label="(0-->0)"]
+	4 -> 63 [label="(0-->0)"]
+	64 [label="4203144.CloseHandle
+3"]
+	61 -> 64 [label="(0-->1)"]
+	63 -> 64 [label="(1-->1)"]
+	65 [label="4203162.lstrcpyA
+regedit.exe /s 
+regedit.exe /s "]
+	66 [label="4203182.lstrcatA
+regedit.exe /s ~dfds3.reg
+~dfds3.reg"]
+	60 -> 66 [label="(1-->2)"]
+	60 -> 66 [label="(2-->2)"]
+	60 -> 66 [label="(0-->2)"]
+	61 -> 66 [label="(1-->2)"]
+	67 [label="4203193.WinExec
+regedit.exe /s ~dfds3.reg
+5"]
+	66 -> 67 [label="(1-->1)"]
+	66 -> 67 [label="(0-->1)"]
+	68 [label="4203204.Sleep
+1000"]
+	2 -> 68 [label="(0-->0)"]
+	5 -> 68 [label="(0-->0)"]
+	10 -> 68 [label="(0-->0)"]
+	13 -> 68 [label="(0-->0)"]
+	14 -> 68 [label="(0-->0)"]
+	69 [label="4203217.DeleteFileA
+~dfds3.reg"]
+	60 -> 69 [label="(1-->1)"]
+	60 -> 69 [label="(2-->1)"]
+	60 -> 69 [label="(0-->1)"]
+	61 -> 69 [label="(1-->1)"]
+	66 -> 69 [label="(2-->1)"]
+	70 [label="4201000.lstrcpyA
+00793eff7a511eb6e87873e99af4a4c7
+00793eff7a511eb6e87873e99af4a4c7"]
+	0 -> 70 [label="(1-->1)"]
+	17 -> 70 [label="(2-->1)"]
+	41 -> 70 [label="(1-->1)"]
+	41 -> 70 [label="(2-->1)"]
+	41 -> 70 [label="(0-->1)"]
+	42 -> 70 [label="(1-->1)"]
+	43 -> 70 [label="(1-->1)"]
+	0 -> 70 [label="(1-->2)"]
+	17 -> 70 [label="(2-->2)"]
+	41 -> 70 [label="(1-->2)"]
+	41 -> 70 [label="(2-->2)"]
+	41 -> 70 [label="(0-->2)"]
+	42 -> 70 [label="(1-->2)"]
+	43 -> 70 [label="(1-->2)"]
+	0 -> 70 [label="(1-->0)"]
+	17 -> 70 [label="(2-->0)"]
+	41 -> 70 [label="(1-->0)"]
+	41 -> 70 [label="(2-->0)"]
+	41 -> 70 [label="(0-->0)"]
+	42 -> 70 [label="(1-->0)"]
+	43 -> 70 [label="(1-->0)"]
+	71 [label="4202944.lstrlenA
+\.exe"]
+	37 -> 71 [label="(1-->1)"]
+	37 -> 71 [label="(0-->1)"]
+	38 -> 71 [label="(1-->1)"]
+	39 -> 71 [label="(2-->1)"]
+	72 [label="4202984.lstrlenA
+\.exe"]
+	37 -> 72 [label="(1-->1)"]
+	37 -> 72 [label="(0-->1)"]
+	38 -> 72 [label="(1-->1)"]
+	39 -> 72 [label="(2-->1)"]
+	71 -> 72 [label="(1-->1)"]
+	71 -> 72 [label="(0-->0)"]
+	73 [label="4201000.lstrcpyA
+\.exe
+\.exe"]
+	37 -> 73 [label="(1-->1)"]
+	37 -> 73 [label="(0-->1)"]
+	38 -> 73 [label="(1-->1)"]
+	39 -> 73 [label="(2-->1)"]
+	71 -> 73 [label="(1-->1)"]
+	72 -> 73 [label="(1-->1)"]
+	37 -> 73 [label="(1-->2)"]
+	37 -> 73 [label="(0-->2)"]
+	38 -> 73 [label="(1-->2)"]
+	39 -> 73 [label="(2-->2)"]
+	71 -> 73 [label="(1-->2)"]
+	72 -> 73 [label="(1-->2)"]
+	37 -> 73 [label="(1-->0)"]
+	37 -> 73 [label="(0-->0)"]
+	38 -> 73 [label="(1-->0)"]
+	39 -> 73 [label="(2-->0)"]
+	71 -> 73 [label="(1-->0)"]
+	72 -> 73 [label="(1-->0)"]
+}
