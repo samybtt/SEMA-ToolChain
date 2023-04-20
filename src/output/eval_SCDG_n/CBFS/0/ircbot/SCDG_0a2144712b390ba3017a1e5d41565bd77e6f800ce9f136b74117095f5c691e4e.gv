@@ -1229,7 +1229,7 @@ SetFileInformationByHandleW"]
 	78 [label="4348111.HeapAlloc
 1
 0
-66"]
+74"]
 	2 -> 78 [label="(0-->1)"]
 	39 -> 78 [label="(0-->1)"]
 	40 -> 78 [label="(0-->1)"]
