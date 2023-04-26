@@ -40,9 +40,9 @@ digraph {
 	10 [label="4219414.GetCurrentProcess
 "]
 	11 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32953_32
+retval_GetCurrentProcess_33211_32
 1000
-retval_GetCurrentProcess_33024_32
+retval_GetCurrentProcess_33212_32
 2147417556
 0
 1
@@ -83,9 +83,9 @@ retval_GetCurrentProcess_32771_32
 1001"]
 	14 -> 15 [label="(0-->1)"]
 	16 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32778_32
+retval_GetCurrentProcess_32807_32
 1001
-retval_GetCurrentProcess_32780_32
+retval_GetCurrentProcess_32817_32
 2147417556
 0
 1
@@ -105,153 +105,93 @@ retval_GetCurrentProcess_32780_32
 	18 [label="4219392.GetFileType
 1002"]
 	17 -> 18 [label="(0-->1)"]
-	19 [label="4219524.SetHandleCount
-32"]
-	20 [label="4220059.GetCommandLineA
-"]
-	21 [label="4214333.HeapAlloc
-1
-1
-17"]
-	1 -> 21 [label="(1-->1)"]
-	1 -> 21 [label="(0-->1)"]
-	3 -> 21 [label="(4-->1)"]
-	12 -> 21 [label="(1-->1)"]
-	12 -> 21 [label="(2-->1)"]
-	13 -> 21 [label="(6-->1)"]
-	16 -> 21 [label="(6-->1)"]
-	1 -> 21 [label="(1-->2)"]
-	1 -> 21 [label="(0-->2)"]
-	3 -> 21 [label="(4-->2)"]
-	12 -> 21 [label="(1-->2)"]
-	12 -> 21 [label="(2-->2)"]
-	13 -> 21 [label="(6-->2)"]
-	16 -> 21 [label="(6-->2)"]
-	22 [label="4220217.GetEnvironmentStrings
-"]
-	23 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32941_32
+	19 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32898_32
 1002
-retval_GetCurrentProcess_33019_32
+retval_GetCurrentProcess_32899_32
 2147417556
 0
 1
 2"]
-	17 -> 23 [label="(0-->2)"]
-	18 -> 23 [label="(1-->2)"]
-	13 -> 23 [label="(4-->4)"]
-	1 -> 23 [label="(1-->6)"]
-	1 -> 23 [label="(0-->6)"]
-	3 -> 23 [label="(4-->6)"]
-	12 -> 23 [label="(1-->6)"]
-	12 -> 23 [label="(2-->6)"]
-	13 -> 23 [label="(6-->6)"]
-	13 -> 23 [label="(7-->7)"]
+	17 -> 19 [label="(0-->2)"]
+	18 -> 19 [label="(1-->2)"]
+	13 -> 19 [label="(4-->4)"]
+	16 -> 19 [label="(4-->4)"]
+	1 -> 19 [label="(1-->6)"]
+	1 -> 19 [label="(0-->6)"]
+	3 -> 19 [label="(4-->6)"]
+	12 -> 19 [label="(1-->6)"]
+	12 -> 19 [label="(2-->6)"]
+	13 -> 19 [label="(6-->6)"]
+	16 -> 19 [label="(6-->6)"]
+	13 -> 19 [label="(7-->7)"]
+	16 -> 19 [label="(7-->7)"]
+	20 [label="4219524.SetHandleCount
+32"]
+	21 [label="4220059.GetCommandLineA
+"]
+	22 [label="4214333.HeapAlloc
+1
+1
+17"]
+	1 -> 22 [label="(1-->1)"]
+	1 -> 22 [label="(0-->1)"]
+	3 -> 22 [label="(4-->1)"]
+	12 -> 22 [label="(1-->1)"]
+	12 -> 22 [label="(2-->1)"]
+	13 -> 22 [label="(6-->1)"]
+	16 -> 22 [label="(6-->1)"]
+	19 -> 22 [label="(6-->1)"]
+	1 -> 22 [label="(1-->2)"]
+	1 -> 22 [label="(0-->2)"]
+	3 -> 22 [label="(4-->2)"]
+	12 -> 22 [label="(1-->2)"]
+	12 -> 22 [label="(2-->2)"]
+	13 -> 22 [label="(6-->2)"]
+	16 -> 22 [label="(6-->2)"]
+	19 -> 22 [label="(6-->2)"]
+	23 [label="4220217.GetEnvironmentStrings
+"]
 	24 [label="4214333.HeapAlloc
 1
 1
-37"]
+41"]
 	1 -> 24 [label="(1-->1)"]
 	1 -> 24 [label="(0-->1)"]
 	3 -> 24 [label="(4-->1)"]
 	12 -> 24 [label="(1-->1)"]
 	12 -> 24 [label="(2-->1)"]
 	13 -> 24 [label="(6-->1)"]
-	21 -> 24 [label="(1-->1)"]
-	21 -> 24 [label="(2-->1)"]
+	16 -> 24 [label="(6-->1)"]
+	19 -> 24 [label="(6-->1)"]
+	22 -> 24 [label="(1-->1)"]
+	22 -> 24 [label="(2-->1)"]
 	1 -> 24 [label="(1-->2)"]
 	1 -> 24 [label="(0-->2)"]
 	3 -> 24 [label="(4-->2)"]
 	12 -> 24 [label="(1-->2)"]
 	12 -> 24 [label="(2-->2)"]
 	13 -> 24 [label="(6-->2)"]
-	21 -> 24 [label="(1-->2)"]
-	21 -> 24 [label="(2-->2)"]
-	25 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32804_32
-1002
-retval_GetCurrentProcess_32809_32
-2147417556
-0
-1
-2"]
-	17 -> 25 [label="(0-->2)"]
-	18 -> 25 [label="(1-->2)"]
-	13 -> 25 [label="(4-->4)"]
-	16 -> 25 [label="(4-->4)"]
-	1 -> 25 [label="(1-->6)"]
-	1 -> 25 [label="(0-->6)"]
-	3 -> 25 [label="(4-->6)"]
-	12 -> 25 [label="(1-->6)"]
-	12 -> 25 [label="(2-->6)"]
-	13 -> 25 [label="(6-->6)"]
-	16 -> 25 [label="(6-->6)"]
-	13 -> 25 [label="(7-->7)"]
-	16 -> 25 [label="(7-->7)"]
-	26 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32812_32
-1002
-retval_GetCurrentProcess_32817_32
-2147417556
-0
-1
-2"]
-	17 -> 26 [label="(0-->2)"]
-	18 -> 26 [label="(1-->2)"]
-	13 -> 26 [label="(4-->4)"]
-	16 -> 26 [label="(4-->4)"]
-	1 -> 26 [label="(1-->6)"]
-	1 -> 26 [label="(0-->6)"]
-	3 -> 26 [label="(4-->6)"]
-	12 -> 26 [label="(1-->6)"]
-	12 -> 26 [label="(2-->6)"]
-	13 -> 26 [label="(6-->6)"]
-	16 -> 26 [label="(6-->6)"]
-	13 -> 26 [label="(7-->7)"]
-	16 -> 26 [label="(7-->7)"]
-	27 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32779_32
-1001
-retval_GetCurrentProcess_32781_32
-2147417556
-0
-1
-2"]
-	14 -> 27 [label="(0-->2)"]
-	15 -> 27 [label="(1-->2)"]
-	13 -> 27 [label="(4-->4)"]
-	1 -> 27 [label="(1-->6)"]
-	1 -> 27 [label="(0-->6)"]
-	3 -> 27 [label="(4-->6)"]
-	12 -> 27 [label="(1-->6)"]
-	12 -> 27 [label="(2-->6)"]
-	13 -> 27 [label="(6-->6)"]
-	13 -> 27 [label="(7-->7)"]
-	28 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32837_32
-1002
-retval_GetCurrentProcess_32839_32
-2147417556
-0
-1
-2"]
-	17 -> 28 [label="(0-->2)"]
-	18 -> 28 [label="(1-->2)"]
-	13 -> 28 [label="(4-->4)"]
-	27 -> 28 [label="(4-->4)"]
-	1 -> 28 [label="(1-->6)"]
-	1 -> 28 [label="(0-->6)"]
-	3 -> 28 [label="(4-->6)"]
-	12 -> 28 [label="(1-->6)"]
-	12 -> 28 [label="(2-->6)"]
-	13 -> 28 [label="(6-->6)"]
-	27 -> 28 [label="(6-->6)"]
-	13 -> 28 [label="(7-->7)"]
-	27 -> 28 [label="(7-->7)"]
+	16 -> 24 [label="(6-->2)"]
+	19 -> 24 [label="(6-->2)"]
+	22 -> 24 [label="(1-->2)"]
+	22 -> 24 [label="(2-->2)"]
+	25 [label="4220387.FreeEnvironmentStringsA
+3221225480"]
+	23 -> 25 [label="(0-->1)"]
+	26 [label="4213922.GetStartupInfoA
+2147417676"]
+	2 -> 26 [label="(0-->0)"]
+	6 -> 26 [label="(0-->0)"]
+	27 [label="4213930.GetModuleHandleA
+0"]
+	28 [label="4220401.GetCommandLineA
+"]
+	21 -> 28 [label="(0-->0)"]
 	29 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32900_32
+retval_GetCurrentProcess_32816_32
 1002
-retval_GetCurrentProcess_32902_32
+retval_GetCurrentProcess_32818_32
 2147417556
 0
 1
@@ -259,35 +199,192 @@ retval_GetCurrentProcess_32902_32
 	17 -> 29 [label="(0-->2)"]
 	18 -> 29 [label="(1-->2)"]
 	13 -> 29 [label="(4-->4)"]
-	16 -> 29 [label="(4-->4)"]
 	1 -> 29 [label="(1-->6)"]
 	1 -> 29 [label="(0-->6)"]
 	3 -> 29 [label="(4-->6)"]
 	12 -> 29 [label="(1-->6)"]
 	12 -> 29 [label="(2-->6)"]
 	13 -> 29 [label="(6-->6)"]
-	16 -> 29 [label="(6-->6)"]
 	13 -> 29 [label="(7-->7)"]
-	16 -> 29 [label="(7-->7)"]
 	30 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32855_32
-1002
-retval_GetCurrentProcess_32904_32
+retval_GetCurrentProcess_32780_32
+1001
+retval_GetCurrentProcess_32781_32
 2147417556
 0
 1
 2"]
-	17 -> 30 [label="(0-->2)"]
-	18 -> 30 [label="(1-->2)"]
+	14 -> 30 [label="(0-->2)"]
+	15 -> 30 [label="(1-->2)"]
 	13 -> 30 [label="(4-->4)"]
-	16 -> 30 [label="(4-->4)"]
 	1 -> 30 [label="(1-->6)"]
 	1 -> 30 [label="(0-->6)"]
 	3 -> 30 [label="(4-->6)"]
 	12 -> 30 [label="(1-->6)"]
 	12 -> 30 [label="(2-->6)"]
 	13 -> 30 [label="(6-->6)"]
-	16 -> 30 [label="(6-->6)"]
 	13 -> 30 [label="(7-->7)"]
-	16 -> 30 [label="(7-->7)"]
+	31 [label="4214333.HeapAlloc
+1
+1
+39"]
+	1 -> 31 [label="(1-->1)"]
+	1 -> 31 [label="(0-->1)"]
+	3 -> 31 [label="(4-->1)"]
+	12 -> 31 [label="(1-->1)"]
+	12 -> 31 [label="(2-->1)"]
+	13 -> 31 [label="(6-->1)"]
+	22 -> 31 [label="(1-->1)"]
+	22 -> 31 [label="(2-->1)"]
+	30 -> 31 [label="(6-->1)"]
+	1 -> 31 [label="(1-->2)"]
+	1 -> 31 [label="(0-->2)"]
+	3 -> 31 [label="(4-->2)"]
+	12 -> 31 [label="(1-->2)"]
+	12 -> 31 [label="(2-->2)"]
+	13 -> 31 [label="(6-->2)"]
+	22 -> 31 [label="(1-->2)"]
+	22 -> 31 [label="(2-->2)"]
+	30 -> 31 [label="(6-->2)"]
+	32 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32798_32
+1001
+retval_GetCurrentProcess_32811_32
+2147417556
+0
+1
+2"]
+	14 -> 32 [label="(0-->2)"]
+	15 -> 32 [label="(1-->2)"]
+	13 -> 32 [label="(4-->4)"]
+	1 -> 32 [label="(1-->6)"]
+	1 -> 32 [label="(0-->6)"]
+	3 -> 32 [label="(4-->6)"]
+	12 -> 32 [label="(1-->6)"]
+	12 -> 32 [label="(2-->6)"]
+	13 -> 32 [label="(6-->6)"]
+	13 -> 32 [label="(7-->7)"]
+	33 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32880_32
+1002
+retval_GetCurrentProcess_32883_32
+2147417556
+0
+1
+2"]
+	17 -> 33 [label="(0-->2)"]
+	18 -> 33 [label="(1-->2)"]
+	13 -> 33 [label="(4-->4)"]
+	32 -> 33 [label="(4-->4)"]
+	1 -> 33 [label="(1-->6)"]
+	1 -> 33 [label="(0-->6)"]
+	3 -> 33 [label="(4-->6)"]
+	12 -> 33 [label="(1-->6)"]
+	12 -> 33 [label="(2-->6)"]
+	13 -> 33 [label="(6-->6)"]
+	32 -> 33 [label="(6-->6)"]
+	13 -> 33 [label="(7-->7)"]
+	32 -> 33 [label="(7-->7)"]
+	34 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32836_32
+1002
+retval_GetCurrentProcess_32837_32
+2147417556
+0
+1
+2"]
+	17 -> 34 [label="(0-->2)"]
+	18 -> 34 [label="(1-->2)"]
+	13 -> 34 [label="(4-->4)"]
+	30 -> 34 [label="(4-->4)"]
+	1 -> 34 [label="(1-->6)"]
+	1 -> 34 [label="(0-->6)"]
+	3 -> 34 [label="(4-->6)"]
+	12 -> 34 [label="(1-->6)"]
+	12 -> 34 [label="(2-->6)"]
+	13 -> 34 [label="(6-->6)"]
+	30 -> 34 [label="(6-->6)"]
+	13 -> 34 [label="(7-->7)"]
+	30 -> 34 [label="(7-->7)"]
+	35 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32839_32
+1002
+retval_GetCurrentProcess_32841_32
+2147417556
+0
+1
+2"]
+	17 -> 35 [label="(0-->2)"]
+	18 -> 35 [label="(1-->2)"]
+	13 -> 35 [label="(4-->4)"]
+	30 -> 35 [label="(4-->4)"]
+	1 -> 35 [label="(1-->6)"]
+	1 -> 35 [label="(0-->6)"]
+	3 -> 35 [label="(4-->6)"]
+	12 -> 35 [label="(1-->6)"]
+	12 -> 35 [label="(2-->6)"]
+	13 -> 35 [label="(6-->6)"]
+	30 -> 35 [label="(6-->6)"]
+	13 -> 35 [label="(7-->7)"]
+	30 -> 35 [label="(7-->7)"]
+	36 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32848_32
+1002
+retval_GetCurrentProcess_32850_32
+2147417556
+0
+1
+2"]
+	17 -> 36 [label="(0-->2)"]
+	18 -> 36 [label="(1-->2)"]
+	13 -> 36 [label="(4-->4)"]
+	30 -> 36 [label="(4-->4)"]
+	1 -> 36 [label="(1-->6)"]
+	1 -> 36 [label="(0-->6)"]
+	3 -> 36 [label="(4-->6)"]
+	12 -> 36 [label="(1-->6)"]
+	12 -> 36 [label="(2-->6)"]
+	13 -> 36 [label="(6-->6)"]
+	30 -> 36 [label="(6-->6)"]
+	13 -> 36 [label="(7-->7)"]
+	30 -> 36 [label="(7-->7)"]
+	37 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32786_32
+1001
+retval_GetCurrentProcess_32794_32
+2147417556
+0
+1
+2"]
+	14 -> 37 [label="(0-->2)"]
+	15 -> 37 [label="(1-->2)"]
+	13 -> 37 [label="(4-->4)"]
+	1 -> 37 [label="(1-->6)"]
+	1 -> 37 [label="(0-->6)"]
+	3 -> 37 [label="(4-->6)"]
+	12 -> 37 [label="(1-->6)"]
+	12 -> 37 [label="(2-->6)"]
+	13 -> 37 [label="(6-->6)"]
+	13 -> 37 [label="(7-->7)"]
+	38 [label="4219439.DuplicateHandle
+retval_GetCurrentProcess_32888_32
+1002
+retval_GetCurrentProcess_32892_32
+2147417556
+0
+1
+2"]
+	17 -> 38 [label="(0-->2)"]
+	18 -> 38 [label="(1-->2)"]
+	13 -> 38 [label="(4-->4)"]
+	37 -> 38 [label="(4-->4)"]
+	1 -> 38 [label="(1-->6)"]
+	1 -> 38 [label="(0-->6)"]
+	3 -> 38 [label="(4-->6)"]
+	12 -> 38 [label="(1-->6)"]
+	12 -> 38 [label="(2-->6)"]
+	13 -> 38 [label="(6-->6)"]
+	37 -> 38 [label="(6-->6)"]
+	13 -> 38 [label="(7-->7)"]
+	37 -> 38 [label="(7-->7)"]
 }

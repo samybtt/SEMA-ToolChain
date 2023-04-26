@@ -678,13 +678,13 @@ C:\Temp\
 C:\Temp\
 ns
 0
-C:\Temp\ns64369b02.TMP"]
+C:\Temp\ns6446f683.TMP"]
 	50 -> 85 [label="(2-->1)"]
 	81 -> 85 [label="(1-->1)"]
 	81 -> 85 [label="(0-->1)"]
 	82 -> 85 [label="(1-->1)"]
 	86 [label="4207836.DeleteFileA
-C:\Temp\ns64369b02.TMP"]
+C:\Temp\ns6446f683.TMP"]
 	85 -> 86 [label="(4-->1)"]
 	87 [label="4206037.GetTickCount
 "]
@@ -3699,7 +3699,7 @@ retval_GetFileSize_32805_32_file_7_899212cef8387993ef7e01d930fd9b946a5531c63ab88
 	165 [label="4217909.ReadFile
 4
 3221258256
-retval_GetFileSize_32805_32_file_7_899212cef8387993ef7e01d930fd9b946a5531c63ab885f4641b7a3061d05f73_2ff_32816_160_file_7_899212cef8387993ef7e01d930fd9b946a5531c63ab885f4641b7a3061d05f73_214_32814_1880
+retval_GetFileSize_32805_32_file_7_899212cef8387993ef7e01d930fd9b946a5531c63ab885f4641b7a3061d05f73_214_32814_1880_file_7_899212cef8387993ef7e01d930fd9b946a5531c63ab885f4641b7a3061d05f73_2ff_32816_160
 2147417004
 0"]
 	90 -> 165 [label="(0-->1)"]

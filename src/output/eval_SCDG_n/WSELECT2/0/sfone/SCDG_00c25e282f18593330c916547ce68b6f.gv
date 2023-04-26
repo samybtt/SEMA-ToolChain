@@ -119,7 +119,7 @@ retval_GetCurrentProcess_32780_32
 	22 [label="4214333.HeapAlloc
 1
 1
-37"]
+108"]
 	1 -> 22 [label="(1-->1)"]
 	1 -> 22 [label="(0-->1)"]
 	3 -> 22 [label="(4-->1)"]
@@ -141,7 +141,7 @@ retval_GetCurrentProcess_32780_32
 	23 [label="4214333.HeapAlloc
 1
 1
-95"]
+72"]
 	1 -> 23 [label="(1-->1)"]
 	1 -> 23 [label="(0-->1)"]
 	3 -> 23 [label="(4-->1)"]
@@ -160,26 +160,7 @@ retval_GetCurrentProcess_32780_32
 	15 -> 23 [label="(6-->2)"]
 	20 -> 23 [label="(1-->2)"]
 	20 -> 23 [label="(2-->2)"]
-	24 [label="4220387.FreeEnvironmentStringsA
-3221225480"]
-	21 -> 24 [label="(0-->1)"]
-	25 [label="4213922.GetStartupInfoA
-2147417676"]
-	2 -> 25 [label="(0-->0)"]
-	7 -> 25 [label="(0-->0)"]
-	26 [label="4213930.GetModuleHandleA
-0"]
-	27 [label="4220401.GetCommandLineA
-"]
-	19 -> 27 [label="(0-->0)"]
-	28 [label="4201373.GetLocalTime
-2147417604"]
-	2 -> 28 [label="(0-->0)"]
-	7 -> 28 [label="(0-->0)"]
-	25 -> 28 [label="(0-->0)"]
-	29 [label="4201674.GetVersionExA
-2147417444"]
-	30 [label="4219439.DuplicateHandle
+	24 [label="4219439.DuplicateHandle
 retval_GetCurrentProcess_32790_32
 1002
 retval_GetCurrentProcess_32793_32
@@ -187,20 +168,20 @@ retval_GetCurrentProcess_32793_32
 0
 1
 2"]
-	16 -> 30 [label="(0-->2)"]
-	17 -> 30 [label="(1-->2)"]
-	12 -> 30 [label="(4-->4)"]
-	15 -> 30 [label="(4-->4)"]
-	1 -> 30 [label="(1-->6)"]
-	1 -> 30 [label="(0-->6)"]
-	3 -> 30 [label="(4-->6)"]
-	6 -> 30 [label="(1-->6)"]
-	6 -> 30 [label="(2-->6)"]
-	12 -> 30 [label="(6-->6)"]
-	15 -> 30 [label="(6-->6)"]
-	12 -> 30 [label="(7-->7)"]
-	15 -> 30 [label="(7-->7)"]
-	31 [label="4219439.DuplicateHandle
+	16 -> 24 [label="(0-->2)"]
+	17 -> 24 [label="(1-->2)"]
+	12 -> 24 [label="(4-->4)"]
+	15 -> 24 [label="(4-->4)"]
+	1 -> 24 [label="(1-->6)"]
+	1 -> 24 [label="(0-->6)"]
+	3 -> 24 [label="(4-->6)"]
+	6 -> 24 [label="(1-->6)"]
+	6 -> 24 [label="(2-->6)"]
+	12 -> 24 [label="(6-->6)"]
+	15 -> 24 [label="(6-->6)"]
+	12 -> 24 [label="(7-->7)"]
+	15 -> 24 [label="(7-->7)"]
+	25 [label="4219439.DuplicateHandle
 retval_GetCurrentProcess_32791_32
 1002
 retval_GetCurrentProcess_32796_32
@@ -208,17 +189,17 @@ retval_GetCurrentProcess_32796_32
 0
 1
 2"]
-	16 -> 31 [label="(0-->2)"]
-	17 -> 31 [label="(1-->2)"]
-	12 -> 31 [label="(4-->4)"]
-	15 -> 31 [label="(4-->4)"]
-	1 -> 31 [label="(1-->6)"]
-	1 -> 31 [label="(0-->6)"]
-	3 -> 31 [label="(4-->6)"]
-	6 -> 31 [label="(1-->6)"]
-	6 -> 31 [label="(2-->6)"]
-	12 -> 31 [label="(6-->6)"]
-	15 -> 31 [label="(6-->6)"]
-	12 -> 31 [label="(7-->7)"]
-	15 -> 31 [label="(7-->7)"]
+	16 -> 25 [label="(0-->2)"]
+	17 -> 25 [label="(1-->2)"]
+	12 -> 25 [label="(4-->4)"]
+	15 -> 25 [label="(4-->4)"]
+	1 -> 25 [label="(1-->6)"]
+	1 -> 25 [label="(0-->6)"]
+	3 -> 25 [label="(4-->6)"]
+	6 -> 25 [label="(1-->6)"]
+	6 -> 25 [label="(2-->6)"]
+	12 -> 25 [label="(6-->6)"]
+	15 -> 25 [label="(6-->6)"]
+	12 -> 25 [label="(7-->7)"]
+	15 -> 25 [label="(7-->7)"]
 }
