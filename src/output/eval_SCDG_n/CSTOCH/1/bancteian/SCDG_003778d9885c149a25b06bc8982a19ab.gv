@@ -56,271 +56,230 @@ digraph {
 	15 -> 16 [label="(2-->2)"]
 	15 -> 16 [label="(4-->4)"]
 	15 -> 16 [label="(5-->5)"]
-	17 [label="4246402.RegOpenKeyExW
+	17 [label="4245741.GetModuleHandleW
+4246160"]
+	18 [label="4245758.GetProcAddress
+9441320
+GetLongPathNameW"]
+	17 -> 18 [label="(0-->1)"]
+	19 [label="4245785.GetLongPathNameW
+2147407710
+2147406542
+261"]
+	13 -> 19 [label="(3-->3)"]
+	20 [label="4245683.CharNextW
+2147407716"]
+	21 [label="4246556.RegQueryValueExW
+0
+2147407710
+0
+0
+0
+2147408232"]
+	19 -> 21 [label="(1-->2)"]
+	22 [label="4246599.RegQueryValueExW
+0
+2147407710
+0
+0
+0
+2147408232"]
+	19 -> 22 [label="(1-->2)"]
+	21 -> 22 [label="(2-->2)"]
+	21 -> 22 [label="(6-->6)"]
+	23 [label="4246722.RegCloseKey
+0"]
+	24 [label="4247883.GetUserDefaultUILanguage
+"]
+	25 [label="4245418.EnterCriticalSection
+6917004"]
+	3 -> 25 [label="(1-->1)"]
+	3 -> 25 [label="(0-->0)"]
+	5 -> 25 [label="(0-->0)"]
+	7 -> 25 [label="(0-->0)"]
+	26 [label="4245469.LeaveCriticalSection
+6917004"]
+	3 -> 26 [label="(1-->1)"]
+	25 -> 26 [label="(1-->1)"]
+	3 -> 26 [label="(0-->0)"]
+	5 -> 26 [label="(0-->0)"]
+	7 -> 26 [label="(0-->0)"]
+	25 -> 26 [label="(0-->0)"]
+	27 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32988_32
+2"]
+	28 [label="4246635.RegQueryValueExW
+0
+4247000
+0
+0
+0
+2147408232"]
+	21 -> 28 [label="(6-->6)"]
+	29 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_33005_32
+2"]
+	30 [label="4244766.IsValidLocale
+retval_GetUserDefaultUILanguage_33005_32
+2"]
+	29 -> 30 [label="(1-->1)"]
+	29 -> 30 [label="(2-->2)"]
+	31 [label="4244794.GetLocaleInfoW
+retval_GetUserDefaultUILanguage_33005_32
+89
+2147408070
+85"]
+	29 -> 31 [label="(1-->1)"]
+	30 -> 31 [label="(1-->1)"]
+	32 [label="4244811.GetLocaleInfoW
+retval_GetUserDefaultUILanguage_33005_32
+90
+2147407900
+85"]
+	29 -> 32 [label="(1-->1)"]
+	30 -> 32 [label="(1-->1)"]
+	31 -> 32 [label="(1-->1)"]
+	31 -> 32 [label="(4-->4)"]
+	33 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32946_32
+2"]
+	34 [label="4250171.MultiByteToWideChar
+retval_GetACP_32773_32
+0
+4243604
+10
+2147403704
+2047"]
+	35 [label="4250171.MultiByteToWideChar
+retval_GetACP_32773_32
+0
+4243604
+10
+3224282764
+11"]
+	34 -> 35 [label="(1-->1)"]
+	34 -> 35 [label="(3-->3)"]
+	34 -> 35 [label="(4-->4)"]
+	36 [label="4244766.IsValidLocale
+retval_GetUserDefaultUILanguage_32946_32
+2"]
+	33 -> 36 [label="(1-->1)"]
+	33 -> 36 [label="(2-->2)"]
+	37 [label="4245525.GetSystemDefaultUILanguage
+"]
+	38 [label="4245552.GetSystemDefaultUILanguage
+"]
+	39 [label="4246402.RegOpenKeyExW
 2147483649
 4246832
 0
 983065
 2147408236"]
-	15 -> 17 [label="(1-->1)"]
-	15 -> 17 [label="(4-->4)"]
-	16 -> 17 [label="(4-->4)"]
-	15 -> 17 [label="(5-->5)"]
-	16 -> 17 [label="(5-->5)"]
-	18 [label="4246432.RegOpenKeyExW
+	15 -> 39 [label="(1-->1)"]
+	15 -> 39 [label="(4-->4)"]
+	16 -> 39 [label="(4-->4)"]
+	15 -> 39 [label="(5-->5)"]
+	16 -> 39 [label="(5-->5)"]
+	40 [label="4246432.RegOpenKeyExW
 2147483650
 4246832
 0
 983065
 2147408236"]
-	16 -> 18 [label="(1-->1)"]
-	17 -> 18 [label="(2-->2)"]
-	15 -> 18 [label="(4-->4)"]
-	16 -> 18 [label="(4-->4)"]
-	17 -> 18 [label="(4-->4)"]
-	15 -> 18 [label="(5-->5)"]
-	16 -> 18 [label="(5-->5)"]
-	17 -> 18 [label="(5-->5)"]
-	19 [label="4245741.GetModuleHandleW
-4246160"]
-	20 [label="4245758.GetProcAddress
-9441320
-GetLongPathNameW"]
-	19 -> 20 [label="(0-->1)"]
-	21 [label="4245785.GetLongPathNameW
-2147407710
-2147406542
-261"]
-	13 -> 21 [label="(3-->3)"]
-	22 [label="4246556.RegQueryValueExW
-0
-2147407710
-0
-0
-0
-2147408232"]
-	21 -> 22 [label="(1-->2)"]
-	23 [label="4246635.RegQueryValueExW
-0
-4247000
-0
-0
-0
-2147408232"]
-	22 -> 23 [label="(6-->6)"]
-	24 [label="4246722.RegCloseKey
-0"]
-	25 [label="4247883.GetUserDefaultUILanguage
-"]
-	26 [label="4245418.EnterCriticalSection
-6917004"]
-	3 -> 26 [label="(1-->1)"]
-	3 -> 26 [label="(0-->0)"]
-	5 -> 26 [label="(0-->0)"]
-	7 -> 26 [label="(0-->0)"]
-	27 [label="4245469.LeaveCriticalSection
-6917004"]
-	3 -> 27 [label="(1-->1)"]
-	26 -> 27 [label="(1-->1)"]
-	3 -> 27 [label="(0-->0)"]
-	5 -> 27 [label="(0-->0)"]
-	7 -> 27 [label="(0-->0)"]
-	26 -> 27 [label="(0-->0)"]
-	28 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_33417_32
-2"]
-	29 [label="4244766.IsValidLocale
-retval_GetUserDefaultUILanguage_33417_32
-2"]
-	28 -> 29 [label="(1-->1)"]
-	28 -> 29 [label="(2-->2)"]
-	30 [label="4245525.GetSystemDefaultUILanguage
-"]
-	31 [label="4245454.LeaveCriticalSection
-6917004"]
-	3 -> 31 [label="(1-->1)"]
-	26 -> 31 [label="(1-->1)"]
-	3 -> 31 [label="(0-->0)"]
-	5 -> 31 [label="(0-->0)"]
-	7 -> 31 [label="(0-->0)"]
-	26 -> 31 [label="(0-->0)"]
-	32 [label="4247923.GetSystemDefaultUILanguage
-"]
-	33 [label="4245487.IsValidLocale
-retval_GetSystemDefaultUILanguage_33164_32
-2"]
-	34 [label="4246599.RegQueryValueExW
-0
-2147407710
-0
-0
-0
-2147408232"]
-	21 -> 34 [label="(1-->2)"]
-	22 -> 34 [label="(2-->2)"]
-	22 -> 34 [label="(6-->6)"]
-	35 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32940_32
-2"]
-	36 [label="4244766.IsValidLocale
-retval_GetUserDefaultUILanguage_32940_32
-2"]
-	35 -> 36 [label="(1-->1)"]
-	35 -> 36 [label="(2-->2)"]
-	37 [label="4245552.GetSystemDefaultUILanguage
-"]
-	38 [label="4250171.MultiByteToWideChar
-retval_GetACP_32774_32
-0
-4243508
-10
-2147403704
-2047"]
-	39 [label="4250171.MultiByteToWideChar
-retval_GetACP_32774_32
-0
-4243508
-10
-3224282764
-11"]
-	38 -> 39 [label="(1-->1)"]
-	38 -> 39 [label="(3-->3)"]
-	38 -> 39 [label="(4-->4)"]
-	40 [label="4245683.CharNextW
-2147407716"]
-	41 [label="4246014.FindFirstFileW
-2147406542
-2147407064"]
-	21 -> 41 [label="(2-->1)"]
-	42 [label="4246032.FindClose
-retval_FindFirstFileW_32846_32"]
-	43 [label="4246044.lstrlenW
-2147407108"]
-	44 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32882_32
-2"]
-	45 [label="4250171.MultiByteToWideChar
-retval_GetACP_32774_32
-0
-4243896
-10
-2147403704
-2047"]
-	46 [label="4250171.MultiByteToWideChar
-retval_GetACP_32774_32
-0
-4243896
-10
-3224282764
-11"]
-	45 -> 46 [label="(1-->1)"]
-	45 -> 46 [label="(3-->3)"]
-	45 -> 46 [label="(4-->4)"]
-	47 [label="4246676.RegQueryValueExW
-0
-4247000
-0
-0
-0
-2147408232"]
-	23 -> 47 [label="(2-->2)"]
-	22 -> 47 [label="(6-->6)"]
-	23 -> 47 [label="(6-->6)"]
-	48 [label="4245487.IsValidLocale
-retval_GetSystemDefaultUILanguage_33123_32
-2"]
-	49 [label="4250171.MultiByteToWideChar
-retval_GetACP_32774_32
-0
-4243868
-10
-2147403704
-2047"]
-	50 [label="4246462.RegOpenKeyExW
+	16 -> 40 [label="(1-->1)"]
+	39 -> 40 [label="(2-->2)"]
+	15 -> 40 [label="(4-->4)"]
+	16 -> 40 [label="(4-->4)"]
+	39 -> 40 [label="(4-->4)"]
+	15 -> 40 [label="(5-->5)"]
+	16 -> 40 [label="(5-->5)"]
+	39 -> 40 [label="(5-->5)"]
+	41 [label="4246462.RegOpenKeyExW
 2147483649
 4246884
 0
 983065
 2147408236"]
-	15 -> 50 [label="(1-->1)"]
-	17 -> 50 [label="(1-->1)"]
-	15 -> 50 [label="(4-->4)"]
-	16 -> 50 [label="(4-->4)"]
-	17 -> 50 [label="(4-->4)"]
-	18 -> 50 [label="(4-->4)"]
-	15 -> 50 [label="(5-->5)"]
-	16 -> 50 [label="(5-->5)"]
-	17 -> 50 [label="(5-->5)"]
-	18 -> 50 [label="(5-->5)"]
-	51 [label="4246492.RegOpenKeyExW
+	15 -> 41 [label="(1-->1)"]
+	39 -> 41 [label="(1-->1)"]
+	15 -> 41 [label="(4-->4)"]
+	16 -> 41 [label="(4-->4)"]
+	39 -> 41 [label="(4-->4)"]
+	40 -> 41 [label="(4-->4)"]
+	15 -> 41 [label="(5-->5)"]
+	16 -> 41 [label="(5-->5)"]
+	39 -> 41 [label="(5-->5)"]
+	40 -> 41 [label="(5-->5)"]
+	42 [label="4246492.RegOpenKeyExW
 2147483649
 4246936
 0
 983065
 2147408236"]
-	15 -> 51 [label="(1-->1)"]
-	17 -> 51 [label="(1-->1)"]
-	50 -> 51 [label="(1-->1)"]
-	15 -> 51 [label="(4-->4)"]
-	16 -> 51 [label="(4-->4)"]
-	17 -> 51 [label="(4-->4)"]
-	18 -> 51 [label="(4-->4)"]
-	50 -> 51 [label="(4-->4)"]
-	15 -> 51 [label="(5-->5)"]
-	16 -> 51 [label="(5-->5)"]
-	17 -> 51 [label="(5-->5)"]
-	18 -> 51 [label="(5-->5)"]
-	50 -> 51 [label="(5-->5)"]
+	15 -> 42 [label="(1-->1)"]
+	39 -> 42 [label="(1-->1)"]
+	41 -> 42 [label="(1-->1)"]
+	15 -> 42 [label="(4-->4)"]
+	16 -> 42 [label="(4-->4)"]
+	39 -> 42 [label="(4-->4)"]
+	40 -> 42 [label="(4-->4)"]
+	41 -> 42 [label="(4-->4)"]
+	15 -> 42 [label="(5-->5)"]
+	16 -> 42 [label="(5-->5)"]
+	39 -> 42 [label="(5-->5)"]
+	40 -> 42 [label="(5-->5)"]
+	41 -> 42 [label="(5-->5)"]
+	43 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32885_32
+2"]
+	44 [label="4250171.MultiByteToWideChar
+retval_GetACP_32774_32
+0
+4243616
+14
+2147403704
+2047"]
+	45 [label="4250171.MultiByteToWideChar
+retval_GetACP_32774_32
+0
+4243616
+14
+3224282764
+15"]
+	44 -> 45 [label="(1-->1)"]
+	44 -> 45 [label="(3-->3)"]
+	44 -> 45 [label="(4-->4)"]
+	46 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32856_32
+2"]
+	47 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32899_32
+2"]
+	48 [label="4246676.RegQueryValueExW
+0
+4247000
+0
+0
+0
+2147408232"]
+	28 -> 48 [label="(2-->2)"]
+	21 -> 48 [label="(6-->6)"]
+	28 -> 48 [label="(6-->6)"]
+	49 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32894_32
+2"]
+	50 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32895_32
+2"]
+	51 [label="4244766.IsValidLocale
+retval_GetUserDefaultUILanguage_32885_32
+2"]
+	43 -> 51 [label="(1-->1)"]
+	43 -> 51 [label="(2-->2)"]
 	52 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32874_32
-2"]
-	53 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32877_32
-2"]
-	54 [label="4244766.IsValidLocale
-retval_GetUserDefaultUILanguage_32877_32
-2"]
-	53 -> 54 [label="(1-->1)"]
-	53 -> 54 [label="(2-->2)"]
-	55 [label="4245487.IsValidLocale
 retval_GetUserDefaultUILanguage_32995_32
 2"]
-	56 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32850_32
-2"]
-	57 [label="4245580.EnterCriticalSection
-6917004"]
-	3 -> 57 [label="(1-->1)"]
-	26 -> 57 [label="(1-->1)"]
-	27 -> 57 [label="(1-->1)"]
-	3 -> 57 [label="(0-->0)"]
-	5 -> 57 [label="(0-->0)"]
-	7 -> 57 [label="(0-->0)"]
-	26 -> 57 [label="(0-->0)"]
-	27 -> 57 [label="(0-->0)"]
-	58 [label="4245621.LeaveCriticalSection
-6917004"]
-	3 -> 58 [label="(1-->1)"]
-	26 -> 58 [label="(1-->1)"]
-	27 -> 58 [label="(1-->1)"]
-	57 -> 58 [label="(1-->1)"]
-	3 -> 58 [label="(0-->0)"]
-	5 -> 58 [label="(0-->0)"]
-	7 -> 58 [label="(0-->0)"]
-	26 -> 58 [label="(0-->0)"]
-	27 -> 58 [label="(0-->0)"]
-	57 -> 58 [label="(0-->0)"]
-	59 [label="4245487.IsValidLocale
-retval_GetSystemDefaultUILanguage_33118_32
-2"]
-	35 -> 59 [label="(2-->2)"]
-	60 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_32927_32
-2"]
-	61 [label="4245487.IsValidLocale
-retval_GetUserDefaultUILanguage_33029_32
-2"]
-	62 [label="4245487.IsValidLocale
-retval_GetSystemDefaultUILanguage_33172_32
+	53 [label="4245487.IsValidLocale
+retval_GetUserDefaultUILanguage_32947_32
 2"]
 }

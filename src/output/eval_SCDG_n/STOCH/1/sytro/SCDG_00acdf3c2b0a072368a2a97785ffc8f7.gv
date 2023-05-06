@@ -77,88 +77,70 @@ GetLongPathNameA"]
 0
 2147416318
 2147416312"]
-	16 [label="4219205.RegQueryValueExA
+	16 [label="4219239.RegCloseKey
+4218447"]
+	15 -> 16 [label="(1-->1)"]
+	17 [label="4219268.lstrcpynA
+PZM
+PZM
+261"]
+	6 -> 17 [label="(2-->1)"]
+	6 -> 17 [label="(2-->2)"]
+	6 -> 17 [label="(3-->3)"]
+	7 -> 17 [label="(3-->3)"]
+	13 -> 17 [label="(3-->3)"]
+	14 -> 17 [label="(3-->3)"]
+	6 -> 17 [label="(2-->0)"]
+	18 [label="4219281.GetThreadLocale
+"]
+	19 [label="4219287.GetLocaleInfoA
+retval_GetThreadLocale_32785_32
+3
+
+5"]
+	6 -> 19 [label="(0-->2)"]
+	20 [label="4221193.LoadStringA
+4194304
+65494
+
+1024"]
+	1 -> 20 [label="(0-->1)"]
+	6 -> 20 [label="(1-->1)"]
+	21 [label="4221193.LoadStringA
+4194304
+65493
+
+1024"]
+	1 -> 21 [label="(0-->1)"]
+	6 -> 21 [label="(1-->1)"]
+	20 -> 21 [label="(1-->1)"]
+	20 -> 21 [label="(4-->4)"]
+	22 [label="4219287.GetLocaleInfoA
+retval_GetThreadLocale_32784_32
+3
+
+5"]
+	6 -> 22 [label="(0-->2)"]
+	23 [label="4219287.GetLocaleInfoA
+retval_GetThreadLocale_32796_32
+3
+
+5"]
+	6 -> 23 [label="(0-->2)"]
+	24 [label="4219205.RegQueryValueExA
 4218447
 
 0
 0
 2147416318
 2147416312"]
-	15 -> 16 [label="(1-->1)"]
-	15 -> 16 [label="(5-->5)"]
-	15 -> 16 [label="(6-->6)"]
-	17 [label="4219239.RegCloseKey
-4218447"]
-	15 -> 17 [label="(1-->1)"]
-	16 -> 17 [label="(1-->1)"]
-	18 [label="4219268.lstrcpynA
-PZM
-PZM
-261"]
-	6 -> 18 [label="(2-->1)"]
-	6 -> 18 [label="(2-->2)"]
-	6 -> 18 [label="(3-->3)"]
-	7 -> 18 [label="(3-->3)"]
-	13 -> 18 [label="(3-->3)"]
-	14 -> 18 [label="(3-->3)"]
-	6 -> 18 [label="(2-->0)"]
-	19 [label="4219281.GetThreadLocale
-"]
-	20 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32800_32
-3
-
-5"]
-	6 -> 20 [label="(0-->2)"]
-	21 [label="4221193.LoadStringA
-4194304
-65494
-
-1024"]
-	1 -> 21 [label="(0-->1)"]
-	6 -> 21 [label="(1-->1)"]
-	22 [label="4221193.LoadStringA
-4194304
-65493
-
-1024"]
-	1 -> 22 [label="(0-->1)"]
-	6 -> 22 [label="(1-->1)"]
-	21 -> 22 [label="(1-->1)"]
-	21 -> 22 [label="(4-->4)"]
-	23 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32813_32
-3
-
-5"]
-	6 -> 23 [label="(0-->2)"]
-	24 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32798_32
-3
-
-5"]
-	6 -> 24 [label="(0-->2)"]
+	15 -> 24 [label="(1-->1)"]
+	15 -> 24 [label="(5-->5)"]
+	15 -> 24 [label="(6-->6)"]
 	25 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32786_32
+retval_GetThreadLocale_32797_32
 3
 
 5"]
 	6 -> 25 [label="(0-->2)"]
-	26 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32787_32
-3
-
-5"]
-	6 -> 26 [label="(0-->2)"]
-	27 [label="4221193.LoadStringA
-4194304
-65491
-
-1024"]
-	1 -> 27 [label="(0-->1)"]
-	6 -> 27 [label="(1-->1)"]
-	21 -> 27 [label="(1-->1)"]
-	22 -> 27 [label="(1-->1)"]
-	21 -> 27 [label="(4-->4)"]
-	22 -> 27 [label="(4-->4)"]
 }

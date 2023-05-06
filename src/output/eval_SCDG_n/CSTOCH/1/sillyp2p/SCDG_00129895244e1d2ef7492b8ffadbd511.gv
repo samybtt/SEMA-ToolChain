@@ -62,36 +62,81 @@ digraph {
 0
 0
 3221225480
-22
+28
 0
 0
 0
 0"]
 	16 -> 17 [label="(0-->3)"]
-	18 [label="4214042.WideCharToMultiByte
+	18 [label="4214101.FreeEnvironmentStringsW
+3221225480"]
+	16 -> 18 [label="(0-->1)"]
+	17 -> 18 [label="(3-->1)"]
+	19 [label="4218515.GetACP
+"]
+	20 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-25
+29
 0
 0
 0
 0"]
-	16 -> 18 [label="(0-->3)"]
-	19 [label="4214101.FreeEnvironmentStringsW
-3221225480"]
-	16 -> 19 [label="(0-->1)"]
-	18 -> 19 [label="(3-->1)"]
-	20 [label="4218515.GetACP
-"]
+	16 -> 20 [label="(0-->3)"]
 	21 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-33
+37
 0
 0
 0
 0"]
 	16 -> 21 [label="(0-->3)"]
+	22 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+32
+0
+0
+0
+0"]
+	16 -> 22 [label="(0-->3)"]
+	14 -> 22 [label="(1-->4)"]
+	23 [label="4213341.GetModuleFileNameA
+0
+00129895244e1d2ef7492b8ffadbd511
+260"]
+	0 -> 23 [label="(1-->2)"]
+	14 -> 23 [label="(1-->0)"]
+	22 -> 23 [label="(4-->0)"]
+	24 [label="4219955.HeapAlloc
+1
+8
+2048"]
+	2 -> 24 [label="(1-->1)"]
+	2 -> 24 [label="(0-->1)"]
+	3 -> 24 [label="(1-->1)"]
+	4 -> 24 [label="(1-->1)"]
+	4 -> 24 [label="(2-->2)"]
+	25 [label="4204529.GetStartupInfoA
+2147417676"]
+	7 -> 25 [label="(0-->0)"]
+	26 [label="4204564.GetModuleHandleA
+0"]
+	27 [label="4217563.CreateFileA
+C:\Gusanillo QueBonito@Compartir.es
+2147483648
+3
+2147417480
+3
+128
+0"]
+	28 [label="4217576.GetFileType
+3"]
+	27 -> 28 [label="(3-->1)"]
+	27 -> 28 [label="(5-->1)"]
+	27 -> 28 [label="(0-->1)"]
 }

@@ -85,7 +85,7 @@ PZM
 	17 [label="4219281.GetThreadLocale
 "]
 	18 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32783_32
+retval_GetThreadLocale_32787_32
 3
 
 5"]
@@ -106,77 +106,48 @@ retval_GetThreadLocale_32783_32
 	6 -> 20 [label="(1-->1)"]
 	19 -> 20 [label="(1-->1)"]
 	19 -> 20 [label="(4-->4)"]
-	21 [label="4221193.LoadStringA
-4194304
-65491
-
-1024"]
-	1 -> 21 [label="(0-->1)"]
-	6 -> 21 [label="(1-->1)"]
-	19 -> 21 [label="(1-->1)"]
-	20 -> 21 [label="(1-->1)"]
-	19 -> 21 [label="(4-->4)"]
-	20 -> 21 [label="(4-->4)"]
-	22 [label="4201010.InitializeCriticalSection
+	21 [label="4201010.InitializeCriticalSection
 4314560"]
-	4 -> 22 [label="(0-->0)"]
-	23 [label="4201071.LocalAlloc
+	4 -> 21 [label="(0-->0)"]
+	22 [label="4201071.LocalAlloc
 0
 4088"]
-	24 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32782_32
-3
-
-5"]
-	6 -> 24 [label="(0-->2)"]
-	25 [label="4219072.RegOpenKeyExA
+	23 [label="4219072.RegOpenKeyExA
 2147483650
 Software\Borland\Locales
 0
 983065
 2147416328"]
-	8 -> 25 [label="(2-->2)"]
-	8 -> 25 [label="(4-->4)"]
-	8 -> 25 [label="(5-->5)"]
+	8 -> 23 [label="(2-->2)"]
+	8 -> 23 [label="(4-->4)"]
+	8 -> 23 [label="(5-->5)"]
+	24 [label="4219287.GetLocaleInfoA
+retval_GetThreadLocale_32788_32
+3
+
+5"]
+	6 -> 24 [label="(0-->2)"]
+	25 [label="4221193.LoadStringA
+4194304
+65491
+
+1024"]
+	1 -> 25 [label="(0-->1)"]
+	6 -> 25 [label="(1-->1)"]
+	19 -> 25 [label="(1-->1)"]
+	20 -> 25 [label="(1-->1)"]
+	19 -> 25 [label="(4-->4)"]
+	20 -> 25 [label="(4-->4)"]
 	26 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32802_32
+retval_GetThreadLocale_32784_32
 3
 
 5"]
 	6 -> 26 [label="(0-->2)"]
-	27 [label="4219102.RegOpenKeyExA
-2147483649
-Software\Borland\Delphi\Locales
-0
-983065
-2147416328"]
-	8 -> 27 [label="(1-->1)"]
-	8 -> 27 [label="(4-->4)"]
-	25 -> 27 [label="(4-->4)"]
-	8 -> 27 [label="(5-->5)"]
-	25 -> 27 [label="(5-->5)"]
-	28 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32803_32
+	27 [label="4219287.GetLocaleInfoA
+retval_GetThreadLocale_32799_32
 3
 
 5"]
-	6 -> 28 [label="(0-->2)"]
-	29 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32771_32
-3
-
-5"]
-	6 -> 29 [label="(0-->2)"]
-	30 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32811_32
-3
-
-5"]
-	6 -> 30 [label="(0-->2)"]
-	31 [label="4219287.GetLocaleInfoA
-retval_GetThreadLocale_32787_32
-3
-
-5"]
-	6 -> 31 [label="(0-->2)"]
+	6 -> 27 [label="(0-->2)"]
 }

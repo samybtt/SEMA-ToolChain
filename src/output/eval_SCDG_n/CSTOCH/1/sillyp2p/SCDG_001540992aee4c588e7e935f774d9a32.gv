@@ -62,7 +62,7 @@ digraph {
 0
 0
 3221225480
-35
+24
 0
 0
 0
@@ -78,44 +78,40 @@ digraph {
 0
 0"]
 	16 -> 18 [label="(0-->3)"]
-	19 [label="4214042.WideCharToMultiByte
+	19 [label="4214101.FreeEnvironmentStringsW
+3221225480"]
+	16 -> 19 [label="(0-->1)"]
+	18 -> 19 [label="(3-->1)"]
+	20 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-32
+26
 0
 0
 0
 0"]
-	16 -> 19 [label="(0-->3)"]
-	14 -> 19 [label="(1-->4)"]
-	20 [label="4214101.FreeEnvironmentStringsW
-3221225480"]
-	16 -> 20 [label="(0-->1)"]
-	19 -> 20 [label="(3-->1)"]
+	16 -> 20 [label="(0-->3)"]
 	21 [label="4218515.GetACP
 "]
-	22 [label="4219098.GetCPInfo
-retval_GetACP_33175_32
-2147417544"]
+	22 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+21
+0
+0
+0
+0"]
+	16 -> 22 [label="(0-->3)"]
 	23 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-37
+31
 0
 0
 0
 0"]
 	16 -> 23 [label="(0-->3)"]
-	24 [label="4214042.WideCharToMultiByte
-0
-0
-3221225480
-23
-0
-0
-0
-0"]
-	16 -> 24 [label="(0-->3)"]
 }

@@ -264,46 +264,67 @@ MessageBoxA"]
 0
 32768"]
 	20 -> 47 [label="(0-->1)"]
-	48 [label="4247263.FindClose
+	48 [label="4215588.VirtualAlloc
+0
+retval_LoadStringW_32908_32
+1052672
+4"]
+	20 -> 48 [label="(4-->4)"]
+	35 -> 48 [label="(4-->4)"]
+	49 [label="4215588.VirtualAlloc
+0
+retval_LoadStringW_32881_32
+1052672
+4"]
+	20 -> 49 [label="(4-->4)"]
+	35 -> 49 [label="(4-->4)"]
+	50 [label="4247263.FindClose
 retval_FindFirstFileW_32856_32"]
-	49 [label="4248145.LoadLibraryExW
+	51 [label="4248145.LoadLibraryExW
 3224341740
 0
 2"]
-	36 -> 49 [label="(1-->1)"]
-	50 [label="4250073.LoadStringW
+	36 -> 51 [label="(1-->1)"]
+	52 [label="4250073.LoadStringW
 9441340
 65485
 2147409468
 4096"]
-	49 -> 50 [label="(0-->1)"]
-	20 -> 50 [label="(3-->4)"]
-	51 [label="4245469.LeaveCriticalSection
+	51 -> 52 [label="(0-->1)"]
+	20 -> 52 [label="(3-->4)"]
+	53 [label="4245469.LeaveCriticalSection
 6917004"]
-	3 -> 51 [label="(1-->1)"]
-	31 -> 51 [label="(1-->1)"]
-	3 -> 51 [label="(0-->0)"]
-	11 -> 51 [label="(0-->0)"]
-	13 -> 51 [label="(0-->0)"]
-	31 -> 51 [label="(0-->0)"]
-	52 [label="4245487.IsValidLocale
+	3 -> 53 [label="(1-->1)"]
+	31 -> 53 [label="(1-->1)"]
+	3 -> 53 [label="(0-->0)"]
+	11 -> 53 [label="(0-->0)"]
+	13 -> 53 [label="(0-->0)"]
+	31 -> 53 [label="(0-->0)"]
+	54 [label="4245487.IsValidLocale
 retval_GetUserDefaultUILanguage_32825_32
 2"]
-	53 [label="4245487.IsValidLocale
+	55 [label="4245487.IsValidLocale
 retval_GetSystemDefaultUILanguage_32838_32
 2"]
-	54 [label="4215588.VirtualAlloc
+	56 [label="4215588.VirtualAlloc
 0
 retval_LoadStringW_32900_32
 1052672
 4"]
-	20 -> 54 [label="(4-->4)"]
-	35 -> 54 [label="(4-->4)"]
-	55 [label="4215588.VirtualAlloc
+	20 -> 56 [label="(4-->4)"]
+	35 -> 56 [label="(4-->4)"]
+	57 [label="4215588.VirtualAlloc
 0
 retval_LoadStringW_32886_32
 1052672
 4"]
-	20 -> 55 [label="(4-->4)"]
-	35 -> 55 [label="(4-->4)"]
+	20 -> 57 [label="(4-->4)"]
+	35 -> 57 [label="(4-->4)"]
+	58 [label="4215588.VirtualAlloc
+0
+retval_LoadStringW_32915_32
+1052672
+4"]
+	20 -> 58 [label="(4-->4)"]
+	35 -> 58 [label="(4-->4)"]
 }

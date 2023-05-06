@@ -68,7 +68,7 @@ PZM"]
 	13 [label="4212899.GetThreadLocale
 "]
 	14 [label="4212905.GetLocaleInfoA
-retval_GetThreadLocale_32781_32
+retval_GetThreadLocale_32782_32
 3
 
 5"]
@@ -103,22 +103,20 @@ retval_GetThreadLocale_32781_32
 	22 [label="4200791.LocalAlloc
 0
 4088"]
-	23 [label="4199499.VirtualAlloc
+	23 [label="4212905.GetLocaleInfoA
+retval_GetThreadLocale_32781_32
+3
+
+5"]
+	2 -> 23 [label="(0-->2)"]
+	24 [label="4199499.VirtualAlloc
 0
 1048576
 8192
 1"]
-	24 [label="4199051.LocalAlloc
+	25 [label="4199051.LocalAlloc
 0
 1604"]
-	25 [label="4199965.VirtualAlloc
-3222798336
-16384
-4096
-4"]
-	23 -> 25 [label="(0-->1)"]
-	15 -> 25 [label="(0-->4)"]
-	23 -> 25 [label="(0-->0)"]
 	26 [label="4212752.RegOpenKeyExA
 2147483649
 Software\Borland\Delphi\Locales
@@ -129,32 +127,28 @@ Software\Borland\Delphi\Locales
 	4 -> 26 [label="(4-->4)"]
 	4 -> 26 [label="(5-->5)"]
 	27 [label="4212905.GetLocaleInfoA
-retval_GetThreadLocale_32782_32
+retval_GetThreadLocale_32787_32
 3
 
 5"]
 	2 -> 27 [label="(0-->2)"]
-	28 [label="4212905.GetLocaleInfoA
-retval_GetThreadLocale_32785_32
-3
-
-5"]
-	2 -> 28 [label="(0-->2)"]
-	29 [label="4213585.LoadStringA
+	28 [label="4213585.LoadStringA
 4194304
 65490
 
 1024"]
-	1 -> 29 [label="(0-->1)"]
-	2 -> 29 [label="(1-->1)"]
-	19 -> 29 [label="(1-->1)"]
-	20 -> 29 [label="(1-->1)"]
-	19 -> 29 [label="(4-->4)"]
-	20 -> 29 [label="(4-->4)"]
-	30 [label="4212905.GetLocaleInfoA
-retval_GetThreadLocale_32769_32
-3
-
-5"]
-	2 -> 30 [label="(0-->2)"]
+	1 -> 28 [label="(0-->1)"]
+	2 -> 28 [label="(1-->1)"]
+	19 -> 28 [label="(1-->1)"]
+	20 -> 28 [label="(1-->1)"]
+	19 -> 28 [label="(4-->4)"]
+	20 -> 28 [label="(4-->4)"]
+	29 [label="4199965.VirtualAlloc
+3222798336
+16384
+4096
+4"]
+	24 -> 29 [label="(0-->1)"]
+	15 -> 29 [label="(0-->4)"]
+	24 -> 29 [label="(0-->0)"]
 }

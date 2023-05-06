@@ -563,10 +563,10 @@ class ToolChainSCDG:
                                         len(simgr.stashes["covered_blocks"]), len(simgr.stashes["active"]),
                                         len(simgr.stashes["pause"]), len(simgr.stashes["ExcessLopp"]), elapsed_time]
 
-        if (os.path.exists("output/eval_SCDG_n/measurements.csv")):
-            frame.to_csv("output/eval_SCDG_n/measurements.csv", mode='a', index=False, header=False)
+        if (os.path.exists("output/eval_SCDG_n/measurements_more.csv")):
+            frame.to_csv("output/eval_SCDG_n/measurements_more.csv", mode='a', index=False, header=False)
         else:
-            frame.to_csv("output/eval_SCDG_n/measurements.csv", mode='a', index=False)
+            frame.to_csv("output/eval_SCDG_n/measurements_more.csv", mode='a', index=False)
 
         self.build_scdg_fin(exp_dir, nameFileShort, main_obj, state, simgr, discard_SCDG)
 

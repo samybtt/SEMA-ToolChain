@@ -11,20 +11,20 @@ echo $j
 for family in ${FamArray[*]}
 do
     echo family
-    for file in $(ls $search_dir/$family | head -n 20)
+    for file in $(ls $search_dir/$family | head -n 42 | tail -n 10)
     do
         echo $file
         for method in ${RandMethodArray[*]}
         do
             echo $method
-            echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/ --format_out=json"
-            $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/ --format_out=json)
+            echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/"
+            $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/)
         done
         for method in ${MethodArray[*]}
         do 
             echo $method
-            echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/ --format_out=json"
-            $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/ --format_out=json)
+            echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/"
+            $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$j/ --dir=output/eval_SCDG_n/$method/$j/)
         done
     done
 done
@@ -42,8 +42,8 @@ do
             for method in ${RandMethodArray[*]}
             do
                 echo $method
-                echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$i/ --dir=output/eval_SCDG_n/$method/$i/ --format_out=json"
-                $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$i/ --dir=output/eval_SCDG_n/$method/$i/ --format_out=json)
+                echo "python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$i/ --dir=output/eval_SCDG_n/$method/$i/"
+                $(python3 ToolChainSCDG/ToolChainSCDG.py --method=$method $search_dir/$family/$file --familly=$family --exp_dir=output/eval_SCDG_n/$method/$i/ --dir=output/eval_SCDG_n/$method/$i/)
             done
         done
     done

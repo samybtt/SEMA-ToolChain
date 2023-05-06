@@ -62,7 +62,7 @@ digraph {
 0
 0
 3221225480
-28
+21
 0
 0
 0
@@ -74,40 +74,30 @@ digraph {
 	17 -> 18 [label="(3-->1)"]
 	19 [label="4218515.GetACP
 "]
-	20 [label="4214042.WideCharToMultiByte
+	20 [label="4213341.GetModuleFileNameA
+0
+0004c747c991a3f8bd3e2c6c050bf971
+260"]
+	0 -> 20 [label="(1-->2)"]
+	14 -> 20 [label="(1-->0)"]
+	21 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-22
+30
 0
 0
 0
 0"]
-	16 -> 20 [label="(0-->3)"]
-	21 [label="4213341.GetModuleFileNameA
-0
-0004c747c991a3f8bd3e2c6c050bf971
-260"]
-	0 -> 21 [label="(1-->2)"]
-	14 -> 21 [label="(1-->0)"]
+	16 -> 21 [label="(0-->3)"]
 	22 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
-43
+23
 0
 0
 0
 0"]
 	16 -> 22 [label="(0-->3)"]
-	23 [label="4214042.WideCharToMultiByte
-0
-0
-3221225480
-33
-0
-0
-0
-0"]
-	16 -> 23 [label="(0-->3)"]
 }

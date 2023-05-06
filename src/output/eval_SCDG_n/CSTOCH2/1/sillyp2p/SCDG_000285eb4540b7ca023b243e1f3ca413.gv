@@ -62,34 +62,25 @@ digraph {
 0
 0
 3221225480
-32
+28
 0
 0
 0
 0"]
 	16 -> 17 [label="(0-->3)"]
-	14 -> 17 [label="(1-->4)"]
-	18 [label="4214042.WideCharToMultiByte
+	18 [label="4214101.FreeEnvironmentStringsW
+3221225480"]
+	16 -> 18 [label="(0-->1)"]
+	17 -> 18 [label="(3-->1)"]
+	19 [label="4218515.GetACP
+"]
+	20 [label="4213341.GetModuleFileNameA
 0
-0
-3221225480
-31
-0
-0
-0
-0"]
-	16 -> 18 [label="(0-->3)"]
-	19 [label="4214042.WideCharToMultiByte
-0
-0
-3221225480
-30
-0
-0
-0
-0"]
-	16 -> 19 [label="(0-->3)"]
-	20 [label="4214042.WideCharToMultiByte
+000285eb4540b7ca023b243e1f3ca413
+260"]
+	0 -> 20 [label="(1-->2)"]
+	14 -> 20 [label="(1-->0)"]
+	21 [label="4214042.WideCharToMultiByte
 0
 0
 3221225480
@@ -98,11 +89,47 @@ digraph {
 0
 0
 0"]
-	16 -> 20 [label="(0-->3)"]
-	21 [label="4214101.FreeEnvironmentStringsW
-3221225480"]
-	16 -> 21 [label="(0-->1)"]
-	20 -> 21 [label="(3-->1)"]
-	22 [label="4218515.GetACP
-"]
+	16 -> 21 [label="(0-->3)"]
+	22 [label="4214076.WideCharToMultiByte
+0
+0
+3221225480
+29
+retval_WideCharToMultiByte_33137_32
+retval_WideCharToMultiByte_33137_32
+0
+0"]
+	16 -> 22 [label="(0-->3)"]
+	21 -> 22 [label="(3-->3)"]
+	21 -> 22 [label="(4-->4)"]
+	23 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+22
+0
+0
+0
+0"]
+	16 -> 23 [label="(0-->3)"]
+	24 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+24
+0
+0
+0
+0"]
+	16 -> 24 [label="(0-->3)"]
+	25 [label="4214042.WideCharToMultiByte
+0
+0
+3221225480
+26
+0
+0
+0
+0"]
+	16 -> 25 [label="(0-->3)"]
 }

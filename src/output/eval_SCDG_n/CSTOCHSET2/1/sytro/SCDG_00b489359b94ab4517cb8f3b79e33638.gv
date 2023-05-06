@@ -221,31 +221,39 @@ retval_GetThreadLocale_32799_32
 1604"]
 	56 [label="4199965.VirtualAlloc
 3222798336
-retval_LoadStringA_32816_32
+16384
 4096
 4"]
 	54 -> 56 [label="(0-->1)"]
 	45 -> 56 [label="(0-->4)"]
 	54 -> 56 [label="(0-->0)"]
-	57 [label="4199499.VirtualAlloc
+	57 [label="4199965.VirtualAlloc
+3222798336
+retval_LoadStringA_32816_32
+4096
+4"]
+	54 -> 57 [label="(0-->1)"]
+	45 -> 57 [label="(0-->4)"]
+	54 -> 57 [label="(0-->0)"]
+	58 [label="4199499.VirtualAlloc
 0
 retval_LoadStringA_32816_32
 8192
 1"]
-	58 [label="4212331.lstrcpyA
+	59 [label="4212331.lstrcpyA
 
 "]
-	59 [label="4212810.RegQueryValueExA
+	60 [label="4212810.RegQueryValueExA
 4217704
 
 0
 0
 2147417446
 2147417440"]
-	60 [label="4212905.GetLocaleInfoA
+	61 [label="4212905.GetLocaleInfoA
 retval_GetThreadLocale_32779_32
 3
 
 5"]
-	2 -> 60 [label="(0-->2)"]
+	2 -> 61 [label="(0-->2)"]
 }
