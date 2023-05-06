@@ -5,34 +5,81 @@ from torch_geometric.datasets import TUDataset
 from torch_geometric.loader import DataLoader
 
 class GINJK(torch.nn.Module):
-    def __init__(self, in_channels, hidden_channels, out_channels, num_layers=2):
+    def __init__(self, num_features, hidden, num_classes, dropout=0.0, l1_reg=0.0, l2_reg=0.0):
         super(GINJK, self).__init__()
-        self.convs = torch.nn.ModuleList()
-        self.convs.append(
-            GINConv(
-                torch.nn.Sequential(
-                    torch.nn.Linear(in_channels, hidden_channels),
-                    torch.nn.ReLU(),
-                    torch.nn.Linear(hidden_channels, hidden_channels))))
-        for _ in range(num_layers - 1):
-            self.convs.append(
-                GINConv(
-                    torch.nn.Sequential(
-                        torch.nn.Linear(hidden_channels, hidden_channels),
-                        torch.nn.ReLU(),
-                        torch.nn.Linear(hidden_channels, hidden_channels))))
-        self.jump = JumpingKnowledge(mode='cat')
-        self.fc = torch.nn.Linear(num_layers * hidden_channels, out_channels)
+        self.conv1 = GINConv(
+            torch.nn.Sequential(
+                torch.nn.Linear(num_features, hidden),
+                torch.nn.BatchNorm1d(hidden),
+                torch.nn.ReLU(),
+                torch.nn.Linear(hidden, hidden),
+                torch.nn.BatchNorm1d(hidden),
+                torch.nn.ReLU()))
+        self.conv2 = GINConv(
+            torch.nn.Sequential(
+                torch.nn.Linear(hidden, hidden),
+                torch.nn.BatchNorm1d(hidden),
+                torch.nn.ReLU(),
+                torch.nn.Linear(hidden, hidden),
+                torch.nn.BatchNorm1d(hidden),
+                torch.nn.ReLU()))
+        self.fc = torch.nn.Linear(hidden, num_classes)
+        self.dropout = dropout
+        self.l1_reg = l1_reg
+        self.l2_reg = l2_reg
 
     def forward(self, x, edge_index, batch):
-        xs = []
-        for conv in self.convs:
-            x = F.relu(conv(x, edge_index))
-            xs.append(x)
-        x = self.jump(xs)
+        x = F.relu(self.conv1(x, edge_index))
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = F.relu(self.conv2(x, edge_index))
+        x = F.dropout(x, p=self.dropout, training=self.training)
         x = global_add_pool(x, batch)
         x = self.fc(x)
+
+        # Add L1 and L2 regularization
+        if self.l1_reg > 0:
+            l1_loss = 0.0
+            for param in self.parameters():
+                l1_loss += torch.norm(param, p=1)
+            x += self.l1_reg * l1_loss
+
+        if self.l2_reg > 0:
+            l2_loss = 0.0
+            for param in self.parameters():
+                l2_loss += torch.norm(param, p=2)
+            x += 0.5 * self.l2_reg * l2_loss
+
         return F.log_softmax(x, dim=-1)
+
+# class GINJK(torch.nn.Module):
+#     def __init__(self, in_channels, hidden_channels, out_channels, num_layers=2):
+#         super(GINJK, self).__init__()
+#         self.convs = torch.nn.ModuleList()
+#         self.convs.append(
+#             GINConv(
+#                 torch.nn.Sequential(
+#                     torch.nn.Linear(in_channels, hidden_channels),
+#                     torch.nn.ReLU(),
+#                     torch.nn.Linear(hidden_channels, hidden_channels))))
+#         for _ in range(num_layers - 1):
+#             self.convs.append(
+#                 GINConv(
+#                     torch.nn.Sequential(
+#                         torch.nn.Linear(hidden_channels, hidden_channels),
+#                         torch.nn.ReLU(),
+#                         torch.nn.Linear(hidden_channels, hidden_channels))))
+#         self.jump = JumpingKnowledge(mode='cat')
+#         self.fc = torch.nn.Linear(num_layers * hidden_channels, out_channels)
+
+#     def forward(self, x, edge_index, batch):
+#         xs = []
+#         for conv in self.convs:
+#             x = F.relu(conv(x, edge_index))
+#             xs.append(x)
+#         x = self.jump(xs)
+#         x = global_add_pool(x, batch)
+#         x = self.fc(x)
+#         return F.log_softmax(x, dim=-1)
     
     # def __init__(self, in_channels, hidden_channels, out_channels, num_layers):
     #     super(GIN_JK, self).__init__()

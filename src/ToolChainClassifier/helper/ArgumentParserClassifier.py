@@ -69,6 +69,11 @@ class ArgumentParserClassifier:
             type=int,
             default=5,
         )
+        self.group.add_argument(
+            "--explain",
+            help="Only for GNN model: explain the prediction (default: False)\n",
+            action='store_true'
+        )
 #        self.group.add_argument(
 #            "--sepoch",
 #            help="Only for deep learning model: starting epoch (default: 1)\n",
