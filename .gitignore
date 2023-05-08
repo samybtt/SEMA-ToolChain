@@ -47,3 +47,10 @@ wl_model.pkl
 # *.tar
 # *.zip
 sema_tc.egg-info
+
+tree.txt
+*subgraph*.png
+unknown/
+out.gs
+*syscalls.svg
+*nb_instructions.svg

@@ -1,27 +1,65 @@
 import torch
 import torch.nn.functional as F
-from torch_geometric.nn import SAGEConv, global_add_pool, global_mean_pool
+from torch_geometric.nn import GINConv, SAGEConv, global_add_pool, global_mean_pool, global_max_pool
 from torch_geometric.utils import degree
 from torch.nn import Linear
 
 
 class GraphSAGE(torch.nn.Module):
-    def __init__(self, in_channels, hidden_channels, out_channels,
-                #  path,name,
-                 threshold=0.45, 
-                 families=['bancteian','delf','FeakerStealer','gandcrab','ircbot','lamer','nitol','RedLineStealer','sfone','sillyp2p','simbot','Sodinokibi','sytro','upatre','wabot','RemcosRAT']):
+    def __init__(self, num_features, hidden, num_classes, dropout=0.5, l1_reg=0.0, l2_reg=0.0):
         super(GraphSAGE, self).__init__()
-        self.conv1 = SAGEConv(in_channels, hidden_channels)
-        self.conv2 = SAGEConv(hidden_channels, out_channels)
-    
-    def forward(self, x, edge_index, batch):
-        import pdb; pdb.set_trace()
-        x = x.long()
-        x = F.relu(self.conv1(x, edge_index))
-        x = self.conv2(x, edge_index)
-        x = global_mean_pool(x, batch)  # global max pooling
+        self.conv1 = GINConv(
+            torch.nn.Sequential(
+                torch.nn.Linear(num_features, hidden),
+                torch.nn.ReLU(),
+                torch.nn.Linear(hidden, hidden)))
+        self.bn1 = torch.nn.BatchNorm1d(hidden)
+        self.conv2 = GINConv(
+            torch.nn.Sequential(
+                torch.nn.Linear(hidden, hidden),
+                torch.nn.ReLU(),
+                torch.nn.Linear(hidden, hidden)))
+        self.bn2 = torch.nn.BatchNorm1d(hidden)
+        self.fc = torch.nn.Linear(hidden, num_classes)
+        self.dropout = dropout
+        self.l1_reg = l1_reg
+        self.l2_reg = l2_reg
 
-        return F.log_softmax(x, dim=1)
+    def forward(self, x, edge_index, batch):
+        x = F.relu(self.conv1(x, edge_index))
+        x = self.bn1(x)
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = F.relu(self.conv2(x, edge_index))
+        x = self.bn2(x)
+        x = F.dropout(x, p=self.dropout, training=self.training)
+        x = global_add_pool(x, batch)
+        x = self.fc(x)
+        if self.l1_reg > 0:
+            l1_loss = torch.tensor(0.0, device=x.device)
+            for param in self.parameters():
+                l1_loss += torch.norm(param, p=1)
+            x += self.l1_reg * l1_loss
+        if self.l2_reg > 0:
+            l2_loss = torch.tensor(0.0, device=x.device)
+            for param in self.parameters():
+                l2_loss += torch.norm(param, p=2)
+            x += 0.5 * self.l2_reg * l2_loss
+        return F.log_softmax(x, dim=-1)
+    
+    
+    # def __init__(self, num_features, hidden, num_classes):
+    #     super(GraphSAGE, self).__init__()
+    #     self.conv1 = GATConv(num_features, hidden)
+    #     self.conv2 = GATConv(hidden, num_classes)
+
+    #     self.fc = torch.nn.Linear(hidden, num_classes)
+    # def forward(self, x, edge_index, batch):
+    #     x = F.elu(self.conv1(x, edge_index))
+    #     x = self.conv2(x, edge_index)
+    #     x = global_max_pool(x, batch) # global max pooling
+    #     self.fc(x)
+    #     return F.log_softmax(x, dim=-1)
+
         
     # def forward(self, x, edge_index, batch):
     #     # Compute normalization factor for each node's neighbors

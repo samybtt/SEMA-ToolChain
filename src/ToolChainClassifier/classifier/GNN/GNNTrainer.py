@@ -19,7 +19,8 @@ from ..Classifier import Classifier
 from .GraphSAGEClassifier import GraphSAGE
 from .GINClassifier import GIN
 from .GIKJKClassifier import GINJK
-from .utils import gen_graph_data, read_gs_4_gnn, PyGDataset
+from .GNNExplainability import GNNExplainability
+from .utils import gen_graph_data, read_gs_4_gnn
 
 CLASS_DIR = os.path.dirname(os.path.abspath(__file__))
 BINARY_CLASS = False # TODO
@@ -148,12 +149,12 @@ class GNNTrainer(Classifier):
             elif self.name=="ginjk":
                 self.clf = GINJK(dataset[0].num_node_features, 64, num_classes)
 
-            optimizer = torch.optim.Adam(self.clf.parameters(), lr=lr)
+            optimizer = torch.optim.Adam(self.clf.parameters(), lr=lr, weight_decay=5e-4)
             criterion = torch.nn.CrossEntropyLoss()
             
             # import pdb; pdb.set_trace()
 
-            for epoch in range(epoch):
+            for ep in range(epoch):
                 self.clf.train()
                 # import pdb; pdb.set_trace()
                 loss_all = 0
@@ -161,11 +162,12 @@ class GNNTrainer(Classifier):
                     optimizer.zero_grad()
                     out = self.clf(data.x, data.edge_index, data.batch)
                     loss = criterion(out, data.y)
+                    # loss = self.clf.loss(out, dataset.data.y, dataset.data.edge_index)
                     loss.backward()
                     loss_all += data.num_graphs * loss.item()
                     optimizer.step()
-                if(epoch % 10 == 0):
-                    print('Epoch: {:03d}, Loss: {:.5f}'.format(epoch, loss_all / len(dataset)))
+                if(ep % 10 == 0 or ep == epoch-1):
+                    print('Epoch: {:03d}, Loss: {:.5f}'.format(ep, loss_all / len(dataset)))
             self.log.info('--------------------FIT OK----------------')
         else:
             self.log.info("Dataset length should be > 0")
@@ -294,3 +296,14 @@ class GNNTrainer(Classifier):
         # plt.savefig(self.original_path + "figure.png")
         plt.savefig("/home/sambt/Desktop/figure.png")
         return f_score
+    
+    def explain(self, path=None, output_path=None):
+        if path is None:
+            dataset = self.val_dataset
+            loader = DataLoader(dataset, batch_size=1, shuffle=True)
+            GNNExplainability(dataset, loader, self.clf, output_path).explain()
+        else:
+            self.init_dataset(path)
+            dataset = self.dataset
+            loader = DataLoader(dataset, batch_size=1, shuffle=True)
+            GNNExplainability(dataset, loader, self.clf, output_path).explain()

@@ -158,6 +158,8 @@ class ToolChainClassifier:
         #self.log.info(self.classifier.get_stat_classifier())
     def detect(self):
         self.classifier.detection(path=(None if self.args.train else self.input_path))
+    def explain(self):
+        self.classifier.explain(path=(None if self.args.train else self.input_path), output_path=ROOT_DIR + "/classifier/explain_output/")
 
 def main():
     tc = ToolChainClassifier()
@@ -165,7 +167,9 @@ def main():
     tc.args = args_parser.parse_arguments()
     args_parser.update_tool(tc.args)
     tc.init()
-    if tc.args.train:
+    if tc.args.explain:
+        tc.explain()
+    elif tc.args.train:
         tc.train()
     elif tc.mode == "classification":
         tc.classify()
