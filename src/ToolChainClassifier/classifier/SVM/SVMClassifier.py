@@ -12,7 +12,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score,recall_score , f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score,recall_score , f1_score, balanced_accuracy_score
 from grakel import Graph
 from grakel.datasets import fetch_dataset
 from grakel.kernels import WeisfeilerLehman, VertexHistogram,ShortestPath,RandomWalk,RandomWalkLabeled,PropagationAttr,NeighborhoodSubgraphPairwiseDistance,WeisfeilerLehmanOptimalAssignment,PyramidMatch
@@ -108,6 +108,7 @@ class SVMClassifier(Classifier):
         
 
         self.log.info("Accuracy %2.2f %%" %(accuracy_score(self.label, self.y_pred)*100))
+        self.log.info("Balenced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
         self.log.info("Precision %2.2f %%" %(precision_score(self.label, self.y_pred,average='weighted')*100))
         self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100

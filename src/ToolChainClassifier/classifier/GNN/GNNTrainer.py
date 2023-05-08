@@ -2,7 +2,7 @@ import torch
 import torch.nn.functional as F
 import progressbar
 from sklearn.model_selection import train_test_split,StratifiedShuffleSplit
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score,recall_score , f1_score
+from sklearn.metrics import confusion_matrix, accuracy_score, precision_score,recall_score , f1_score, balanced_accuracy_score
 import matplotlib.pyplot as plt
 from sklearn.metrics import roc_curve, roc_auc_score
 import seaborn as sns
@@ -249,6 +249,7 @@ class GNNTrainer(Classifier):
         
 
         self.log.info("Accuracy %2.2f %%" %(accuracy_score(self.label, self.y_pred)*100))
+        self.log.info("Balenced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
         self.log.info("Precision %2.2f %%" %(precision_score(self.label, self.y_pred,average='weighted')*100))
         self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100
