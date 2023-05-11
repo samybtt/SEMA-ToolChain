@@ -70,9 +70,9 @@ retval_GetCurrentProcess_32771_32
 1001"]
 	13 -> 14 [label="(0-->1)"]
 	15 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32802_32
+retval_GetCurrentProcess_32783_32
 1001
-retval_GetCurrentProcess_32807_32
+retval_GetCurrentProcess_32788_32
 2147417556
 0
 1
@@ -93,9 +93,9 @@ retval_GetCurrentProcess_32807_32
 1002"]
 	16 -> 17 [label="(0-->1)"]
 	18 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33079_32
+retval_GetCurrentProcess_32868_32
 1002
-retval_GetCurrentProcess_33084_32
+retval_GetCurrentProcess_32873_32
 2147417556
 0
 1
@@ -140,48 +140,48 @@ retval_GetCurrentProcess_33084_32
 	22 [label="4220217.GetEnvironmentStrings
 "]
 	23 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33080_32
-1002
-retval_GetCurrentProcess_33085_32
+retval_GetCurrentProcess_32784_32
+1001
+retval_GetCurrentProcess_32789_32
 2147417556
 0
 1
 2"]
-	16 -> 23 [label="(0-->2)"]
-	17 -> 23 [label="(1-->2)"]
+	13 -> 23 [label="(0-->2)"]
+	14 -> 23 [label="(1-->2)"]
 	12 -> 23 [label="(4-->4)"]
-	15 -> 23 [label="(4-->4)"]
 	1 -> 23 [label="(1-->6)"]
 	1 -> 23 [label="(0-->6)"]
 	3 -> 23 [label="(4-->6)"]
 	6 -> 23 [label="(1-->6)"]
 	6 -> 23 [label="(2-->6)"]
 	12 -> 23 [label="(6-->6)"]
-	15 -> 23 [label="(6-->6)"]
 	12 -> 23 [label="(7-->7)"]
-	15 -> 23 [label="(7-->7)"]
 	24 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32786_32
-1001
-retval_GetCurrentProcess_32794_32
+retval_GetCurrentProcess_32879_32
+1002
+retval_GetCurrentProcess_32883_32
 2147417556
 0
 1
 2"]
-	13 -> 24 [label="(0-->2)"]
-	14 -> 24 [label="(1-->2)"]
+	16 -> 24 [label="(0-->2)"]
+	17 -> 24 [label="(1-->2)"]
 	12 -> 24 [label="(4-->4)"]
+	23 -> 24 [label="(4-->4)"]
 	1 -> 24 [label="(1-->6)"]
 	1 -> 24 [label="(0-->6)"]
 	3 -> 24 [label="(4-->6)"]
 	6 -> 24 [label="(1-->6)"]
 	6 -> 24 [label="(2-->6)"]
 	12 -> 24 [label="(6-->6)"]
+	23 -> 24 [label="(6-->6)"]
 	12 -> 24 [label="(7-->7)"]
+	23 -> 24 [label="(7-->7)"]
 	25 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32971_32
+retval_GetCurrentProcess_32880_32
 1002
-retval_GetCurrentProcess_32976_32
+retval_GetCurrentProcess_32884_32
 2147417556
 0
 1
@@ -189,38 +189,41 @@ retval_GetCurrentProcess_32976_32
 	16 -> 25 [label="(0-->2)"]
 	17 -> 25 [label="(1-->2)"]
 	12 -> 25 [label="(4-->4)"]
-	24 -> 25 [label="(4-->4)"]
+	23 -> 25 [label="(4-->4)"]
 	1 -> 25 [label="(1-->6)"]
 	1 -> 25 [label="(0-->6)"]
 	3 -> 25 [label="(4-->6)"]
 	6 -> 25 [label="(1-->6)"]
 	6 -> 25 [label="(2-->6)"]
 	12 -> 25 [label="(6-->6)"]
-	24 -> 25 [label="(6-->6)"]
+	23 -> 25 [label="(6-->6)"]
 	12 -> 25 [label="(7-->7)"]
-	24 -> 25 [label="(7-->7)"]
+	23 -> 25 [label="(7-->7)"]
 	26 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32785_32
-1001
-retval_GetCurrentProcess_32793_32
+retval_GetCurrentProcess_32881_32
+1002
+retval_GetCurrentProcess_32885_32
 2147417556
 0
 1
 2"]
-	13 -> 26 [label="(0-->2)"]
-	14 -> 26 [label="(1-->2)"]
+	16 -> 26 [label="(0-->2)"]
+	17 -> 26 [label="(1-->2)"]
 	12 -> 26 [label="(4-->4)"]
+	15 -> 26 [label="(4-->4)"]
 	1 -> 26 [label="(1-->6)"]
 	1 -> 26 [label="(0-->6)"]
 	3 -> 26 [label="(4-->6)"]
 	6 -> 26 [label="(1-->6)"]
 	6 -> 26 [label="(2-->6)"]
 	12 -> 26 [label="(6-->6)"]
+	15 -> 26 [label="(6-->6)"]
 	12 -> 26 [label="(7-->7)"]
+	15 -> 26 [label="(7-->7)"]
 	27 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33231_32
+retval_GetCurrentProcess_32834_32
 1002
-retval_GetCurrentProcess_33236_32
+retval_GetCurrentProcess_32839_32
 2147417556
 0
 1
@@ -228,59 +231,56 @@ retval_GetCurrentProcess_33236_32
 	16 -> 27 [label="(0-->2)"]
 	17 -> 27 [label="(1-->2)"]
 	12 -> 27 [label="(4-->4)"]
-	26 -> 27 [label="(4-->4)"]
 	1 -> 27 [label="(1-->6)"]
 	1 -> 27 [label="(0-->6)"]
 	3 -> 27 [label="(4-->6)"]
 	6 -> 27 [label="(1-->6)"]
 	6 -> 27 [label="(2-->6)"]
 	12 -> 27 [label="(6-->6)"]
-	26 -> 27 [label="(6-->6)"]
 	12 -> 27 [label="(7-->7)"]
-	26 -> 27 [label="(7-->7)"]
 	28 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33232_32
-1002
-retval_GetCurrentProcess_33237_32
+retval_GetCurrentProcess_32782_32
+1001
+retval_GetCurrentProcess_32787_32
 2147417556
 0
 1
 2"]
-	16 -> 28 [label="(0-->2)"]
-	17 -> 28 [label="(1-->2)"]
+	13 -> 28 [label="(0-->2)"]
+	14 -> 28 [label="(1-->2)"]
 	12 -> 28 [label="(4-->4)"]
-	24 -> 28 [label="(4-->4)"]
 	1 -> 28 [label="(1-->6)"]
 	1 -> 28 [label="(0-->6)"]
 	3 -> 28 [label="(4-->6)"]
 	6 -> 28 [label="(1-->6)"]
 	6 -> 28 [label="(2-->6)"]
 	12 -> 28 [label="(6-->6)"]
-	24 -> 28 [label="(6-->6)"]
 	12 -> 28 [label="(7-->7)"]
-	24 -> 28 [label="(7-->7)"]
 	29 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32784_32
-1001
-retval_GetCurrentProcess_32788_32
+retval_GetCurrentProcess_32819_32
+1002
+retval_GetCurrentProcess_32824_32
 2147417556
 0
 1
 2"]
-	13 -> 29 [label="(0-->2)"]
-	14 -> 29 [label="(1-->2)"]
+	16 -> 29 [label="(0-->2)"]
+	17 -> 29 [label="(1-->2)"]
 	12 -> 29 [label="(4-->4)"]
+	28 -> 29 [label="(4-->4)"]
 	1 -> 29 [label="(1-->6)"]
 	1 -> 29 [label="(0-->6)"]
 	3 -> 29 [label="(4-->6)"]
 	6 -> 29 [label="(1-->6)"]
 	6 -> 29 [label="(2-->6)"]
 	12 -> 29 [label="(6-->6)"]
+	28 -> 29 [label="(6-->6)"]
 	12 -> 29 [label="(7-->7)"]
+	28 -> 29 [label="(7-->7)"]
 	30 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32969_32
+retval_GetCurrentProcess_32820_32
 1002
-retval_GetCurrentProcess_32974_32
+retval_GetCurrentProcess_32825_32
 2147417556
 0
 1
@@ -288,20 +288,20 @@ retval_GetCurrentProcess_32974_32
 	16 -> 30 [label="(0-->2)"]
 	17 -> 30 [label="(1-->2)"]
 	12 -> 30 [label="(4-->4)"]
-	29 -> 30 [label="(4-->4)"]
+	28 -> 30 [label="(4-->4)"]
 	1 -> 30 [label="(1-->6)"]
 	1 -> 30 [label="(0-->6)"]
 	3 -> 30 [label="(4-->6)"]
 	6 -> 30 [label="(1-->6)"]
 	6 -> 30 [label="(2-->6)"]
 	12 -> 30 [label="(6-->6)"]
-	29 -> 30 [label="(6-->6)"]
+	28 -> 30 [label="(6-->6)"]
 	12 -> 30 [label="(7-->7)"]
-	29 -> 30 [label="(7-->7)"]
+	28 -> 30 [label="(7-->7)"]
 	31 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32970_32
+retval_GetCurrentProcess_32864_32
 1002
-retval_GetCurrentProcess_32975_32
+retval_GetCurrentProcess_32869_32
 2147417556
 0
 1
@@ -309,20 +309,20 @@ retval_GetCurrentProcess_32975_32
 	16 -> 31 [label="(0-->2)"]
 	17 -> 31 [label="(1-->2)"]
 	12 -> 31 [label="(4-->4)"]
-	26 -> 31 [label="(4-->4)"]
+	23 -> 31 [label="(4-->4)"]
 	1 -> 31 [label="(1-->6)"]
 	1 -> 31 [label="(0-->6)"]
 	3 -> 31 [label="(4-->6)"]
 	6 -> 31 [label="(1-->6)"]
 	6 -> 31 [label="(2-->6)"]
 	12 -> 31 [label="(6-->6)"]
-	26 -> 31 [label="(6-->6)"]
+	23 -> 31 [label="(6-->6)"]
 	12 -> 31 [label="(7-->7)"]
-	26 -> 31 [label="(7-->7)"]
+	23 -> 31 [label="(7-->7)"]
 	32 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32973_32
+retval_GetCurrentProcess_32882_32
 1002
-retval_GetCurrentProcess_32978_32
+retval_GetCurrentProcess_32886_32
 2147417556
 0
 1
@@ -330,20 +330,20 @@ retval_GetCurrentProcess_32978_32
 	16 -> 32 [label="(0-->2)"]
 	17 -> 32 [label="(1-->2)"]
 	12 -> 32 [label="(4-->4)"]
-	29 -> 32 [label="(4-->4)"]
+	23 -> 32 [label="(4-->4)"]
 	1 -> 32 [label="(1-->6)"]
 	1 -> 32 [label="(0-->6)"]
 	3 -> 32 [label="(4-->6)"]
 	6 -> 32 [label="(1-->6)"]
 	6 -> 32 [label="(2-->6)"]
 	12 -> 32 [label="(6-->6)"]
-	29 -> 32 [label="(6-->6)"]
+	23 -> 32 [label="(6-->6)"]
 	12 -> 32 [label="(7-->7)"]
-	29 -> 32 [label="(7-->7)"]
+	23 -> 32 [label="(7-->7)"]
 	33 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32990_32
+retval_GetCurrentProcess_32836_32
 1002
-retval_GetCurrentProcess_32995_32
+retval_GetCurrentProcess_32841_32
 2147417556
 0
 1
@@ -351,20 +351,20 @@ retval_GetCurrentProcess_32995_32
 	16 -> 33 [label="(0-->2)"]
 	17 -> 33 [label="(1-->2)"]
 	12 -> 33 [label="(4-->4)"]
-	29 -> 33 [label="(4-->4)"]
+	28 -> 33 [label="(4-->4)"]
 	1 -> 33 [label="(1-->6)"]
 	1 -> 33 [label="(0-->6)"]
 	3 -> 33 [label="(4-->6)"]
 	6 -> 33 [label="(1-->6)"]
 	6 -> 33 [label="(2-->6)"]
 	12 -> 33 [label="(6-->6)"]
-	29 -> 33 [label="(6-->6)"]
+	28 -> 33 [label="(6-->6)"]
 	12 -> 33 [label="(7-->7)"]
-	29 -> 33 [label="(7-->7)"]
+	28 -> 33 [label="(7-->7)"]
 	34 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32991_32
+retval_GetCurrentProcess_32837_32
 1002
-retval_GetCurrentProcess_32996_32
+retval_GetCurrentProcess_32842_32
 2147417556
 0
 1
@@ -372,59 +372,59 @@ retval_GetCurrentProcess_32996_32
 	16 -> 34 [label="(0-->2)"]
 	17 -> 34 [label="(1-->2)"]
 	12 -> 34 [label="(4-->4)"]
-	26 -> 34 [label="(4-->4)"]
+	15 -> 34 [label="(4-->4)"]
 	1 -> 34 [label="(1-->6)"]
 	1 -> 34 [label="(0-->6)"]
 	3 -> 34 [label="(4-->6)"]
 	6 -> 34 [label="(1-->6)"]
 	6 -> 34 [label="(2-->6)"]
 	12 -> 34 [label="(6-->6)"]
-	26 -> 34 [label="(6-->6)"]
+	15 -> 34 [label="(6-->6)"]
 	12 -> 34 [label="(7-->7)"]
-	26 -> 34 [label="(7-->7)"]
+	15 -> 34 [label="(7-->7)"]
 	35 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32803_32
-1001
-retval_GetCurrentProcess_32808_32
+retval_GetCurrentProcess_32838_32
+1002
+retval_GetCurrentProcess_32843_32
 2147417556
 0
 1
 2"]
-	13 -> 35 [label="(0-->2)"]
-	14 -> 35 [label="(1-->2)"]
+	16 -> 35 [label="(0-->2)"]
+	17 -> 35 [label="(1-->2)"]
 	12 -> 35 [label="(4-->4)"]
+	15 -> 35 [label="(4-->4)"]
 	1 -> 35 [label="(1-->6)"]
 	1 -> 35 [label="(0-->6)"]
 	3 -> 35 [label="(4-->6)"]
 	6 -> 35 [label="(1-->6)"]
 	6 -> 35 [label="(2-->6)"]
 	12 -> 35 [label="(6-->6)"]
+	15 -> 35 [label="(6-->6)"]
 	12 -> 35 [label="(7-->7)"]
+	15 -> 35 [label="(7-->7)"]
 	36 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32993_32
-1002
-retval_GetCurrentProcess_32998_32
+retval_GetCurrentProcess_32785_32
+1001
+retval_GetCurrentProcess_32790_32
 2147417556
 0
 1
 2"]
-	16 -> 36 [label="(0-->2)"]
-	17 -> 36 [label="(1-->2)"]
+	13 -> 36 [label="(0-->2)"]
+	14 -> 36 [label="(1-->2)"]
 	12 -> 36 [label="(4-->4)"]
-	35 -> 36 [label="(4-->4)"]
 	1 -> 36 [label="(1-->6)"]
 	1 -> 36 [label="(0-->6)"]
 	3 -> 36 [label="(4-->6)"]
 	6 -> 36 [label="(1-->6)"]
 	6 -> 36 [label="(2-->6)"]
 	12 -> 36 [label="(6-->6)"]
-	35 -> 36 [label="(6-->6)"]
 	12 -> 36 [label="(7-->7)"]
-	35 -> 36 [label="(7-->7)"]
 	37 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_32992_32
+retval_GetCurrentProcess_33025_32
 1002
-retval_GetCurrentProcess_32997_32
+retval_GetCurrentProcess_33030_32
 2147417556
 0
 1
@@ -432,20 +432,20 @@ retval_GetCurrentProcess_32997_32
 	16 -> 37 [label="(0-->2)"]
 	17 -> 37 [label="(1-->2)"]
 	12 -> 37 [label="(4-->4)"]
-	24 -> 37 [label="(4-->4)"]
+	36 -> 37 [label="(4-->4)"]
 	1 -> 37 [label="(1-->6)"]
 	1 -> 37 [label="(0-->6)"]
 	3 -> 37 [label="(4-->6)"]
 	6 -> 37 [label="(1-->6)"]
 	6 -> 37 [label="(2-->6)"]
 	12 -> 37 [label="(6-->6)"]
-	24 -> 37 [label="(6-->6)"]
+	36 -> 37 [label="(6-->6)"]
 	12 -> 37 [label="(7-->7)"]
-	24 -> 37 [label="(7-->7)"]
+	36 -> 37 [label="(7-->7)"]
 	38 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33081_32
+retval_GetCurrentProcess_33029_32
 1002
-retval_GetCurrentProcess_33086_32
+retval_GetCurrentProcess_33034_32
 2147417556
 0
 1
@@ -453,20 +453,20 @@ retval_GetCurrentProcess_33086_32
 	16 -> 38 [label="(0-->2)"]
 	17 -> 38 [label="(1-->2)"]
 	12 -> 38 [label="(4-->4)"]
-	35 -> 38 [label="(4-->4)"]
+	36 -> 38 [label="(4-->4)"]
 	1 -> 38 [label="(1-->6)"]
 	1 -> 38 [label="(0-->6)"]
 	3 -> 38 [label="(4-->6)"]
 	6 -> 38 [label="(1-->6)"]
 	6 -> 38 [label="(2-->6)"]
 	12 -> 38 [label="(6-->6)"]
-	35 -> 38 [label="(6-->6)"]
+	36 -> 38 [label="(6-->6)"]
 	12 -> 38 [label="(7-->7)"]
-	35 -> 38 [label="(7-->7)"]
+	36 -> 38 [label="(7-->7)"]
 	39 [label="4219439.DuplicateHandle
-retval_GetCurrentProcess_33078_32
+retval_GetCurrentProcess_33176_32
 1002
-retval_GetCurrentProcess_33083_32
+retval_GetCurrentProcess_33178_32
 2147417556
 0
 1
@@ -474,14 +474,14 @@ retval_GetCurrentProcess_33083_32
 	16 -> 39 [label="(0-->2)"]
 	17 -> 39 [label="(1-->2)"]
 	12 -> 39 [label="(4-->4)"]
-	24 -> 39 [label="(4-->4)"]
+	36 -> 39 [label="(4-->4)"]
 	1 -> 39 [label="(1-->6)"]
 	1 -> 39 [label="(0-->6)"]
 	3 -> 39 [label="(4-->6)"]
 	6 -> 39 [label="(1-->6)"]
 	6 -> 39 [label="(2-->6)"]
 	12 -> 39 [label="(6-->6)"]
-	24 -> 39 [label="(6-->6)"]
+	36 -> 39 [label="(6-->6)"]
 	12 -> 39 [label="(7-->7)"]
-	24 -> 39 [label="(7-->7)"]
+	36 -> 39 [label="(7-->7)"]
 }
