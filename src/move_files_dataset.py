@@ -7,12 +7,12 @@ source_dir = "output/eval_SCDG_n"
 dest_dir = "databases/examples_samy/big_dataset"
 
 # Define the possible methods and families
-# possible_methods = ["WSELECT", "WSELECT2", "WSELECTSET2", "CDFS", "CBFS", "CSTOCH", "CSTOCH2", "CSTOCHSET2", "STOCH"]
-possible_methods = ["CSTOCH", "CSTOCH2", "CSTOCHSET2", "STOCH"]
+possible_methods = ["WSELECT", "WSELECT2", "WSELECTSET2", "CDFS", "CBFS", "CSTOCH", "CSTOCH2", "CSTOCHSET2", "STOCH"]
+# possible_methods = ["CSTOCH", "CSTOCH2", "CSTOCHSET2", "STOCH"]
 possible_families = ["bancteian", "ircbot", "sillyp2p", "sytro", "simbot", "FeakerStealer", "sfone", "lamer", "RedLineStealer", "RemcosRAT", "Sodinokibi", "delf", "nitol", "gandcrab", "wabot"]
 # import pdb; pdb.set_trace()
 
-for i in range(1, 7):
+for i in range(0, 1):
     # Loop over each method directory in the source directory
     print("############################################### ", i)
     for method in os.listdir(source_dir):

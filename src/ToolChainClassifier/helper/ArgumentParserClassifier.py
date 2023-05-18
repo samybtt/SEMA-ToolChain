@@ -74,6 +74,12 @@ class ArgumentParserClassifier:
             help="Only for GNN model: explain the prediction (default: False)\n",
             action='store_true'
         )
+        self.group.add_argument(
+            "--num_layers",
+            help="Only for GNN models: number of conv layers (default: 4)\n",
+            type=int,
+            default=4,
+        )
 #        self.group.add_argument(
 #            "--sepoch",
 #            help="Only for deep learning model: starting epoch (default: 1)\n",

@@ -62,6 +62,7 @@ class ToolChainClassifier:
             epoch = args.epoch
             shared_type = 1#args.smodel
             self.mode = args.mode
+            num_layers = args.num_layers
         else:
             threshold = args["threshold"]
             support = args["support"]
@@ -85,11 +86,11 @@ class ToolChainClassifier:
                     from .classifier.DL.DLTrainerClassifier import DLTrainerClassifier
                 self.classifier = DLTrainerClassifier(path=ROOT_DIR,epoch=epoch,shared_type=shared_type)
             elif self.classifier_name == "gin":
-                self.classifier = GNNTrainer(path=ROOT_DIR, name="gin", threshold=threshold, families=families)
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="gin", threshold=threshold, families=families, num_layers=num_layers)
             elif self.classifier_name == "sage":
-                self.classifier = GNNTrainer(path=ROOT_DIR, name="sage", threshold=threshold, families=families)
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="sage", threshold=threshold, families=families, num_layers=num_layers)
             elif self.classifier_name == "ginjk":
-                self.classifier = GNNTrainer(path=ROOT_DIR, name="ginjk", threshold=threshold, families=families)
+                self.classifier = GNNTrainer(path=ROOT_DIR, name="ginjk", threshold=threshold, families=families, num_layers=num_layers)
             else:
                 self.log.info("Error: Unrecognize classifer (gspan|inria|wl|dl)")
                 exit(-1)    
@@ -159,7 +160,7 @@ class ToolChainClassifier:
     def detect(self):
         self.classifier.detection(path=(None if self.args.train else self.input_path))
     def explain(self):
-        self.classifier.explain(path=(None if self.args.train else self.input_path), output_path=ROOT_DIR + "/classifier/explain_output/")
+        self.classifier.explain(path=(None if self.args.train else self.input_path), output_path=ROOT_DIR + "/classifier/explain_output/new/")
 
 def main():
     tc = ToolChainClassifier()

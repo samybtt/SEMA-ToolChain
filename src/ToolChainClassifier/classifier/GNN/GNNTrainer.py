@@ -21,6 +21,7 @@ from .GINClassifier import GIN
 from .GIKJKClassifier import GINJK
 from .GNNExplainability import GNNExplainability
 from .utils import gen_graph_data, read_gs_4_gnn
+import copy
 
 CLASS_DIR = os.path.dirname(os.path.abspath(__file__))
 BINARY_CLASS = False # TODO
@@ -35,6 +36,7 @@ def collate_fn(data_list):
 class GNNTrainer(Classifier):
     def __init__(self, path, name, threshold=0.45,
                  families=['bancteian','delf','FeakerStealer','gandcrab','ircbot','lamer','nitol','RedLineStealer','sfone','sillyp2p','simbot','Sodinokibi','sytro','upatre','wabot','RemcosRAT'],
+                 num_layers=2, hidden=64, lr=0.001, epochs=350, batch_size=1,
                  multi_gpu=1):
         super().__init__(path, name, threshold)
 
@@ -59,6 +61,12 @@ class GNNTrainer(Classifier):
         self.classes = sorted(list(classes))
         self.clf = None
         self.y_pred = list()
+
+        self.num_layers = num_layers
+        self.hidden = hidden
+        self.lr = lr
+        self.epochs = epochs
+        self.batch_size = batch_size
 
         self.train_index, self.val_index = [],[]
         self.original_path = ""
@@ -108,7 +116,7 @@ class GNNTrainer(Classifier):
         bar.finish()
 
     def split_dataset(self):
-        sss = StratifiedShuffleSplit(n_splits=1, test_size=0.4, random_state=24)
+        sss = StratifiedShuffleSplit(n_splits=1, test_size=0.3, random_state=24)
         for train, test in sss.split(self.dataset, self.label):
             self.train_index = train
             self.val_index = test
@@ -125,35 +133,52 @@ class GNNTrainer(Classifier):
         dname = dirname.split("_")[0]
         return dname, name
     
-    def train(self, path, epoch=250, lr=0.01):
+    def train(self, path):
+        epoch=self.epochs
+        lr=self.lr
+        batch_size=self.batch_size
         self.init_dataset(path)
 
         self.log.info("Dataset len: " + str(len(self.dataset)))
         self.dataset_len = len(self.dataset)
-
+        # import pdb; pdb.set_trace()
         if self.dataset_len > 0:            
             self.split_dataset()
             dataset = self.train_dataset
+            val_dataset = self.val_dataset
+            # dataset = self.dataset
             # import pdb; pdb.set_trace()
 
-            # dataset = TUDataset(root='data/TUDataset', name='MUTAG')
             num_classes = len(np.unique(self.label))
-            train_loader = DataLoader(dataset, batch_size=64, shuffle=True, collate_fn=collate_fn)
+            train_loader = DataLoader(dataset, batch_size=batch_size, shuffle=True)#, collate_fn=collate_fn)
+            val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 
             # import pdb; pdb.set_trace()
             
             if self.name=="gin":
-                self.clf = GIN(dataset[0].num_node_features, 64, num_classes)
+                self.clf = GIN(dataset[0].num_node_features, self.hidden, num_classes, self.num_layers)
             elif self.name=="sage":
-                self.clf = GraphSAGE(dataset[0].num_node_features, 64, num_classes)
+                self.clf = GraphSAGE(dataset[0].num_node_features, self.hidden, num_classes, self.num_layers)
             elif self.name=="ginjk":
-                self.clf = GINJK(dataset[0].num_node_features, 64, num_classes)
+                self.clf = GINJK(dataset[0].num_node_features, self.hidden, num_classes, self.num_layers)
 
-            optimizer = torch.optim.Adam(self.clf.parameters(), lr=lr, weight_decay=5e-4)
+            optimizer = torch.optim.Adam(self.clf.parameters(), lr=lr)#, weight_decay=5e-4)
             criterion = torch.nn.CrossEntropyLoss()
-            
+            scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)
+            # scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, 
+            #                             T_0 = 8,# Number of iterations for the first restart
+            #                             T_mult = 1, # A factor increases TiTi​ after a restart
+            #                             eta_min = 1e-5) # Minimum learning rate
+            # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,
+            #                   T_max = 42, # Maximum number of iterations.
+            #                  eta_min = 1e-4) # Minimum learning rate.
             # import pdb; pdb.set_trace()
-
+            torch.autograd.set_detect_anomaly(True)
+            patience = 20 # Number of epochs to wait for improvement
+            best_val_loss = float('inf')
+            best_val_bal_acc = 0
+            best_model_wts = copy.deepcopy(self.clf.state_dict())
+            counter = 0  # Counter to keep track of epochs without improvement
             for ep in range(epoch):
                 self.clf.train()
                 # import pdb; pdb.set_trace()
@@ -166,8 +191,45 @@ class GNNTrainer(Classifier):
                     loss.backward()
                     loss_all += data.num_graphs * loss.item()
                     optimizer.step()
-                if(ep % 10 == 0 or ep == epoch-1):
-                    print('Epoch: {:03d}, Loss: {:.5f}'.format(ep, loss_all / len(dataset)))
+                before_lr = optimizer.param_groups[0]["lr"]
+                scheduler.step()
+                after_lr = optimizer.param_groups[0]["lr"]
+                train_loss = loss_all / len(dataset)
+
+                # validation
+                self.clf.eval()
+                val_loss = 0
+                val_correct = 0
+                val_predictions = []
+                targets = []
+                with torch.no_grad():
+                    for val_data in val_loader:
+                        val_out = self.clf(val_data.x, val_data.edge_index, val_data.batch)
+                        val_loss += criterion(val_out, val_data.y).item()
+                        val_pred = val_out.argmax(dim=1)
+                        val_correct += val_pred.eq(val_data.y).sum().item()
+                        val_predictions.extend(val_pred.cpu().numpy())
+                        targets.extend(val_data.y)
+                
+                val_loss /= len(val_dataset)
+                val_accuracy = (val_correct / len(val_dataset))*100
+                val_bal_accuracy = balanced_accuracy_score(targets, val_predictions)*100
+                # Check if validation loss has improved
+                if ((best_val_bal_acc < val_bal_accuracy) or
+                    (best_val_bal_acc == val_bal_accuracy and val_loss < best_val_loss)):
+                    best_val_loss = val_loss
+                    best_val_bal_acc = val_bal_accuracy
+                    # Save the current best model
+                    # torch.save(self.clf.state_dict(), best_model_path)
+                    best_model_wts = copy.deepcopy(self.clf.state_dict())
+                    counter = 0                   
+                else:
+                    counter += 1
+                    # if counter >= patience:
+                    #     print("Validation loss did not improve for {} epochs. Stopping training.".format(patience))
+                    #     break
+                print("Epoch: %03d/%03d: lr %.5f -> %.5f | Train Loss: %.5f | Val Loss: %.5f | Val Accuracy: %.3f%% | Val BAL Accuracy: %.3f%% | patience counter: %.0f" % (ep, epoch-1, before_lr, after_lr, train_loss, val_loss, val_accuracy, val_bal_accuracy, counter))
+            self.clf.load_state_dict(best_model_wts)
             self.log.info('--------------------FIT OK----------------')
         else:
             self.log.info("Dataset length should be > 0")
@@ -188,7 +250,7 @@ class GNNTrainer(Classifier):
                 for p in pred:
                     # print(p)
                     self.y_pred.append(self.fam_idx[p])
-            print("AAAAAccuracy: " + str(correct/len(self.dataset)))
+            # print("AAAAAccuracy: " + str(correct/len(self.dataset)))
         else:
             # import pdb; pdb.set_trace()
             self.init_dataset(path)
@@ -205,7 +267,7 @@ class GNNTrainer(Classifier):
                 for p in pred:
                     # print(p)
                     self.y_pred.append(self.fam_idx[p])
-            print("AAAAAccuracy: " + str(correct/len(self.dataset)))
+            # print("AAAAAccuracy: " + str(correct/len(self.dataset)))
             # import pdb; pdb.set_trace() 
 
 
@@ -225,7 +287,7 @@ class GNNTrainer(Classifier):
                 for p in pred:
                     # print(p)
                     self.y_pred.append(self.fam_idx[p])
-            print("AAAAAccuracy: " + str(correct/len(self.dataset)))
+            # print("AAAAAccuracy: " + str(correct/len(self.dataset)))
         else:
             self.init_dataset(path)
             self.clf.eval()
@@ -241,7 +303,7 @@ class GNNTrainer(Classifier):
                 for p in pred:
                     # print(p)
                     self.y_pred.append(self.fam_idx[p])
-            print("AAAAAccuracy: " + str(correct/len(self.dataset)))
+            # print("AAAAAccuracy: " + str(correct/len(self.dataset)))
 
 
     def get_stat_classifier(self):
@@ -249,7 +311,7 @@ class GNNTrainer(Classifier):
         
 
         self.log.info("Accuracy %2.2f %%" %(accuracy_score(self.label, self.y_pred)*100))
-        self.log.info("Balenced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
+        self.log.info("Balanced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
         self.log.info("Precision %2.2f %%" %(precision_score(self.label, self.y_pred,average='weighted')*100))
         self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100
@@ -260,7 +322,7 @@ class GNNTrainer(Classifier):
             y_score1 = self.clf.predict_proba(self.K_val)[:,1]
             false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(self.label, y_score1,pos_label='clean')
             plt.subplots(1, figsize=(10,10))
-            plt.title('Receiver Operating Characteristic - DecisionTree')
+            plt.title('Receiver Operating Characteristic -  DecisionTree')
             plt.plot(false_positive_rate1, true_positive_rate1)
             plt.plot([0, 1], ls="--")
             plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
@@ -302,9 +364,9 @@ class GNNTrainer(Classifier):
         if path is None:
             dataset = self.val_dataset
             loader = DataLoader(dataset, batch_size=1, shuffle=True)
-            GNNExplainability(dataset, loader, self.clf, output_path).explain()
+            GNNExplainability(dataset, loader, self.clf, self.mapping, output_path).explain()
         else:
             self.init_dataset(path)
             dataset = self.dataset
             loader = DataLoader(dataset, batch_size=1, shuffle=True)
-            GNNExplainability(dataset, loader, self.clf, output_path).explain()
+            GNNExplainability(dataset, loader, self.clf, self.mapping, output_path).explain()

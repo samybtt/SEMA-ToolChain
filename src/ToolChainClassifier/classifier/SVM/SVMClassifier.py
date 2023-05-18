@@ -108,7 +108,7 @@ class SVMClassifier(Classifier):
         
 
         self.log.info("Accuracy %2.2f %%" %(accuracy_score(self.label, self.y_pred)*100))
-        self.log.info("Balenced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
+        self.log.info("Balanced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
         self.log.info("Precision %2.2f %%" %(precision_score(self.label, self.y_pred,average='weighted')*100))
         self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100

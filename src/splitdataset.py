@@ -6,9 +6,12 @@ import shutil
 data_dir = "databases/examples_samy/big_dataset/merged/alldata"
 train_dir = "databases/examples_samy/big_dataset/merged/traindatabal"
 test_dir = "databases/examples_samy/big_dataset/merged/testdatabal"
+possible_families = ["bancteian", "ircbot", "sillyp2p", "sytro", "simbot", "RemcosRAT", "delf", "nitol", "gandcrab", "wabot"]
+# possible_families = ["bancteian", "ircbot", "sillyp2p", "sytro", "simbot", "FeakerStealer", "sfone", "lamer", "RedLineStealer", "RemcosRAT", "delf", "nitol", "gandcrab", "wabot"]
+
 
 # Set the train/test split ratio (e.g., 80/20 split)
-split_ratio = 0.8
+split_ratio = 0.7
 
 
 for method in os.listdir(data_dir):
@@ -19,6 +22,8 @@ for method in os.listdir(data_dir):
     os.makedirs(train_method_dir, exist_ok=True)
     os.makedirs(test_method_dir, exist_ok=True)
     for family_dir in os.listdir(method_dir):
+        if family_dir not in possible_families:
+            continue
         # Create the corresponding directories in the train/test directory
         train_family_dir = os.path.join(train_method_dir, family_dir)
         test_family_dir = os.path.join(test_method_dir, family_dir)
@@ -33,12 +38,14 @@ for method in os.listdir(data_dir):
 
         # # Split the list of GS files into train and test sets
         # split_idx = int(len(gs_files) * split_ratio)
+        # split_idx = int(36 * split_ratio)
         # train_files = gs_files[:split_idx]
         # test_files = gs_files[split_idx:]
+
         # Split the list of GS files into train and test sets
-        split_idx = int(len(gs_files) * split_ratio)
-        train_files = gs_files[:20]
-        test_files = gs_files[20:26]
+        # split_idx = int(len(gs_files) * split_ratio)
+        train_files = gs_files[:26]
+        test_files = gs_files[26:36]
 
         # Move the train files to the train directory and the test files to the test directory
         for train_file in train_files:
