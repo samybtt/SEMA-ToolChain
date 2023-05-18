@@ -164,14 +164,14 @@ class GNNTrainer(Classifier):
 
             optimizer = torch.optim.Adam(self.clf.parameters(), lr=lr)#, weight_decay=5e-4)
             criterion = torch.nn.CrossEntropyLoss()
-            scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)
+            # scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.5)
             # scheduler = torch.optim.lr_scheduler.CosineAnnealingWarmRestarts(optimizer, 
             #                             T_0 = 8,# Number of iterations for the first restart
             #                             T_mult = 1, # A factor increases TiTi​ after a restart
             #                             eta_min = 1e-5) # Minimum learning rate
-            # scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,
-            #                   T_max = 42, # Maximum number of iterations.
-            #                  eta_min = 1e-4) # Minimum learning rate.
+            scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer,
+                              T_max = 42, # Maximum number of iterations.
+                             eta_min = 1e-4) # Minimum learning rate.
             # import pdb; pdb.set_trace()
             torch.autograd.set_detect_anomaly(True)
             patience = 20 # Number of epochs to wait for improvement
