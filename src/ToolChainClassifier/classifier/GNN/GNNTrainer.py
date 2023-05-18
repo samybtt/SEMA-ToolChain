@@ -116,7 +116,7 @@ class GNNTrainer(Classifier):
         bar.finish()
 
     def split_dataset(self):
-        sss = StratifiedShuffleSplit(n_splits=1, test_size=0.3, random_state=24)
+        sss = StratifiedShuffleSplit(n_splits=1, test_size=0.4, random_state=24)
         for train, test in sss.split(self.dataset, self.label):
             self.train_index = train
             self.val_index = test
@@ -364,9 +364,9 @@ class GNNTrainer(Classifier):
         if path is None:
             dataset = self.val_dataset
             loader = DataLoader(dataset, batch_size=1, shuffle=True)
-            GNNExplainability(dataset, loader, self.clf, self.mapping, output_path).explain()
+            GNNExplainability(dataset, loader, self.clf, self.mapping, self.fam_idx, output_path).explain()
         else:
             self.init_dataset(path)
             dataset = self.dataset
             loader = DataLoader(dataset, batch_size=1, shuffle=True)
-            GNNExplainability(dataset, loader, self.clf, self.mapping, output_path).explain()
+            GNNExplainability(dataset, loader, self.clf, self.mapping, self.fam_idx, output_path).explain()

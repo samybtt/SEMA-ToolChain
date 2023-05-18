@@ -29,12 +29,13 @@ def has_graphviz() -> bool:
 # loader = DataLoader(dataset, batch_size=1, shuffle=True)
 
 class GNNExplainability():
-    def __init__(self,dataset, loader, model, mapping, output_path=None):
+    def __init__(self,dataset, loader, model, mapping, fam_idx, output_path=None):
         self.dataset = dataset
         self.loader = loader
         self.model = model
         self.output_path= output_path
         self.mapping = mapping
+        self.fam_idx = fam_idx
 
     def explain(self):
         explainer = Explainer(
@@ -66,12 +67,12 @@ class GNNExplainability():
                                 self.mapping,
                                 explanation.edge_index, 
                                 explanation.edge_mask,
-                                self.output_path+f'subgraph_{i}_{true_label}_{pred}.png', 
+                                self.output_path+f'subgraph_{i}_{self.fam_idx[true_label]}_{self.fam_idx[pred]}.png', 
                                 backend="graphviz")
                 # explanation.visualize_graph(self.output_path+f'subgraph_{i}_{true_label}_{pred}.png', backend="graphviz")
                 # explanation.visualize_feature_importance(self.output_path+f'feature_importance_{i}_{true_label}_{pred}.png', top_k=10)
             else:
-                explanation.visualize_graph(f'subgraph_{i}_{true_label}_{pred}.png', backend="graphviz")
+                explanation.visualize_graph(f'subgraph_{i}_{self.fam_idx[true_label]}_{self.fam_idx[pred]}.png', backend="graphviz")
                 # explanation.visualize_feature_importance(f'feature_importance_{i}_{true_label}_{pred}.png', top_k=10)
 
     # def explain(self):
