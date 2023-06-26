@@ -309,13 +309,21 @@ class GNNTrainer(Classifier):
     def get_stat_classifier(self):
         logging.basicConfig(level=logging.INFO)
         
-
-        self.log.info("Accuracy %2.2f %%" %(accuracy_score(self.label, self.y_pred)*100))
-        self.log.info("Balanced accuracy %2.2f %%" %(balanced_accuracy_score(self.label, self.y_pred)*100))
-        self.log.info("Precision %2.2f %%" %(precision_score(self.label, self.y_pred,average='weighted')*100))
-        self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
+        accuracy = accuracy_score(self.label, self.y_pred)*100
+        balanced_accuracy = balanced_accuracy_score(self.label, self.y_pred)*100
+        precision = precision_score(self.label, self.y_pred,average='weighted')*100
+        recall = recall_score(self.label, self.y_pred,average='weighted')*100
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100
+
+        self.log.info("Accuracy %2.2f %%" %(accuracy))
+        self.log.info("Balanced accuracy %2.2f %%" %(balanced_accuracy))
+        self.log.info("Precision %2.2f %%" %(precision))
+        self.log.info("Recall %2.2f %%" %(recall))
         self.log.info("F1-score %2.2f %%" %(f_score))
+
+        
+        with open(f"output/gnn_eval/ml_eval_stats.csv", "a") as f:
+            f.write(f"{accuracy},{balanced_accuracy},{precision},{recall},{f_score}\n")
     
         if BINARY_CLASS:
             conf = confusion_matrix(self.label,self.y_pred,labels=['clean','malware'])

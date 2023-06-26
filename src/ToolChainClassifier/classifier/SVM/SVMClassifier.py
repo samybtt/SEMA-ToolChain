@@ -113,47 +113,54 @@ class SVMClassifier(Classifier):
         self.log.info("Recall %2.2f %%" %(recall_score(self.label, self.y_pred,average='weighted')*100))
         f_score = f1_score(self.label, self.y_pred,average='weighted')*100
         self.log.info("F1-score %2.2f %%" %(f_score))
+        
+        accuracy = accuracy_score(self.label, self.y_pred)*100
+        balanced_accuracy = balanced_accuracy_score(self.label, self.y_pred)*100
+        precision = precision_score(self.label, self.y_pred,average='weighted')*100
+        recall = recall_score(self.label, self.y_pred,average='weighted')*100
+        with open(f"output/gnn_eval/ml_eval_stats.csv", "a") as f:
+            f.write(f"{accuracy},{balanced_accuracy},{precision},{recall},{f_score}\n")
     
-        if BINARY_CLASS:
-            conf = confusion_matrix(self.label,self.y_pred,labels=['clean','malware'])
-            y_score1 = self.clf.predict_proba(self.K_val)[:,1]
-            false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(self.label, y_score1,pos_label='clean')
-            plt.subplots(1, figsize=(10,10))
-            plt.title('Receiver Operating Characteristic - DecisionTree')
-            plt.plot(false_positive_rate1, true_positive_rate1)
-            plt.plot([0, 1], ls="--")
-            plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
-            plt.ylabel('True Positive Rate')
-            plt.xlabel('False Positive Rate')
-            plt.show()
-            print("OOOOOOHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
-            # plt.savefig(self.original_path + "figure_binary.png")
+        # if BINARY_CLASS:
+        #     conf = confusion_matrix(self.label,self.y_pred,labels=['clean','malware'])
+        #     y_score1 = self.clf.predict_proba(self.K_val)[:,1]
+        #     false_positive_rate1, true_positive_rate1, threshold1 = roc_curve(self.label, y_score1,pos_label='clean')
+        #     plt.subplots(1, figsize=(10,10))
+        #     plt.title('Receiver Operating Characteristic - DecisionTree')
+        #     plt.plot(false_positive_rate1, true_positive_rate1)
+        #     plt.plot([0, 1], ls="--")
+        #     plt.plot([0, 0], [1, 0] , c=".7"), plt.plot([1, 1] , c=".7")
+        #     plt.ylabel('True Positive Rate')
+        #     plt.xlabel('False Positive Rate')
+        #     # plt.show()
+        #     # print("OOOOOOHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+        #     # plt.savefig(self.original_path + "figure_binary.png")
 
-        else:
-            conf = confusion_matrix(self.label,self.y_pred,labels=self.fam_idx)
+        # else:
+        #     conf = confusion_matrix(self.label,self.y_pred,labels=self.fam_idx)
 
-        list_name =[]
-        for y in self.label:
-            if y not in list_name:
-                list_name.append(y)
-        figsize = (10,7)
-        fontsize=9
-        if BINARY_CLASS:
-            df_cm = pd.DataFrame(conf, index=['clean','malware'], columns=['clean','malware'],)
-        else :
-            df_cm = pd.DataFrame(conf, index=self.fam_idx, columns=self.fam_idx,)
-        fig = plt.figure(figsize=figsize)
-        try:
-            heatmap = sns.heatmap(df_cm, annot=True, fmt="d",cbar=False)
-        except ValueError:
-            raise ValueError("Confusion matrix values must be integers.")
-        heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=0, ha='right', fontsize=fontsize)
-        heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=45, ha='right', fontsize=fontsize)
-        plt.ylabel('True label')
-        plt.xlabel('Predicted label')
-        plt.show()
-        print("AAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
+        # list_name =[]
+        # for y in self.label:
+        #     if y not in list_name:
+        #         list_name.append(y)
+        # figsize = (10,7)
+        # fontsize=9
+        # if BINARY_CLASS:
+        #     df_cm = pd.DataFrame(conf, index=['clean','malware'], columns=['clean','malware'],)
+        # else :
+        #     df_cm = pd.DataFrame(conf, index=self.fam_idx, columns=self.fam_idx,)
+        # fig = plt.figure(figsize=figsize)
+        # try:
+        #     heatmap = sns.heatmap(df_cm, annot=True, fmt="d",cbar=False)
+        # except ValueError:
+        #     raise ValueError("Confusion matrix values must be integers.")
+        # heatmap.yaxis.set_ticklabels(heatmap.yaxis.get_ticklabels(), rotation=0, ha='right', fontsize=fontsize)
+        # heatmap.xaxis.set_ticklabels(heatmap.xaxis.get_ticklabels(), rotation=45, ha='right', fontsize=fontsize)
+        # plt.ylabel('True label')
+        # plt.xlabel('Predicted label')
+        # plt.show()
+        # print("AAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHH")
         # plt.savefig(self.original_path + "figure.png")
-        plt.savefig("/home/sambt/Desktop/figure.png")
+        # plt.savefig("/home/sambt/Desktop/figure.png")
         return f_score
     

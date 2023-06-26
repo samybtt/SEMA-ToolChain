@@ -21,7 +21,7 @@ class GIN(torch.nn.Module):
                         torch.nn.ReLU(),
                         torch.nn.Linear(hidden, hidden),
                     )))
-        self.fc = torch.nn.Linear(hidden, num_classes)
+        self.fc = torch.nn.Linear(hidden, num_classes) 
 
     def forward(self, x, edge_index, batch):
         x = F.relu(self.conv1(x, edge_index))

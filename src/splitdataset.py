@@ -21,18 +21,43 @@ for method in os.listdir(data_dir):
     test_method_dir = os.path.join(test_dir, method)
     os.makedirs(train_method_dir, exist_ok=True)
     os.makedirs(test_method_dir, exist_ok=True)
-    for family_dir in os.listdir(method_dir):
-        if family_dir not in possible_families:
-            continue
-        # Create the corresponding directories in the train/test directory
-        train_family_dir = os.path.join(train_method_dir, family_dir)
-        test_family_dir = os.path.join(test_method_dir, family_dir)
-        os.makedirs(train_family_dir, exist_ok=True)
-        os.makedirs(test_family_dir, exist_ok=True)
 
-        # Get the list of all GS files in the family directory
-        gs_files = os.listdir(os.path.join(method_dir, family_dir))
+    for i in range(5):
+        # Create the corresponding directories in the train/test directory
+        train_method_dir = os.path.join(train_dir, method, f"split_{i}")
+        test_method_dir = os.path.join(test_dir, method, f"split_{i}")
+        os.makedirs(train_method_dir, exist_ok=True)
+        os.makedirs(test_method_dir, exist_ok=True)
+
+        for family_dir in os.listdir(method_dir):
+            if family_dir not in possible_families:
+                continue
+            # Create the corresponding directories in the train/test directory
+            train_family_dir = os.path.join(train_method_dir, family_dir)
+            test_family_dir = os.path.join(test_method_dir, family_dir)
+            os.makedirs(train_family_dir, exist_ok=True)
+            os.makedirs(test_family_dir, exist_ok=True)
+
+            # Get the list of all GS files in the family directory
+            gs_files = os.listdir(os.path.join(method_dir, family_dir))
         
+            shuffled_list = random.sample(gs_files, 36)
+            random.shuffle(shuffled_list)
+
+            train_files = shuffled_list[:26]
+            test_files = shuffled_list[26:36]
+
+            # Move the train files to the train directory and the test files to the test directory
+            for train_file in train_files:
+                src = os.path.join(method_dir, family_dir, train_file)
+                dst = os.path.join(train_family_dir, train_file)
+                shutil.copy(src, dst)
+
+            for test_file in test_files:
+                src = os.path.join(method_dir, family_dir, test_file)
+                dst = os.path.join(test_family_dir, test_file)
+                shutil.copy(src, dst)
+
         # Shuffle the list of GS files randomly
         random.shuffle(gs_files)
 
@@ -44,16 +69,16 @@ for method in os.listdir(data_dir):
 
         # Split the list of GS files into train and test sets
         # split_idx = int(len(gs_files) * split_ratio)
-        train_files = gs_files[:26]
-        test_files = gs_files[26:36]
+        # train_files = gs_files[:26]
+        # test_files = gs_files[26:36]
 
-        # Move the train files to the train directory and the test files to the test directory
-        for train_file in train_files:
-            src = os.path.join(method_dir, family_dir, train_file)
-            dst = os.path.join(train_family_dir, train_file)
-            shutil.copy(src, dst)
+        # # Move the train files to the train directory and the test files to the test directory
+        # for train_file in train_files:
+        #     src = os.path.join(method_dir, family_dir, train_file)
+        #     dst = os.path.join(train_family_dir, train_file)
+        #     shutil.copy(src, dst)
 
-        for test_file in test_files:
-            src = os.path.join(method_dir, family_dir, test_file)
-            dst = os.path.join(test_family_dir, test_file)
-            shutil.copy(src, dst)
+        # for test_file in test_files:
+        #     src = os.path.join(method_dir, family_dir, test_file)
+        #     dst = os.path.join(test_family_dir, test_file)
+        #     shutil.copy(src, dst)

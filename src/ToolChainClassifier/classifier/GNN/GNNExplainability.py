@@ -2,6 +2,8 @@ from torch_geometric.data import Data
 from torch_geometric.explain import Explainer, PGExplainer, GNNExplainer
 from torch_geometric.loader import DataLoader
 from torch_geometric.explain.metric import fidelity
+from torch_geometric.explain import unfaithfulness
+
 import matplotlib.pyplot as plt
 from math import sqrt
 from typing import Any, Optional
@@ -41,7 +43,7 @@ class GNNExplainability():
         explainer = Explainer(
             model=self.model,
             algorithm=GNNExplainer(epochs=200),
-            explanation_type='model', #'phenomenon',
+            explanation_type='phenomenon', #'model',
             node_mask_type='attributes',
             edge_mask_type='object',
             model_config=dict(
@@ -49,17 +51,19 @@ class GNNExplainability():
                 task_level='graph',
                 return_type='log_probs',
             ),
-            threshold_config=dict(threshold_type='topk', value=20),
+            threshold_config=dict(threshold_type='topk', value=10),
         )
 
         for i in range(len(self.dataset)):
             data = self.dataset[i]
             print(data)
-            explanation = explainer(data.x, data.edge_index, batch=data.batch)
+            explanation = explainer(data.x, data.edge_index, batch=data.batch, target=data.y)
             print(explanation)
             # import pdb; pdb.set_trace()
             pred = explainer.get_prediction(data.x, data.edge_index, data.batch).argmax(dim=1).item()
             true_label = data.y.item()
+            # unfaithfulness_score = unfaithfulness(explainer, explanation)
+            # print(unfaithfulness_score)
             # fid_pm = fidelity(explainer, explanation)
             # print(fid_pm)
             if self.output_path is not None:
