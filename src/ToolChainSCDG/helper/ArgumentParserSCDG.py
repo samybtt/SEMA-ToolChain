@@ -12,7 +12,7 @@ class ArgumentParserSCDG:
         self.group = self.parser.add_argument_group('SCDG module arguments')
         self.group.add_argument(
             "--method",
-            help="Method used for the analysis among (DFS,BFS,CBFS, STOCH, CSTOCH) (default : DFS)",
+            help="Method used for the analysis among (DFS,BFS,CBFS, STOCH, CSTOCH1, CSTOCH2, CSTOCH3, WSELECT1, WSELECT2, WSELECT3) (default : DFS)",
         )
         self.group.add_argument(
             "--n_args",
@@ -168,7 +168,7 @@ class ArgumentParserSCDG:
         self.tool_scdg.debug_error = args.debug_error
         if args.method:
             expl_method = args.method.upper()
-            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH", "CSTOCH", "CSTOCH2", "CSTOCHSET", "CSTOCHSET2", "WSELECT", "WSELECT2", "WSELECTSET", "WSELECTSET2", "DPP"]:
+            if expl_method not in ["BFS", "DFS", "CDFS", "CBFS", "STOCH", "CSTOCH1", "CSTOCH2", "CSTOCHSET", "CSTOCH3", "WSELECT1", "WSELECT2", "WSELECTSET", "WSELECT3", "DPP"]:
                 import pdb; pdb.set_trace()
                 self.tool_scdg.log.info("Method of exploration not recognized")
                 self.tool_scdg.log.info("Changed to default DFS")

@@ -485,7 +485,7 @@ class ToolChainSCDG:
             exploration_tech = ToolChainExplorerStochastic(
                 simgr, 0, exp_dir, nameFileShort, self
             )
-        elif self.expl_method == "CSTOCH":
+        elif self.expl_method == "CSTOCH1":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerCStochastic(
                 simgr, 0, exp_dir, nameFileShort, self
@@ -500,12 +500,12 @@ class ToolChainSCDG:
             exploration_tech = ToolChainExplorerCStochasticSet(
                 simgr, 0, exp_dir, nameFileShort, self
             )
-        elif self.expl_method == "CSTOCHset2":
+        elif self.expl_method == "CSTOCH3":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerCStochasticSetBis(
                 simgr, 0, exp_dir, nameFileShort, self
             )
-        elif self.expl_method == "WSELECT":
+        elif self.expl_method == "WSELECT1":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerWeightedSelect(
                 simgr, 0, exp_dir, nameFileShort, self
@@ -520,7 +520,7 @@ class ToolChainSCDG:
             exploration_tech = ToolChainExplorerWeightedSelectSet(
                 simgr, 0, exp_dir, nameFileShort, self
             )
-        elif self.expl_method == "WSELECTset2":
+        elif self.expl_method == "WSELECT3":
             # import pdb; pdb.set_trace()
             exploration_tech = ToolChainExplorerWeightedSelectSetBis(
                 simgr, 0, exp_dir, nameFileShort, self
