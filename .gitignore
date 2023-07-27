@@ -54,3 +54,5 @@ unknown/
 out.gs
 *syscalls.svg
 *nb_instructions.svg
+*ginjk_model.pkl
+*gin_model.pkl
