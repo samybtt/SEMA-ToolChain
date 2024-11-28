@@ -17,3 +17,12 @@ sema/toolchain/submodules/SEMA-quickspan/build/*
 *.tar
 docs/*
 site/*
+
+#############
+
+src/ignoreme/**
+src/databases/**
+src/output/runs/**
+
+src/SemaClassifier/classifier/explain_output/**
+src/SemaClassifier/classifier/saved_model/*.pkl
